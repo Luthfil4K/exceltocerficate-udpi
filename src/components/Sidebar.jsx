@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState}from 'react'
-import { BarChart,BarChart2, Menu,Users, Settings } from 'lucide-react'
+import { BarChart,BarChart2, Menu,Users, Settings, File } from 'lucide-react'
 import {AnimatePresence, motion} from 'framer-motion'
 import { Link } from 'react-router-dom'
 const SIDEBAR_ITEMS = [
@@ -12,7 +12,7 @@ const SIDEBAR_ITEMS = [
     },
     {
         name : "Document",
-        icon : Settings,
+        icon : File,
         color : "#6EE7B7",
         path: "/document",
     },
@@ -24,7 +24,7 @@ const SIDEBAR_ITEMS = [
     },
     {
       name : "Paper",
-      icon : BarChart,
+      icon : Settings,
       color : "#3B82F6",
       path: "/",
     },
@@ -52,7 +52,9 @@ const Sidebar = () => {
           {SIDEBAR_ITEMS.map((a)=>(
             <Link className='' key={a.name} to={a.name}>
               <motion.div
-              className='mb-2 flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors'>
+              className='mb-2 flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors'
+              whileHover={{x:4,scale:1}}
+              >
                 <a.icon size={20} style={{color: a.color, minWidth:"20px"}}/>
                 <AnimatePresence>
                   {isOpen && (
@@ -62,6 +64,7 @@ const Sidebar = () => {
                     animate={{opacity:1, width:'auto'}}
                     exit={{opacity:0, width:0}}
                     transition={{duration:0.2, delay:0.3}}
+                    
                     >
                     {a.name}
                     </motion.span>
