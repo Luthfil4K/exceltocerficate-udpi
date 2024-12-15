@@ -1,5 +1,5 @@
 import React from 'react'
-import Card1 from '../components/Card1'
+import CardUdpi from '../components/CardUdpi'
 import Header from '../components/Header'
 import {motion} from 'framer-motion'
 import Grid from '@mui/material/Grid'
@@ -18,18 +18,18 @@ const DashboardPages = () => {
         transition={{duration:0.5}}
         >
 
-          <Grid pt={5} container spacing={4} sx={{paddingLeft:5}} >
+          <Grid  pt={5} container spacing={4} sx={{paddingLeft:5}} >
             <Grid item md={4} xs={12} >
-              <Card1 title={'Ujian Dinas'}>
-              </Card1>
+              <CardUdpi title={'Ujian Dinas'}>
+              </CardUdpi>
             </Grid>
             <Grid item md={4} xs={12} >
-              <Card1 title={'Penyesuaian Ijazah SMA'}>
-              </Card1>
+              <CardUdpi title={'Penyesuaian Ijazah SMA'}>
+              </CardUdpi>
             </Grid>
             <Grid item md={4} xs={12} >
-              <Card1 title={'Penyesuaian Ijazah D4/S1'}>
-              </Card1>
+              <CardUdpi title={'Penyesuaian Ijazah D4/S1'}>
+              </CardUdpi>
             </Grid>
           </Grid>
 

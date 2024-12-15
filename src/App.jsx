@@ -26,9 +26,9 @@ function App() {
         </div>    
         <Sidebar></Sidebar>
         <div className="flex-1 overflow-auto relative z-10 ">
-          <Header title={ location.pathname.split('/')}></Header>  
+          <Header title={ location.pathname == '/'? 'Dashboard' : location.pathname.split('/')}></Header>  
         <Routes >
-          <Route path='/Dashboard' element={<DashboardPages></DashboardPages>}></Route>
+          <Route path='/' element={<DashboardPages></DashboardPages>}></Route>
           <Route path='/Document' element={<DocumentPage></DocumentPage>}></Route>
         </Routes>
         </div>

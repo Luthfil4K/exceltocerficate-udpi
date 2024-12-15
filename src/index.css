@@ -89,7 +89,7 @@ button:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.5s;
+  transition: 0.1s;
   border-radius: 10px;
   margin: 0 -45px;
   backdrop-filter: blur(10px);
@@ -124,7 +124,7 @@ button:focus-visible {
   height: 354px;
   background-image: linear-gradient(163deg, #503852 0%, #132f45 100%);
   border-radius: 20px;
-  transition: all .5s;
+  transition: all .1s;
  }
  
  .card2 {
@@ -133,7 +133,7 @@ button:focus-visible {
   /* background-color: #4e494e; */
   background-image: linear-gradient(163deg, #1d141e 0%, #0a1925 100%);
   border-radius:20px;
-  transition: all .5s;
+  transition: all .1s;
   padding: 16px;
  }
  
