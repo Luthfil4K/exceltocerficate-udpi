@@ -6,6 +6,7 @@ import './App.css'
 import { Route, Routes,useLocation } from 'react-router-dom'
 import DashboardPages from './pages/DashboardPages'
 import DocumentPage from './pages/DocumentPage'
+import RenderPage from './pages/RenderPage'
 import Sidebar from './components/Sidebar'
 import Header from './components/Header'
 
@@ -30,6 +31,7 @@ function App() {
         <Routes >
           <Route path='/' element={<DashboardPages></DashboardPages>}></Route>
           <Route path='/Document' element={<DocumentPage></DocumentPage>}></Route>
+          <Route path='/RenderPage' element={<RenderPage></RenderPage>}></Route>
         </Routes>
         </div>
       </div>
