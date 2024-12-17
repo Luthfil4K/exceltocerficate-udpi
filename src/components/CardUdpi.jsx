@@ -3,10 +3,8 @@ import { fontWeight } from '@mui/system'
 import React from 'react'
 import { FileText } from 'lucide-react'
 import ButtonStandard from  './ButtonStandard'
-import { Link } from 'react-router-dom'
 
 const CardUdpi = (props) => {
-  
   
   return (
     <>
@@ -22,9 +20,7 @@ const CardUdpi = (props) => {
           <FileText size={180} color={'#20222F'} />
           </Grid>
           <Grid item md={12} sx={{justifyContent:'center',display:'flex', height:40}}>
-          <Link className='' key={'asd'} to={'RenderPage'}>
-            <ButtonStandard >Buat</ButtonStandard>
-          </Link>
+            <ButtonStandard toWhere='RenderPage' >Buat</ButtonStandard>
           </Grid>
         </Grid>
       </div>

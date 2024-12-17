@@ -1,21 +1,38 @@
 
 import {Button} from '@mui/material'
+import { Link } from 'react-router-dom'
 
-const ButtonStandard = ({children}) => {
+
+const ButtonStandard = ({children,toWhere}) => {
 
   
   return (
-    <Button 
-      sx={{
-        backgroundColor:'#1e1f49',
-        '&:hover': {
-        backgroundColor: '#40429f'  
-      }}} 
-      variant='contained' 
+
+    <Link 
+      sx={{ 
+        display: 'block',  // Menjadikan Link sebagai elemen blok 
+        width: 3000       // Atur lebar sesuai keinginan
+      }} 
       fullWidth 
-      size='large'>
-      {children}
-    </Button>
+      className='' 
+      key={'asd'} 
+      to={toWhere}
+    >
+      <Button 
+        sx={{
+          backgroundColor:'#1e1f49',
+          '&:hover': {
+            backgroundColor: '#40429f'
+          },
+          width:200
+        }} 
+        variant='contained' 
+        fullWidth 
+        size='large'
+      >
+        {children}
+      </Button>
+    </Link>
   )
 }
 
