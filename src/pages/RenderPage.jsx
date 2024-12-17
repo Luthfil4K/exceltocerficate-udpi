@@ -1,25 +1,37 @@
 import React from 'react'
 import { Grid, Typography, Card } from '@mui/material'
+import CardRenderDescription from '../components/CardRenderDescription'
+
 
 const RenderPage = () => {
   return (
     <div>
-      <Grid container spacing={4}>
-        <Grid item md={8}>
-            <Card>
+      <Grid sx={{padding:2}} p-4 container spacing={2}>
+        <Grid item xs={8}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+            <CardRenderDescription>
+
+            </CardRenderDescription>
+            </Grid>
+            <Grid item xs={12}>
+
+            <Card sx={{height:300, padding:1}}>
+                test
+            </Card>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={4} >
+            <Card sx={{height:515, padding:1}}>
                 test
             </Card>
         </Grid>
-        <Grid item md={4}>
-            <Card>
+        {/* <Grid item xs={12}>
+            <Card sx={{height:250, padding:1}}>
                 test
             </Card>
-        </Grid>
-        <Grid item md={12}>
-            <Card>
-                test
-            </Card>
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   )
