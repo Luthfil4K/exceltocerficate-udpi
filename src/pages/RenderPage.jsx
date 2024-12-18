@@ -3,14 +3,14 @@ import { Grid, Typography, Card } from '@mui/material'
 import CardRenderDescription from '../components/CardRenderDescription'
 
 
-const RenderPage = () => {
+const RenderPage = (props) => {
   return (
     <div>
       <Grid sx={{padding:2}} p-4 container spacing={2}>
         <Grid item xs={8}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
-            <CardRenderDescription>
+            <CardRenderDescription title={props.taskTitle}>
 
             </CardRenderDescription>
             </Grid>
