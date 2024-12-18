@@ -7,15 +7,9 @@ import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
 
 
-
-
-
 const CardRenderDescription = (props) => {
   const [value, setValue] = useState  (0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
   
   return (
     <div>

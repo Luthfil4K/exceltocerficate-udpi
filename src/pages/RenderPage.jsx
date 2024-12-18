@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, Typography, Card } from '@mui/material'
 import CardRenderDescription from '../components/CardRenderDescription'
+import CardRenderTable from '../components/CardRenderTable'
 
 
 const RenderPage = (props) => {
@@ -16,8 +17,8 @@ const RenderPage = (props) => {
             </Grid>
             <Grid item xs={12}>
 
-            <Card sx={{height:300, padding:1}}>
-                test
+            <Card sx={{height:300, padding:1, overflow:'auto',backgroundColor:'#101722',}}>
+              <CardRenderTable></CardRenderTable>
             </Card>
             </Grid>
           </Grid>
