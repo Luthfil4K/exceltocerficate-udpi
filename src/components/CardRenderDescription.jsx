@@ -5,6 +5,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
+import ButtonStandard from './ButtonStandard';
 
 
 const CardRenderDescription = (props) => {
@@ -25,7 +26,8 @@ const CardRenderDescription = (props) => {
         <Box sx={{padding:2, width: '100%' }}>
         <Grid container spacing={2}>
             <Grid item xs={12}>
-              <Typography variant='' color={'white'}>test</Typography>
+              <ButtonStandard>Unduh Template Excel</ButtonStandard>
+              
             </Grid>
            </Grid>
         </Box>

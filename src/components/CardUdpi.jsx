@@ -2,7 +2,7 @@ import { Grid, Typography } from '@mui/material'
 import { fontWeight } from '@mui/system'
 import React from 'react'
 import { FileText } from 'lucide-react'
-import ButtonStandard from  './ButtonStandard'
+import ButtonNav from  './ButtonNav'
 
 const CardUdpi = (props) => {
   
@@ -20,7 +20,7 @@ const CardUdpi = (props) => {
           <FileText size={180} color={'#20222F'} />
           </Grid>
           <Grid item md={12} sx={{justifyContent:'center',display:'flex', height:40}}>
-            <ButtonStandard toWhere='RenderPage' >Buat</ButtonStandard>
+            <ButtonNav toWhere='RenderPage' >Buat</ButtonNav>
           </Grid>
         </Grid>
       </div>
