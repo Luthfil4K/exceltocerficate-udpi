@@ -2,6 +2,7 @@ import React from 'react'
 import { Grid, Typography, Card } from '@mui/material'
 import CardRenderDescription from '../components/CardRenderDescription'
 import CardRenderTable from '../components/CardRenderTable'
+import CardRenderReview from '../components/CardRenderReview'
 
 
 const RenderPage = (props) => {
@@ -15,14 +16,13 @@ const RenderPage = (props) => {
             </CardRenderDescription>
             </Grid>
             <Grid item xs={4}>
-            <Card sx={{height:200, padding:1}}>
-                test
-            </Card>
+           <CardRenderReview/>
+
             </Grid>
           </Grid>
         </Grid>
         <Grid item xs={12} >
-          <Card sx={{height:300, padding:1, overflow:'auto',backgroundColor:'#101722',}}>
+          <Card sx={{height:300, padding:2, overflow:'auto',backgroundColor:'#101722',}}>
               <CardRenderTable></CardRenderTable>
           </Card>
         </Grid>

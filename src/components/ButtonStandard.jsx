@@ -7,10 +7,7 @@ import { handleDownloadTable } from '../utils/handleDownloadTable';
 
 const ButtonStandard = (props) => {
 
-  console.log(props)
-  console.log(props)
-  console.log(props)
-  console.log(props)
+  
   const handleButtonClick = (kegiatan) => {
     handleDownloadTable(kegiatan);  
   }
@@ -28,7 +25,7 @@ const ButtonStandard = (props) => {
         },
        
       }} 
-      onClick={props.title == "Unduh Template Excel" ? handleButtonClick(props.kegiatan):handleNothing}
+      onClick={props.title == "Unduh Template Excel" ? () => handleButtonClick(props.kegiatan) : handleNothing}
       variant='contained' 
       fullWidth 
       size='large'
