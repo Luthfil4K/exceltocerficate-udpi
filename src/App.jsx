@@ -1,14 +1,15 @@
 import { useState } from 'react'
 
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 import { Route, Routes,useLocation } from 'react-router-dom'
 import DashboardPages from './pages/DashboardPages'
 import DocumentPage from './pages/DocumentPage'
+import TemplatePage from './pages/TemplatePage'
 import RenderPage from './pages/RenderPage'
 import Sidebar from './components/Sidebar'
+import reactLogo from './assets/react.svg'
 import Header from './components/Header'
+import viteLogo from '/vite.svg'
+import './App.css'
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path='/' element={<DashboardPages></DashboardPages>}></Route>
           <Route path='/Document' element={<DocumentPage></DocumentPage>}></Route>
           <Route path='/RenderPage' element={<RenderPage></RenderPage>}></Route>
+          <Route path='/TemplatePage' element={<TemplatePage></TemplatePage>}></Route>
         </Routes>
         </div>
       </div>
