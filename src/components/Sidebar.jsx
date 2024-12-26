@@ -32,7 +32,7 @@ const SIDEBAR_ITEMS = [
 
 const Sidebar = () => {
 
-  const [isOpen,setIsOpen] = useState(true)
+  const [isOpen,setIsOpen] = useState(false)
   return (
     <motion.div 
     className={`relative z-10 transition-all duration-300 ease-in-out flex-shrink-0 ${isOpen? 'w-64':'w-20'}`}
