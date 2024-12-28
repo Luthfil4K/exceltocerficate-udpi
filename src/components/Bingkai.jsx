@@ -64,12 +64,10 @@ const styles = StyleSheet.create({
     paddingTop: 220,
     paddingHorizontal: 100,
     flexGrow: 1,
-    backgroundColor: "rgba(0, 0, 255, 0.2)",
   },
   kop: {
     width: "100%",
     height: 60,
-    backgroundColor: "rgba(0, 255, 255, 0.4)",
     alignItems: "center",
     marginBottom: 10,
     bps: {
@@ -93,7 +91,6 @@ const styles = StyleSheet.create({
   isi: {
     width: "100%",
     height: 40,
-    backgroundColor: "rgba(20, 100, 255, 0.3)",
     marginBottom: 20,
     isiSurat: {
       fontSize: 12,
@@ -102,19 +99,16 @@ const styles = StyleSheet.create({
   keteranganIsi: {
     width: "100%",
     height: 100,
-    backgroundColor: "rgba(20, 20, 255, 0.2)",
     marginBottom: 10,
     display: "flex",
     flexDirection: "row",
     isiKiri: {
       width: "35%",
       height: 100,
-      backgroundColor: "rgba(20, 20, 55, 0.2)",
     },
     isiKanan: {
       width: "66%",
       height: 100,
-      backgroundColor: "rgba(20, 20, 155, 0.9)",
     },
     formatIdentitas: {
       marginBottom: 4,
@@ -124,7 +118,6 @@ const styles = StyleSheet.create({
   keteranganLulus: {
     width: "100%",
     height: 30,
-    backgroundColor: "rgba(20, 20, 255, 0.2)",
     marginBottom: 10,
     alignItems: "center",
     lulusText: {
@@ -137,7 +130,6 @@ const styles = StyleSheet.create({
   penutup: {
     width: "100%",
     height: 30,
-    backgroundColor: "rgba(20, 20, 255, 0.2)",
     marginBottom: 20,
     penutupText: {
       fontSize: 12,
@@ -148,50 +140,57 @@ const styles = StyleSheet.create({
     height: 120,
     display: "flex",
     flexDirection: "row",
-    backgroundColor: "rgba(20, 20, 255, 0.2)",
     isiKiri: {
-      paddingLeft: 60,
+      paddingLeft: 50,
       width: "36%",
       height: 120,
-      backgroundColor: "rgba(200, 10, 20, 0.1)",
       layoutFoto: {
         width: 90,
         height: 120,
         border: "3px black",
-        backgroundColor: "rgba(200, 10, 20, 0.4)",
       },
     },
     stempel: {
-      width: "20%",
+      marginLeft:120,
+      position:'absolute',
+      justifyContent:'center',
+      marginTop:10,
+      alignItems:'center',
+      layoutFoto:{
+        width:100,
+        height:100,
+      }
     },
     ttd: {
-      width: "2%",
+      justifyContent:'center',
+      marginLeft:180,
+      position:'absolute',
+      alignItems:'center',
+      layoutFoto:{
+        width:100,
+        height:100,
+      }
     },
     isiKanan: {
-      width: "70%",
+      width: "80%",
       height: 120,
       alamat: {
-        alignItems: "center",
+        alignItems:'center',
         height: 50,
-        backgroundColor: "rgba(200, 10, 20, 0.4)",
       },
       ttd: {
         height: 60,
-        backgroundColor: "rgba(10, 110, 220, 0.1)",
         layoutFoto:{
           width:90,
           height:90,
-          backgroundColor:"rgba(200,10,20,04)"
         }
       },
       namaTtd: {
         height: 30,
         alignItems: "center",
-        backgroundColor: "rgba(200, 10, 20, 0.2)",
         layoutFoto:{
           width:90,
           height:90,
-          backgroundColor:"rgba(200,10,20,04)"
         }
       },
       normalText: {
@@ -294,7 +293,7 @@ const Bingkai = () => {
                     <View style={styles.fotoTtd.stempel}>
                       <Image 
                         src="STEMPEL-BPSpng.png" // Pastikan path gambar sudah benar, atau gunakan require('./bingkai-01.png')
-                        style={styles.fotoTtd.isiKiri.layoutFoto}
+                        style={styles.fotoTtd.stempel.layoutFoto}
                       />
                     </View>
                     <View style={styles.fotoTtd.ttd}>
