@@ -15,6 +15,13 @@ import FontRobotoRegular from "../assets/fonts/Roboto/Roboto-Regular.ttf";
 import FontRobotoItalic from "../assets/fonts/Roboto/Roboto-Italic.ttf";
 import FontRobotoBoldItalic from "../assets/fonts/Roboto/Roboto-BoldItalic.ttf";
 import FontRobotoBold from "../assets/fonts/Roboto/Roboto-Bold.ttf";
+import {
+  Table,
+  TableHeader,
+  TableCell,
+  TableBody,
+  DataTableCell,
+} from "@david.kucsai/react-pdf-table";
 
 // Font.register({ family: 'Open Sans', src: 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap' });
 
@@ -151,47 +158,47 @@ const styles = StyleSheet.create({
       },
     },
     stempel: {
-      marginLeft:120,
-      position:'absolute',
-      justifyContent:'center',
-      marginTop:10,
-      alignItems:'center',
-      layoutFoto:{
-        width:100,
-        height:100,
-      }
+      marginLeft: 120,
+      position: "absolute",
+      justifyContent: "center",
+      marginTop: 10,
+      alignItems: "center",
+      layoutFoto: {
+        width: 100,
+        height: 100,
+      },
     },
     ttd: {
-      justifyContent:'center',
-      marginLeft:180,
-      position:'absolute',
-      alignItems:'center',
-      layoutFoto:{
-        width:100,
-        height:100,
-      }
+      justifyContent: "center",
+      marginLeft: 180,
+      position: "absolute",
+      alignItems: "center",
+      layoutFoto: {
+        width: 100,
+        height: 100,
+      },
     },
     isiKanan: {
       width: "80%",
       height: 120,
       alamat: {
-        alignItems:'center',
+        alignItems: "center",
         height: 50,
       },
       ttd: {
         height: 60,
-        layoutFoto:{
-          width:90,
-          height:90,
-        }
+        layoutFoto: {
+          width: 90,
+          height: 90,
+        },
       },
       namaTtd: {
         height: 30,
         alignItems: "center",
-        layoutFoto:{
-          width:90,
-          height:90,
-        }
+        layoutFoto: {
+          width: 90,
+          height: 90,
+        },
       },
       normalText: {
         fontSize: 12,
@@ -200,6 +207,35 @@ const styles = StyleSheet.create({
   },
   normalText: {
     fontSize: 11,
+  },
+});
+
+const tableStyles = StyleSheet.create({
+  page: {
+    flexDirection: "column",
+    padding: 20,
+    fontFamily: "Helvetica",
+  },
+  section: {
+    marginBottom: 20,
+  },
+  table: {
+    display: "table",
+    width: "100%",
+    borderStyle: "solid",
+    borderWidth: 1,
+    borderColor: "#ddd",
+    marginBottom: 20,
+  },
+  tableHeader: {
+    backgroundColor: "#4CAF50",
+    color: "#fff",
+    textAlign: "center",
+    padding: 5,
+  },
+  tableCell: {
+    textAlign: "left",
+    padding: 5,
   },
 });
 
@@ -291,13 +327,13 @@ const Bingkai = () => {
                       />
                     </View>
                     <View style={styles.fotoTtd.stempel}>
-                      <Image 
+                      <Image
                         src="STEMPEL-BPSpng.png" // Pastikan path gambar sudah benar, atau gunakan require('./bingkai-01.png')
                         style={styles.fotoTtd.stempel.layoutFoto}
                       />
                     </View>
                     <View style={styles.fotoTtd.ttd}>
-                      <Image 
+                      <Image
                         src="tanda tangan png.png" // Pastikan path gambar sudah benar, atau gunakan require('./bingkai-01.png')
                         style={styles.fotoTtd.ttd.layoutFoto}
                       />
@@ -327,6 +363,124 @@ const Bingkai = () => {
                       </View>
                     </View>
                   </View>
+                </View>
+              </Page>
+              <Page>
+                <Table
+                  data={[
+                    {
+                      firstName: "John",
+                      lastName: "Smith",
+                      dob: new Date(2000, 1, 1),
+                      country: "Australia",
+                      phoneNumber: "xxx-0000-0000",
+                    },
+                  ]}>
+                  <TableHeader textAlign={"center"}>
+                    <TableCell weighting={0.3}>First Name</TableCell>
+                    <TableCell weighting={0.6}>
+                      Last Name
+                      <TableCell weighting={0.5}>Last asd</TableCell>
+                      <TableCell weighting={0.5}>Last asd</TableCell>
+                    </TableCell>
+                    <TableCell>DOB</TableCell>
+                    <TableCell>Country</TableCell>
+                    <TableCell>Phone Number</TableCell>
+                  </TableHeader>
+                  <TableBody>
+                    <DataTableCell
+                      weighting={0.3}
+                      getContent={(r) => r.firstName}
+                    />
+                    <DataTableCell
+                      weighting={0.3}
+                      getContent={(r) => r.lastName}
+                    />
+                    <DataTableCell getContent={(r) => r.dob.toLocaleString()} />
+                    <DataTableCell getContent={(r) => r.country} />
+                    <DataTableCell getContent={(r) => r.phoneNumber} />
+                  </TableBody>
+                </Table>
+              </Page>
+              <Page style={tableStyles.page}>
+                <View style={tableStyles.section}>
+                  <Text style={{ fontSize: 18, marginBottom: 10 }}>
+                    Tabel Nilai Ujian
+                  </Text>
+                  <Table style={tableStyles.table}>
+                    <TableHeader>
+                      <TableCell style={tableStyles.tableHeader}>No</TableCell>
+                      <TableCell style={tableStyles.tableHeader}>
+                        Materi Ujian
+                      </TableCell>
+                      <TableCell style={tableStyles.tableHeader}>
+                        Persentase
+                      </TableCell>
+                      <TableCell style={tableStyles.tableHeader}>
+                        Tertimbang
+                        <TabkeCell>
+                          asdsdqew
+                        </TabkeCell>
+                        <TabkeCell>
+                          asd
+                        </TabkeCell>
+                      </TableCell>
+                      <TableCell style={tableStyles.tableHeader}>
+                        Nilai Tertimbang Dengan Huruf
+                      </TableCell>
+                    </TableHeader>
+                    <TableBody>
+                      <DataTableCell style={tableStyles.tableCell}>1</DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>
+                        Matematika
+                      </DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>
+                        85%
+                      </DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>85</DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>B</DataTableCell>
+
+                      <DataTableCell style={tableStyles.tableCell}>2</DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>
+                        Bahasa Indonesia
+                      </DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>
+                        90%
+                      </DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>90</DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>A</DataTableCell>
+
+                      <DataTableCell style={tableStyles.tableCell}>3</DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>
+                        Fisika
+                      </DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>
+                        75%
+                      </DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>75</DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>C</DataTableCell>
+
+                      <DataTableCell style={tableStyles.tableCell}>4</DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>
+                        Kimia
+                      </DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>
+                        88%
+                      </DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>88</DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>B+</DataTableCell>
+
+                      <DataTableCell style={tableStyles.tableCell}>5</DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>
+                        Sejarah
+                      </DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>
+                        92%
+                      </DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>92</DataTableCell>
+                      <DataTableCell style={tableStyles.tableCell}>A</DataTableCell>
+                    </TableBody>
+                  </Table>
                 </View>
               </Page>
             </Document>
