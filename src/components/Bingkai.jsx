@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import { Card, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import {
@@ -22,6 +22,8 @@ import {
   TableBody,
   DataTableCell,
 } from "@david.kucsai/react-pdf-table";
+
+import html2pdf from "html2pdf.js";
 
 // Font.register({ family: 'Open Sans', src: 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap' });
 
@@ -240,20 +242,58 @@ const tableStyles = StyleSheet.create({
 });
 
 const Bingkai = (props) => {
-  const [data,setData] = useState(props.map(a=>({
-    nomorIjazah:a.nomorIjazah,
-    nama:a.nama,
-    nip:a.nip,
-    tempatLahir:a.tempatLahir,
-    tanggalLahir :a.tanggalLahir,
-    pangkat:a.pangkat,
-    golongan:a.golongan,
-    unitKerja:a.unitKerja,
-    unitKerja:a.unitKerja,
-    linkFoto:a.linkFoto,
-    tanggalTtd:a.tanggalTtd,
+  // const [data,setData] = useState(props.map(a=>({
+  //   // nomorIjazah:a.nomorIjazah,
+  //   // nama:a.nama,
+  //   // nip:a.nip,
+  //   // tempatLahir:a.tempatLahir,
+  //   // tanggalLahir :a.tanggalLahir,
+  //   // pangkat:a.pangkat,
+  //   // golongan:a.golongan,
+  //   // unitKerja:a.unitKerja,
+  //   // unitKerja:a.unitKerja,
+  //   // linkFoto:a.linkFoto,
+  //   // tanggalTtd:a.tanggalTtd,
 
-  })))
+  // })))
+  const [data, setData] = useState({
+    nomorIjazah: "a.nomorIjazah",
+    nama: "a.nama",
+    nip: "a.nip",
+    tempatLahir: "a.tempatLahir",
+    tanggalLahir: "a.tanggalLahir",
+    pangkat: "a.pangkat",
+    golongan: "a.golongan",
+    unitKerja: "a.unitKerja",
+    unitKerja: "a.unitKerja",
+    linkFoto: "a.linkFoto",
+    tanggalTtd: "a.tanggalTtd",
+  });
+
+  const handleDownload = () => {
+    setTimeout(() => {
+      const element = document.getElementById("content"); // ID dari elemen yang ingin di-convert
+
+      // Periksa apakah elemen ditemukan
+      if (element) {
+        console.log("Element found", element);
+      } else {
+        console.log("Element not found");
+      }
+
+      const options = {
+        margin: 0.5, // Margin halaman
+        filename: "file-converted.pdf", // Nama file output PDF
+        image: { type: "jpeg", quality: 0.98 }, // Mengonversi gambar dalam format JPEG
+        html2canvas: { scale: 2 }, // Skala render canvas
+        jsPDF: { unit: "in", format: "a4", orientation: "portrait" }, // Menetapkan format A4
+      };
+
+      // Menggunakan html2pdf untuk menghasilkan PDF
+      html2pdf().from(element).set(options).save();
+    }, 1000); // Penundaan 100ms
+  };
+
   return (
     <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2 }}>
       <Grid
@@ -262,7 +302,8 @@ const Bingkai = (props) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-        }}>
+        }}
+      >
         <Card sx={{ height: 700, width: 1000 }}>
           <PDFViewer style={{ width: "100%", height: "100%" }}>
             <Document>
@@ -314,10 +355,10 @@ const Bingkai = (props) => {
                         : {data.nip}
                       </Text>
                       <Text style={styles.keteranganIsi.formatIdentitas}>
-                        : {data.tempatLahir}, {tanggalLahir}
+                        : {data.tempatLahir}, {data.tanggalLahir}
                       </Text>
                       <Text style={styles.keteranganIsi.formatIdentitas}>
-                        : {data.pangkat/golongan}
+                        : {data.pangkat / data.golongan}
                       </Text>
                       <Text style={styles.keteranganIsi.formatIdentitas}>
                         : {data.unitKerja}
@@ -356,7 +397,7 @@ const Bingkai = (props) => {
                     <View style={styles.fotoTtd.isiKanan}>
                       <View style={styles.fotoTtd.isiKanan.alamat}>
                         <Text style={styles.fotoTtd.isiKanan.normalText}>
-                          Jakarta, {tanggalTtd}
+                          Jakarta, {data.tanggalTtd}
                         </Text>
                         <Text style={styles.fotoTtd.isiKanan.normalText}>
                           a.n. KEPALA BADAN PUSAT STATISTIK,
@@ -380,128 +421,68 @@ const Bingkai = (props) => {
                   </View>
                 </View>
               </Page>
-              {/* <Page>
-                <Table
-                  data={[
-                    {
-                      firstName: "John",
-                      lastName: "Smith",
-                      dob: new Date(2000, 1, 1),
-                      country: "Australia",
-                      phoneNumber: "xxx-0000-0000",
-                    },
-                  ]}>
-                  <TableHeader textAlign={"center"}>
-                    <TableCell weighting={0.3}>First Name</TableCell>
-                    <TableCell weighting={0.6}>
-                      Last Name
-                      <TableCell weighting={0.5}>Last asd</TableCell>
-                      <TableCell weighting={0.5}>Last asd</TableCell>
-                    </TableCell>
-                    <TableCell>DOB</TableCell>
-                    <TableCell>Country</TableCell>
-                    <TableCell>Phone Number</TableCell>
-                  </TableHeader>
-                  <TableBody>
-                    <DataTableCell
-                      weighting={0.3}
-                      getContent={(r) => r.firstName}
-                    />
-                    <DataTableCell
-                      weighting={0.3}
-                      getContent={(r) => r.lastName}
-                    />
-                    <DataTableCell getContent={(r) => r.dob.toLocaleString()} />
-                    <DataTableCell getContent={(r) => r.country} />
-                    <DataTableCell getContent={(r) => r.phoneNumber} />
-                  </TableBody>
-                </Table>
-              </Page>
-              <Page style={tableStyles.page}>
-                <View style={tableStyles.section}>
-                  <Text style={{ fontSize: 18, marginBottom: 10 }}>
-                    Tabel Nilai Ujian
-                  </Text>
-                  <Table style={tableStyles.table}>
-                    <TableHeader>
-                      <TableCell style={tableStyles.tableHeader}>No</TableCell>
-                      <TableCell style={tableStyles.tableHeader}>
-                        Materi Ujian
-                      </TableCell>
-                      <TableCell style={tableStyles.tableHeader}>
-                        Persentase
-                      </TableCell>
-                      <TableCell style={tableStyles.tableHeader}>
-                        Tertimbang
-                        <TabkeCell>
-                          asdsdqew
-                        </TabkeCell>
-                        <TabkeCell>
-                          asd
-                        </TabkeCell>
-                      </TableCell>
-                      <TableCell style={tableStyles.tableHeader}>
-                        Nilai Tertimbang Dengan Huruf
-                      </TableCell>
-                    </TableHeader>
-                    <TableBody>
-                      <DataTableCell style={tableStyles.tableCell}>1</DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>
-                        Matematika
-                      </DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>
-                        85%
-                      </DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>85</DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>B</DataTableCell>
-
-                      <DataTableCell style={tableStyles.tableCell}>2</DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>
-                        Bahasa Indonesia
-                      </DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>
-                        90%
-                      </DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>90</DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>A</DataTableCell>
-
-                      <DataTableCell style={tableStyles.tableCell}>3</DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>
-                        Fisika
-                      </DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>
-                        75%
-                      </DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>75</DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>C</DataTableCell>
-
-                      <DataTableCell style={tableStyles.tableCell}>4</DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>
-                        Kimia
-                      </DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>
-                        88%
-                      </DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>88</DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>B+</DataTableCell>
-
-                      <DataTableCell style={tableStyles.tableCell}>5</DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>
-                        Sejarah
-                      </DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>
-                        92%
-                      </DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>92</DataTableCell>
-                      <DataTableCell style={tableStyles.tableCell}>A</DataTableCell>
-                    </TableBody>
-                  </Table>
-                </View>
-              </Page> */}
             </Document>
           </PDFViewer>
         </Card>
       </Grid>
+
+      <div id="content" style={{ padding: "10px", backgroundColor:'f0f0f0',color:'black' }}>
+      <h1 style={{ color: 'black' }}>Hello PDF</h1>
+      <p style={{ color: 'black' }}>This content will appear in the PDF.</p>
+        <div style={styles.layout}>
+          <div style={styles.kop}>
+            <p style={styles.kop.bps}>BADAN PUSAT STATISTIK</p>
+            <p style={styles.kop.namaSurat}>SURAT TANDA LULUS UJIAN DINAS</p>
+            <p style={styles.kop.nomorSurat}>Nomor : 531250/UD/I/2024</p>
+          </div>
+          <div style={styles.isi}>
+            <p style={styles.isi.isiSurat}>
+              Badan Pusat Statistik berdasarkan Peraturan Pemerintah Nomor 11
+              Tahun 2017 dan ketentuan-ketentuan pelaksanaannya menyatakan bahwa
+              :
+            </p>
+          </div>
+          <div style={styles.keteranganIsi}>
+            <div style={styles.keteranganIsi.isiKiri}>
+              <p style={styles.keteranganIsi.formatIdentitas}>Nama</p>
+              <p style={styles.keteranganIsi.formatIdentitas}>NIP</p>
+              <p style={styles.keteranganIsi.formatIdentitas}>
+                Tempat, Tanggal Lahir
+              </p>
+              <p style={styles.keteranganIsi.formatIdentitas}>
+                Pangkat/Golongan
+              </p>
+              <p style={styles.keteranganIsi.formatIdentitas}>Unit Kerja</p>
+            </div>
+            <div style={styles.keteranganIsi.isiKanan}>
+              <p style={styles.keteranganIsi.formatIdentitas}>
+                : {data.nomorIjazah}
+              </p>
+              <p style={styles.keteranganIsi.formatIdentitas}>: {data.nip}</p>
+              <p style={styles.keteranganIsi.formatIdentitas}>
+                : {data.tempatLahir}, {data.tanggalLahir}
+              </p>
+              <p style={styles.keteranganIsi.formatIdentitas}>
+                : {data.pangkat / data.golongan}
+              </p>
+              <p style={styles.keteranganIsi.formatIdentitas}>
+                : {data.unitKerja}
+              </p>
+            </div>
+          </div>
+          <div style={styles.keteranganLulus}>
+            <p style={styles.keteranganLulus.lulusp}>LULUS</p>
+          </div>
+          <div style={styles.penutup}>
+            <p style={styles.penutup.penutupp}>
+              Ujian Dinas Tingkat I Badan Pusat Statistik tahun 2024.
+            </p>
+          </div>
+          {/*  */}
+        </div>
+      </div>
+
+      <button onClick={handleDownload}>unduh disiini</button>
     </Grid>
   );
 };
