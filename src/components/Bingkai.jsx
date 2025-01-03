@@ -212,6 +212,38 @@ const styles = StyleSheet.create({
   },
 });
 
+const table2 = StyleSheet.create({
+  body: {
+    fontFamily: "Roboto",
+    margin: 20,
+    backgroundColor: "#f4f4f9",
+  },
+
+  table: {
+    width: "100%",
+    borderCollapse: "collapse",
+    marginTop: "20px",
+    backgroundColor: "white",
+  },
+
+  td: {
+    padding: "12px",
+    textAlign: "left",
+    border: "1px solid #ddd",
+  },
+  th: {
+    padding: "12px",
+    textAlign: "left",
+    border: "1px solid #ddd",
+  },
+
+  th: {
+    backgroundColor: "#4CAF50",
+    color: "white",
+  },
+});
+
+ 
 const tableStyles = StyleSheet.create({
   page: {
     flexDirection: "column",
@@ -426,9 +458,9 @@ const Bingkai = (props) => {
         </Card>
       </Grid>
 
-      <div id="content" style={{ padding: "10px", backgroundColor:'f0f0f0',color:'black' }}>
-      <h1 style={{ color: 'black' }}>Hello PDF</h1>
-      <p style={{ color: 'black' }}>This content will appear in the PDF.</p>
+      {/* <div id="content" style={{ padding: "10px", backgroundColor:'f0f0f0',color:'black' }}>
+        <h1 style={{ color: 'black' }}>Hello PDF</h1>
+        <p style={{ color: 'black' }}>This content will appear in the PDF.</p>
         <div style={styles.layout}>
           <div style={styles.kop}>
             <p style={styles.kop.bps}>BADAN PUSAT STATISTIK</p>
@@ -478,11 +510,57 @@ const Bingkai = (props) => {
               Ujian Dinas Tingkat I Badan Pusat Statistik tahun 2024.
             </p>
           </div>
-          {/*  */}
+   
+        </div>
+      </div> */}
+
+      {/* <button onClick={handleDownload}>unduh disiini</button> */}
+
+
+      <h2>Tabel Nilai Siswa</h2>
+      <div style={tableStyles.page}>
+        <h2>Tabel Nilai Siswa</h2>
+        <div style={tableStyles.section}>
+          <table style={tableStyles.table}>
+            <thead>
+              <tr>
+                <th style={tableStyles.tableHeader}>Nama</th>
+                <th style={tableStyles.tableHeader}>Tanggal Lahir</th>
+                <th style={tableStyles.tableHeader} colSpan="2">
+                  Nilai
+                </th>
+              </tr>
+              <tr>
+                <th style={tableStyles.tableHeader}></th>
+                <th style={tableStyles.tableHeader}></th>
+                <th style={tableStyles.tableHeader}>Matematika</th>
+                <th style={tableStyles.tableHeader}>Bahasa Indonesia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style={tableStyles.tableCell}>Andi</td>
+                <td style={tableStyles.tableCell}>15 Januari 2005</td>
+                <td style={tableStyles.tableCell}>90</td>
+                <td style={tableStyles.tableCell}>85</td>
+              </tr>
+              <tr>
+                <td style={tableStyles.tableCell}>Siti</td>
+                <td style={tableStyles.tableCell}>20 Maret 2006</td>
+                <td style={tableStyles.tableCell}>80</td>
+                <td style={tableStyles.tableCell}>88</td>
+              </tr>
+              <tr>
+                <td style={tableStyles.tableCell}>Budi</td>
+                <td style={tableStyles.tableCell}>10 Juli 2004</td>
+                <td style={tableStyles.tableCell}>85</td>
+                <td style={tableStyles.tableCell}>90</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
-      <button onClick={handleDownload}>unduh disiini</button>
     </Grid>
   );
 };
