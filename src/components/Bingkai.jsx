@@ -224,6 +224,8 @@ const table2 = StyleSheet.create({
     borderCollapse: "collapse",
     marginTop: "20px",
     backgroundColor: "white",
+    borderColor:'white',
+    border: '1px solid #ddd',  
   },
 
   td: {
@@ -246,31 +248,64 @@ const table2 = StyleSheet.create({
  
 const tableStyles = StyleSheet.create({
   page: {
-    flexDirection: "column",
-    padding: 20,
-    fontFamily: "Helvetica",
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '20px',
+    fontFamily: 'Helvetica',
   },
   section: {
-    marginBottom: 20,
+    marginBottom: '20px',
   },
   table: {
-    display: "table",
-    width: "100%",
-    borderStyle: "solid",
-    borderWidth: 1,
-    borderColor: "#ddd",
-    marginBottom: 20,
+    display: 'table',
+    width: '100%',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    borderColor: '#ddd',
+    borderCollapse: 'collapse',
+    marginBottom: '20px',
   },
   tableHeader: {
-    backgroundColor: "#4CAF50",
-    color: "#fff",
-    textAlign: "center",
-    padding: 5,
+    backgroundColor: '#4CAF50',
+    color: '#fff',
+    textAlign: 'center',
+    padding: '10px',
+    border: '1px solid #ddd',  // Garis pada header
+    borderBottom: 'none',  // Menghilangkan garis bawah pada header
   },
   tableCell: {
-    textAlign: "left",
-    padding: 5,
+    textAlign: 'left',
+    padding: '10px',
+    border: '1px solid #ddd',  // Garis antar cell
   },
+
+  cellNilai:{
+    height:"70px",
+    border:'1px solid #ddd',
+    borderColor:'white',
+    textAlign:'center',
+    borderBottomColor:'white',
+  },
+  tableHeaderNoBottomBorder: {
+    height:"70px",
+    borderBottom:'none',
+    borderLeft:'1px solid #ddd',
+    borderLeftColor:'white',
+    verticalAlign: 'bottom',
+    textAlign:'center',
+  },
+  cellnoHeight: {
+    borderBottom:'1px solid #ddd',
+    height:"40px",
+    borderLeft:'1px solid #ddd',
+    borderLeftColor:'white',
+    borderBottomColor:'white',
+  },
+  noKolom:{
+    borderLeft:'1px solid #ddd',
+    borderColor:'white',
+    textAlign:'center',
+  }
 });
 
 const Bingkai = (props) => {
@@ -521,43 +556,60 @@ const Bingkai = (props) => {
       <div style={tableStyles.page}>
         <h2>Tabel Nilai Siswa</h2>
         <div style={tableStyles.section}>
-          <table style={tableStyles.table}>
-            <thead>
-              <tr>
-                <th style={tableStyles.tableHeader}>Nama</th>
-                <th style={tableStyles.tableHeader}>Tanggal Lahir</th>
-                <th style={tableStyles.tableHeader} colSpan="2">
-                  Nilai
-                </th>
-              </tr>
-              <tr>
-                <th style={tableStyles.tableHeader}></th>
-                <th style={tableStyles.tableHeader}></th>
-                <th style={tableStyles.tableHeader}>Matematika</th>
-                <th style={tableStyles.tableHeader}>Bahasa Indonesia</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={tableStyles.tableCell}>Andi</td>
-                <td style={tableStyles.tableCell}>15 Januari 2005</td>
-                <td style={tableStyles.tableCell}>90</td>
-                <td style={tableStyles.tableCell}>85</td>
-              </tr>
-              <tr>
-                <td style={tableStyles.tableCell}>Siti</td>
-                <td style={tableStyles.tableCell}>20 Maret 2006</td>
-                <td style={tableStyles.tableCell}>80</td>
-                <td style={tableStyles.tableCell}>88</td>
-              </tr>
-              <tr>
-                <td style={tableStyles.tableCell}>Budi</td>
-                <td style={tableStyles.tableCell}>10 Juli 2004</td>
-                <td style={tableStyles.tableCell}>85</td>
-                <td style={tableStyles.tableCell}>90</td>
-              </tr>
-            </tbody>
-          </table>
+        <table style={tableStyles.table}>
+          <thead>
+            <tr>
+              <th style={ tableStyles.tableHeaderNoBottomBorder}colSpan="1">NO</th>
+              <th style={ tableStyles.tableHeaderNoBottomBorder }>
+                MATERI UJIAN DINAS
+              </th>
+              <th style={ tableStyles.cellNilai } colSpan="2">
+                NILAI
+              </th>
+              <th style={ tableStyles.tableHeaderNoBottomBorder }colSpan="2">
+                NILAI TERTIMBANG DENGAN HURUF
+              </th>
+            </tr>
+            <tr>
+              <th style={tableStyles.cellnoHeight }></th>
+              <th style={tableStyles.cellnoHeight}></th>
+              <th style={tableStyles.cellnoHeight}>PRESENTASI (NPR)</th>
+              <th style={tableStyles.cellnoHeight}>TERTIMBANG (NT)</th>
+              <th style={tableStyles.cellnoHeight}></th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* Baris pertama dengan NO=1 */}
+            <tr>
+              <td style={tableStyles.noKolom}>(1)</td>
+              <td style={tableStyles.noKolom}>(2)</td>
+              <td style={tableStyles.noKolom}>(3)</td>
+              <td style={tableStyles.noKolom}>(4)</td>
+              <td style={tableStyles.noKolom}>(5)</td>
+            </tr>
+            <tr>
+              <td style={tableStyles.tableCell} rowSpan="3">
+                1
+              </td>
+              <td style={tableStyles.tableCell}>Kelompok A</td>
+              <td style={tableStyles.tableCell}></td>
+              <td style={tableStyles.tableCell}></td>
+              <td style={tableStyles.tableCell}></td>
+            </tr>
+            <tr>
+              <td style={tableStyles.tableCell}>Siti</td>
+              <td style={tableStyles.tableCell}>80</td>
+              <td style={tableStyles.tableCell}>88</td>
+              <td style={tableStyles.tableCell}>B</td>
+            </tr>
+            <tr>
+              <td style={tableStyles.tableCell}>Budi</td>
+              <td style={tableStyles.tableCell}>85</td>
+              <td style={tableStyles.tableCell}>90</td>
+              <td style={tableStyles.tableCell}>A</td>
+            </tr>
+          </tbody>
+        </table>
         </div>
       </div>
 
