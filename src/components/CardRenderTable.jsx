@@ -15,54 +15,16 @@ import {
   GridRowEditStopReasons,
 } from '@mui/x-data-grid';
 import {
-  randomCreatedDate,
-  randomTraderName,
   randomId,
-  randomArrayItem,
 } from '@mui/x-data-grid-generator';
 
-const roles = ['Market', 'Finance', 'Development'];
-const randomRole = () => {
-  return randomArrayItem(roles);
-};
+import dataRowUD from '../data/dataRowUD'
+import dataColUD from '../data/dataColUD'
 
-const initialRows = [
-    {
-      id: randomId(),
-      name: randomTraderName(),
-      age: 25,
-      joinDate: randomCreatedDate(),
-      role: randomRole(),
-    },
-    {
-      id: randomId(),
-      name: randomTraderName(),
-      age: 36,
-      joinDate: randomCreatedDate(),
-      role: randomRole(),
-    },
-    {
-      id: randomId(),
-      name: randomTraderName(),
-      age: 19,
-      joinDate: randomCreatedDate(),
-      role: randomRole(),
-    },
-    {
-      id: randomId(),
-      name: randomTraderName(),
-      age: 28,
-      joinDate: randomCreatedDate(),
-      role: randomRole(),
-    },
-    {
-      id: randomId(),
-      name: randomTraderName(),
-      age: 23,
-      joinDate: randomCreatedDate(),
-      role: randomRole(),
-    },
-  ];
+const roles = ['Market', 'Finance', 'Development'];
+
+  console.log(dataRowUD)
+  console.log(dataColUD)
   
   const EditToolbar = (props) => {
     const { setRows, setRowModesModel } = props;
@@ -133,84 +95,9 @@ const CardRenderTable = () => {
     setRowModesModel(newRowModesModel);
   };
 
-  const columns = [
-    { field: 'name',
-      headerClassName: 'super-app-theme--header', headerName: 'Name', width: 180, editable: true },
-    {
-      field: 'age',
-      headerClassName: 'super-app-theme--header',
-      headerName: 'Age',
-      type: 'number',
-      width: 80,
-      align: 'left',
-      headerAlign: 'left',
-      editable: true,
-    },
-    {
-      field: 'joinDate',
-      headerClassName: 'super-app-theme--header',
-      headerName: 'Join date',
-      type: 'date',
-      width: 180,
-      editable: true,
-    },
-    {
-      field: 'role',
-      headerClassName: 'super-app-theme--header',
-      headerName: 'Department',
-      width: 220,
-      editable: true,
-      type: 'singleSelect',
-      valueOptions: ['Market', 'Finance', 'Development'],
-    },
-    {
-      field: 'actions',
-      headerClassName: 'super-app-theme--header',
-      type: 'actions',
-      headerName: 'Actions',
-      width: 100,
-      cellClassName: 'actions',
-      getActions: ({ id }) => {
-        const isInEditMode = rowModesModel[id]?.mode === GridRowModes.Edit;
 
-        if (isInEditMode) {
-          return [
-            <GridActionsCellItem
-              icon={<SaveIcon />}
-              label="Save"
-              sx={{
-                color: 'primary.main',
-              }}
-              onClick={handleSaveClick(id)}
-            />,
-            <GridActionsCellItem
-              icon={<CancelIcon />}
-              label="Cancel"
-              className="textPrimary"
-              onClick={handleCancelClick(id)}
-              color="inherit"
-            />,
-          ];
-        }
 
-        return [
-          <GridActionsCellItem
-            icon={<EditIcon />}
-            label="Edit"
-            className="textPrimary"
-            onClick={handleEditClick(id)}
-            color="inherit"
-          />,
-          <GridActionsCellItem
-            icon={<DeleteIcon />}
-            label="Delete"
-            onClick={handleDeleteClick(id)}
-            color="inherit"
-          />,
-        ];
-      },
-    },
-  ];
+
   return (
     <div>
         <Box
@@ -236,8 +123,8 @@ const CardRenderTable = () => {
                 color:'white',
                 overflow:'auto',
             }}
-            rows={rows}
-            columns={columns}
+            rows={dataRowUD}
+            columns={dataColUD}
             editMode="row"
             rowModesModel={rowModesModel}
             onRowModesModelChange={handleRowModesModelChange}
