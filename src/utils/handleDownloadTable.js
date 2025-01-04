@@ -1,4 +1,4 @@
-import templateUjianDinas from '../data/ujianDinas'
+import templateUjianDinas from '../data/dataColUD'
 import templatePenyesuaianIjazah from '../data/penyesuaianIjazah'
 import xlsx from 'json-as-xlsx'
 
