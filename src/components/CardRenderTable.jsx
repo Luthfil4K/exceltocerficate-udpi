@@ -1,58 +1,57 @@
-import {useState} from 'react'
-import { Card, Divider, Typography, Grid } from '@mui/material'
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import AddIcon from '@mui/icons-material/Add';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/DeleteOutlined';
-import SaveIcon from '@mui/icons-material/Save';
-import CancelIcon from '@mui/icons-material/Close';
+import { useState } from "react";
+import { Card, Divider, Typography, Grid } from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import AddIcon from "@mui/icons-material/Add";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/DeleteOutlined";
+import SaveIcon from "@mui/icons-material/Save";
+import CancelIcon from "@mui/icons-material/Close";
+import ButtonStandard from './ButtonStandard';
 import {
   GridRowModes,
   DataGrid,
   GridToolbarContainer,
   GridActionsCellItem,
   GridRowEditStopReasons,
-} from '@mui/x-data-grid';
-import {
-  randomId,
-} from '@mui/x-data-grid-generator';
+} from "@mui/x-data-grid";
+import { randomId } from "@mui/x-data-grid-generator";
 
-import dataRowUD from '../data/dataRowUD'
-import dataColUD from '../data/dataColUD'
+import { handleImportExcel } from '../utils/handleImportExcel';
 
-const roles = ['Market', 'Finance', 'Development'];
 
-  console.log(dataRowUD)
-  console.log(dataColUD)
-  
-  const EditToolbar = (props) => {
-    const { setRows, setRowModesModel } = props;
-  
-    const handleClick = () => {
-      const id = randomId();
-      setRows((oldRows) => [
-        ...oldRows,
-        { id, name: '', age: '', role: '', isNew: true },
-      ]);
-      setRowModesModel((oldModel) => ({
-        ...oldModel,
-        [id]: { mode: GridRowModes.Edit, fieldToFocus: 'name' },
-      }));
-    };
-  
-    return (
-      <GridToolbarContainer>
-        <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
-          Add record
-        </Button>
-      </GridToolbarContainer>
-    );
-  }
 
-const CardRenderTable = () => {
+const roles = ["Market", "Finance", "Development"];
 
-  const [rows, setRows] = useState(initialRows);
+
+const EditToolbar = (props) => {
+  const { setRows, setRowModesModel } = props;
+
+  const handleClick = () => {
+    const id = randomId();
+    setRows((oldRows) => [
+      ...oldRows,
+      { id, name: "", age: "", role: "", isNew: true },
+    ]);
+    setRowModesModel((oldModel) => ({
+      ...oldModel,
+      [id]: { mode: GridRowModes.Edit, fieldToFocus: "name" },
+    }));
+  };
+
+  return (
+    <GridToolbarContainer>
+      <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
+        Add record
+      </Button>
+    </GridToolbarContainer>
+  );
+};
+
+
+const CardRenderTable = (props) => {
+  const [rows, setRows] = useState(props.dataRowUD);
+  const [cols, setCols] = useState(props.dataColUD);
   const [rowModesModel, setRowModesModel] = useState({});
 
   const handleRowEditStop = (params, event) => {
@@ -95,49 +94,58 @@ const CardRenderTable = () => {
     setRowModesModel(newRowModesModel);
   };
 
-
-
-
   return (
     <div>
-        <Box
+      <input
+        style={{ display: "none" }}
+        id="raised-button-file"
+        multiple
+        type="file"
+        onChange={handleImportExcel}
+      />
+      <label htmlFor="raised-button-file">
+        <ButtonStandard kegiatan={'ujianDinas'} title={'Unduh Template Excel'} variant="contained" component="span">
+          Upload
+        </ButtonStandard>
+      </label>
+     
+      <Box
         sx={{
-            overflow:'auto',
-            height: 500,
-            width: '100%',
-            '& .actions': {
-            color: 'text.secondary',
-            },
-            '& .textPrimary': {
-            color: 'text.primary',
-            },
-            backgroundColor:'#101722',
-            '& .super-app-theme--header': {
-                backgroundColor: '#101722',
-            },
-        }}
-        >
+          overflow: "auto",
+          height: 500,
+          width: "100%",
+          "& .actions": {
+            color: "text.secondary",
+          },
+          "& .textPrimary": {
+            color: "text.primary",
+          },
+          backgroundColor: "#101722",
+          "& .super-app-theme--header": {
+            backgroundColor: "#101722",
+          },
+        }}>
         <DataGrid
-            sx={{
-                backgroundColor:'#101722',
-                color:'white',
-                overflow:'auto',
-            }}
-            rows={dataRowUD}
-            columns={dataColUD}
-            editMode="row"
-            rowModesModel={rowModesModel}
-            onRowModesModelChange={handleRowModesModelChange}
-            onRowEditStop={handleRowEditStop}
-            processRowUpdate={processRowUpdate}
-            slots={{ toolbar: EditToolbar }}
-            slotProps={{
+          sx={{
+            backgroundColor: "#101722",
+            color: "white",
+            overflow: "auto",
+          }}
+          rows={rows}
+          columns={cols}
+          editMode="row"
+          rowModesModel={rowModesModel}
+          onRowModesModelChange={handleRowModesModelChange}
+          onRowEditStop={handleRowEditStop}
+          processRowUpdate={processRowUpdate}
+          slots={{ toolbar: EditToolbar }}
+          slotProps={{
             toolbar: { setRows, setRowModesModel },
-            }}
+          }}
         />
-        </Box>
+      </Box>
     </div>
-  )
-}
+  );
+};
 
-export default CardRenderTable
+export default CardRenderTable;

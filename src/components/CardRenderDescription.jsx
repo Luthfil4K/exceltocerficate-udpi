@@ -24,7 +24,6 @@ const CardRenderDescription = (props) => {
         <Grid container spacing={2}>
             <Grid item xs={12}>
               <ButtonStandard kegiatan={'ujianDinas'} title={'Unduh Template Excel'}></ButtonStandard>
-              
             </Grid>
            </Grid>
         </Box>
