@@ -1,5 +1,5 @@
 import templateUjianDinas from '../data/dataColUD'
-import templatePenyesuaianIjazah from '../data/penyesuaianIjazah'
+import templatePenyesuaianIjazah from '../data/dataColPI'
 import xlsx from 'json-as-xlsx'
 
 const rowst = [
