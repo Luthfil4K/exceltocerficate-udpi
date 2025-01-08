@@ -22,7 +22,7 @@ const convertToJson = (headers, data) => {
   return rows;
 };
 
-export const importExcel = (e) => {
+export const handleImportExcel = (e) => {
   const [colDefs, setColDefs] = useState();
   const [data, setData] = useState(dataRowPI);
 

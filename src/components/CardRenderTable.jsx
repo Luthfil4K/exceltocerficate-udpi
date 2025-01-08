@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, Divider, Typography, Grid } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -17,11 +17,16 @@ import {
 } from "@mui/x-data-grid";
 import { randomId } from "@mui/x-data-grid-generator";
 
-import { handleImportExcel } from '../utils/handleImportExcel';
+// import { handleImportExcel } from '../utils/handleImportExcel';
+import * as XLSX from "xlsx/xlsx.mjs";
+import dataRowPI from "../data/dataRowPI";
+
+const EXTENSIONS = ["xlsx", "xls", "csv"];
 
 
 
-const roles = ["Market", "Finance", "Development"];
+
+
 
 
 const EditToolbar = (props) => {
@@ -50,9 +55,99 @@ const EditToolbar = (props) => {
 
 
 const CardRenderTable = (props) => {
+
+  const [data, setData] = useState(props.dataRowUD);
+  const [colDefs, setColDefs] = useState();
+
   const [rows, setRows] = useState(props.dataRowUD);
   const [cols, setCols] = useState(props.dataColUD);
   const [rowModesModel, setRowModesModel] = useState({});
+
+
+  // handle import
+  const getExention = (file) => {
+    const parts = file.name.split(".");
+    const extension = parts[parts.length - 1];
+    return EXTENSIONS.includes(extension); // return boolean
+  };
+  
+  const convertToJson = (headers, data) => {
+    const rows = [];
+    data.forEach((row) => {
+      let rowData = {};
+      row.forEach((element, index) => {
+        rowData[headers[index]] = element;
+      });
+      rows.push(rowData);
+    });
+    return rows;
+  };
+  
+
+  const handleImportExcel = (e) => {
+  
+    const file = e.target.files[0];
+  
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      //parse data
+      const bstr = event.target.result;
+      const workBook = XLSX.read(bstr, { type: "binary" });
+  
+      //get first sheet
+      const workSheetName = workBook.SheetNames[0];
+      const workSheet = workBook.Sheets[workSheetName];
+      //convert to array
+      const fileData = XLSX.utils.sheet_to_json(workSheet, { header: 1 });
+  
+      const headers = fileData[0];
+      const heads = headers.map((head) => ({
+        title: head,
+        field: head,
+        headerClassName: "super-app-theme--header",
+        editable: true,
+        headerName: head,
+        minWidth: 200,
+        flex: 1,
+      }));
+      setCols(heads);
+      setColDefs(heads);
+  
+      //removing header
+      fileData.splice(0, 1);
+  
+      const midErrorData = convertToJson(headers, fileData);
+  
+      const filteredArray = midErrorData.filter(
+        (item) => Object.keys(item).length !== 0
+      );
+      setData(filteredArray);
+      setRows(filteredArray)
+      
+    };
+    if (file) {
+      if (getExention(file)) {
+        reader.readAsBinaryString(file);
+      } else {
+        alert("Invalid file input, Select Excel, CSV file");
+      }
+    } else {
+      setData([]);
+      setColDefs([]);
+    }
+  
+    return data;
+  };
+
+  useEffect(()=>{
+    console.log("data")
+    console.log(data)
+    console.log("rows")
+    console.log(rows)
+    console.log("cols")
+    console.log(cols)
+  },[data])
+  // end handle import
 
   const handleRowEditStop = (params, event) => {
     if (params.reason === GridRowEditStopReasons.rowFocusOut) {
@@ -104,11 +199,19 @@ const CardRenderTable = (props) => {
         onChange={handleImportExcel}
       />
       <label htmlFor="raised-button-file">
-        <ButtonStandard kegiatan={'ujianDinas'} title={'Unduh Template Excel'} variant="contained" component="span">
+        <Button
+          sx={{
+            backgroundColor: "#1e1f49",
+            "&:hover": {
+              backgroundColor: "#40429f",
+            },
+          }}
+          variant="contained"
+          component="span">
           Upload
-        </ButtonStandard>
+        </Button>
       </label>
-     
+
       <Box
         sx={{
           overflow: "auto",
