@@ -20,6 +20,7 @@ import { randomId } from "@mui/x-data-grid-generator";
 // import { handleImportExcel } from '../utils/handleImportExcel';
 import * as XLSX from "xlsx/xlsx.mjs";
 import dataRowPI from "../data/dataRowPI";
+import Bingkai from "./Bingkai";
 
 const EXTENSIONS = ["xlsx", "xls", "csv"];
 
@@ -247,6 +248,7 @@ const CardRenderTable = (props) => {
           }}
         />
       </Box>
+      <Bingkai datadata={rows}></Bingkai>
     </div>
   );
 };

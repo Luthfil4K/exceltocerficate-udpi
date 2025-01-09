@@ -320,6 +320,8 @@ const tableStyles = StyleSheet.create({
 });
 
 const Bingkai = (props) => {
+  console.log(props)
+  console.log(props)
   // const [data,setData] = useState(props.map(a=>({
   //   // nomorIjazah:a.nomorIjazah,
   //   // nama:a.nama,
@@ -334,7 +336,7 @@ const Bingkai = (props) => {
   //   // tanggalTtd:a.tanggalTtd,
 
   // })))
-  const [data, setData] = useState({
+  const [sasa, setData] = useState({
     nomorIjazah: "a.nomorIjazah",
     nama: "a.nama",
     nip: "a.nip",
@@ -384,120 +386,130 @@ const Bingkai = (props) => {
         <Card sx={{ height: 700, width: 1000 }}>
           <PDFViewer style={{ width: "100%", height: "100%" }}>
             <Document>
-              <Page size="A4" style={styles.page}>
-                <Image
-                  src="bingkaiGaruda-01-01.png" // Pastikan path gambar sudah benar, atau gunakan require('./bingkai-01.png')
-                  style={styles.backgroundImage}
-                />
-                <View style={styles.layout}>
-                  <View style={styles.kop}>
-                    <Text style={styles.kop.bps}>BADAN PUSAT STATISTIK</Text>
-                    <Text style={styles.kop.namaSurat}>
-                      SURAT TANDA LULUS UJIAN DINAS
-                    </Text>
-                    <Text style={styles.kop.nomorSurat}>
-                      Nomor : 531250/UD/I/2024
-                    </Text>
-                  </View>
-                  <View style={styles.isi}>
-                    <Text style={styles.isi.isiSurat}>
-                      Badan Pusat Statistik berdasarkan Peraturan Pemerintah
-                      Nomor 11 Tahun 2017 dan ketentuan-ketentuan pelaksanaannya
-                      menyatakan bahwa :
-                    </Text>
-                  </View>
-                  <View style={styles.keteranganIsi}>
-                    <View style={styles.keteranganIsi.isiKiri}>
-                      <Text style={styles.keteranganIsi.formatIdentitas}>
-                        Nama
-                      </Text>
-                      <Text style={styles.keteranganIsi.formatIdentitas}>
-                        NIP
-                      </Text>
-                      <Text style={styles.keteranganIsi.formatIdentitas}>
-                        Tempat, Tanggal Lahir
-                      </Text>
-                      <Text style={styles.keteranganIsi.formatIdentitas}>
-                        Pangkat/Golongan
-                      </Text>
-                      <Text style={styles.keteranganIsi.formatIdentitas}>
-                        Unit Kerja
-                      </Text>
-                    </View>
-                    <View style={styles.keteranganIsi.isiKanan}>
-                      <Text style={styles.keteranganIsi.formatIdentitas}>
-                        : {data.nomorIjazah}
-                      </Text>
-                      <Text style={styles.keteranganIsi.formatIdentitas}>
-                        : {data.nip}
-                      </Text>
-                      <Text style={styles.keteranganIsi.formatIdentitas}>
-                        : {data.tempatLahir}, {data.tanggalLahir}
-                      </Text>
-                      <Text style={styles.keteranganIsi.formatIdentitas}>
-                        : {data.pangkat / data.golongan}
-                      </Text>
-                      <Text style={styles.keteranganIsi.formatIdentitas}>
-                        : {data.unitKerja}
-                      </Text>
-                    </View>
-                  </View>
-                  <View style={styles.keteranganLulus}>
-                    <Text style={styles.keteranganLulus.lulusText}>LULUS</Text>
-                  </View>
-                  <View style={styles.penutup}>
-                    <Text style={styles.penutup.penutupText}>
-                      Ujian Dinas Tingkat I Badan Pusat Statistik tahun 2024.
-                    </Text>
-                  </View>
-                  <View style={styles.fotoTtd}>
-                    <View style={styles.fotoTtd.isiKiri}>
-                      {/* <View style={styles.fotoTtd.isiKiri.layoutFoto}></View> */}
-                      <Image
-                        src="Foto_Tukimin - ariv ahmad97.jpeg" // Pastikan path gambar sudah benar, atau gunakan require('./bingkai-01.png')
-                        // src=`${data.linkFoto}` // Pastikan path gambar sudah benar, atau gunakan require('./bingkai-01.png')
-                        style={styles.fotoTtd.isiKiri.layoutFoto}
-                      />
-                    </View>
-                    <View style={styles.fotoTtd.stempel}>
-                      <Image
-                        src="STEMPEL-BPSpng.png" // Pastikan path gambar sudah benar, atau gunakan require('./bingkai-01.png')
-                        style={styles.fotoTtd.stempel.layoutFoto}
-                      />
-                    </View>
-                    <View style={styles.fotoTtd.ttd}>
-                      <Image
-                        src="tanda tangan png.png" // Pastikan path gambar sudah benar, atau gunakan require('./bingkai-01.png')
-                        style={styles.fotoTtd.ttd.layoutFoto}
-                      />
-                    </View>
-                    <View style={styles.fotoTtd.isiKanan}>
-                      <View style={styles.fotoTtd.isiKanan.alamat}>
-                        <Text style={styles.fotoTtd.isiKanan.normalText}>
-                          Jakarta, {data.tanggalTtd}
+              {props.datadata.map((data) => (
+                <>
+                  {" "}
+                  <Page size="A4" style={styles.page}>
+                    <Image
+                      src="bingkaiGaruda-01-01.png" // Pastikan path gambar sudah benar, atau gunakan require('./bingkai-01.png')
+                      style={styles.backgroundImage}
+                    />
+                    <View style={styles.layout}>
+                      <View style={styles.kop}>
+                        <Text style={styles.kop.bps}>
+                          BADAN PUSAT STATISTIK
                         </Text>
-                        <Text style={styles.fotoTtd.isiKanan.normalText}>
-                          a.n. KEPALA BADAN PUSAT STATISTIK,
+                        <Text style={styles.kop.namaSurat}>
+                          SURAT TANDA LULUS UJIAN DINAS
                         </Text>
-                        <Text style={styles.fotoTtd.isiKanan.normalText}>
-                          Kepala Biro Sumber Daya Manusia,
+                        <Text style={styles.kop.nomorSurat}>
+                          Nomor : {data.nomor_ijazah}/UD/I/2024
                         </Text>
                       </View>
-                      <View style={styles.fotoTtd.isiKanan.ttd}>
-                        {/* <Text style={styles.fotoTtd.isiKanan.normalText}>Jakarta, 10 Agustus 2024</Text>   */}
+                      <View style={styles.isi}>
+                        <Text style={styles.isi.isiSurat}>
+                          Badan Pusat Statistik berdasarkan Peraturan Pemerintah
+                          Nomor 11 Tahun 2017 dan ketentuan-ketentuan
+                          pelaksanaannya menyatakan bahwa :
+                        </Text>
                       </View>
-                      <View style={styles.fotoTtd.isiKanan.namaTtd}>
-                        <Text style={styles.fotoTtd.isiKanan.normalText}>
-                          Dr. Eni Lestariningsih, S.Si, M.A.
+                      <View style={styles.keteranganIsi}>
+                        <View style={styles.keteranganIsi.isiKiri}>
+                          <Text style={styles.keteranganIsi.formatIdentitas}>
+                            Nama
+                          </Text>
+                          <Text style={styles.keteranganIsi.formatIdentitas}>
+                            NIP
+                          </Text>
+                          <Text style={styles.keteranganIsi.formatIdentitas}>
+                            Tempat, Tanggal Lahir
+                          </Text>
+                          <Text style={styles.keteranganIsi.formatIdentitas}>
+                            Pangkat/Golongan
+                          </Text>
+                          <Text style={styles.keteranganIsi.formatIdentitas}>
+                            Unit Kerja
+                          </Text>
+                        </View>
+                        <View style={styles.keteranganIsi.isiKanan}>
+                          <Text style={styles.keteranganIsi.formatIdentitas}>
+                            : {data.nama_peserta}
+                          </Text>
+                          <Text style={styles.keteranganIsi.formatIdentitas}>
+                            : {data.nip}
+                          </Text>
+                          <Text style={styles.keteranganIsi.formatIdentitas}>
+                            : {data.tempat_tanggal_lahir},{" "}
+                            {data.tempat_tanggal_lahir}
+                          </Text>
+                          <Text style={styles.keteranganIsi.formatIdentitas}>
+                            :{" "}
+                            {data.tempat_tanggal_lahir /
+                              data.tempat_tanggal_lahir}
+                          </Text>
+                          <Text style={styles.keteranganIsi.formatIdentitas}>
+                            : {data.unit_eselon_II}
+                          </Text>
+                        </View>
+                      </View>
+                      <View style={styles.keteranganLulus}>
+                        <Text style={styles.keteranganLulus.lulusText}>
+                          LULUS
                         </Text>
-                        <Text style={styles.fotoTtd.isiKanan.normalText}>
-                          NIP . 197003101994012001
+                      </View>
+                      <View style={styles.penutup}>
+                        <Text style={styles.penutup.penutupText}>
+                          Ujian Dinas Tingkat I Badan Pusat Statistik tahun
+                          2024.
                         </Text>
+                      </View>
+                      <View style={styles.fotoTtd}>
+                        <View style={styles.fotoTtd.isiKiri}>
+                          <Image
+                            src="Foto_Tukimin - ariv ahmad97.jpeg" // Pastikan path gambar sudah benar, atau gunakan require('./bingkai-01.png')
+                            // src=`${data.linkFoto}` // Pastikan path gambar sudah benar, atau gunakan require('./bingkai-01.png')
+                            style={styles.fotoTtd.isiKiri.layoutFoto}
+                          />
+                        </View>
+                        <View style={styles.fotoTtd.stempel}>
+                          <Image
+                            src="STEMPEL-BPSpng.png" // Pastikan path gambar sudah benar, atau gunakan require('./bingkai-01.png')
+                            style={styles.fotoTtd.stempel.layoutFoto}
+                          />
+                        </View>
+                        <View style={styles.fotoTtd.ttd}>
+                          <Image
+                            src="tanda tangan png.png" // Pastikan path gambar sudah benar, atau gunakan require('./bingkai-01.png')
+                            style={styles.fotoTtd.ttd.layoutFoto}
+                          />
+                        </View>
+                        <View style={styles.fotoTtd.isiKanan}>
+                          <View style={styles.fotoTtd.isiKanan.alamat}>
+                            <Text style={styles.fotoTtd.isiKanan.normalText}>
+                              Jakarta, {data.tempat_tanggal_lahir}
+                            </Text>
+                            <Text style={styles.fotoTtd.isiKanan.normalText}>
+                              a.n. KEPALA BADAN PUSAT STATISTIK,
+                            </Text>
+                            <Text style={styles.fotoTtd.isiKanan.normalText}>
+                              Kepala Biro Sumber Daya Manusia,
+                            </Text>
+                          </View>
+                          <View style={styles.fotoTtd.isiKanan.ttd}></View>
+                          <View style={styles.fotoTtd.isiKanan.namaTtd}>
+                            <Text style={styles.fotoTtd.isiKanan.normalText}>
+                              Dr. Eni Lestariningsih, S.Si, M.A.
+                            </Text>
+                            <Text style={styles.fotoTtd.isiKanan.normalText}>
+                              NIP . 197003101994012001
+                            </Text>
+                          </View>
+                        </View>
                       </View>
                     </View>
-                  </View>
-                </View>
-              </Page>
+                  </Page>
+                </>
+              ))}
             </Document>
           </PDFViewer>
         </Card>
@@ -561,7 +573,7 @@ const Bingkai = (props) => {
 
       {/* <button onClick={handleDownload}>unduh disiini</button> */}
 
-      <h2>Tabel Nilai Siswa</h2>
+      {/* <h2>Tabel Nilai Siswa</h2>
       <div style={tableStyles.page}>
         <h2>Tabel Nilai Siswa</h2>
         <div style={tableStyles.section}>
@@ -588,7 +600,6 @@ const Bingkai = (props) => {
               </tr>
             </thead>
             <tbody>
-              {/* Baris pertama dengan NO=1 */}
               <tr>
                 <td style={tableStyles.noKolom}>(1)</td>
                 <td style={tableStyles.noKolom}>(2)</td>
@@ -724,7 +735,7 @@ const Bingkai = (props) => {
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
     </Grid>
   );
 };
