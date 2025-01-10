@@ -10,7 +10,7 @@ import { handleImportExcel } from '../utils/handleImportExcel';
 const ButtonStandard = (props) => {
 
   
-  const handleButtonClick = (kegiatan) => {
+const handleButtonClick = (kegiatan) => {
     handleDownloadTable(kegiatan);  
   }
 
