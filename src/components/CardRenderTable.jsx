@@ -52,7 +52,7 @@ const roles = ['Market', 'Finance', 'Development'];
 
 const CardRenderTable = () => {
 
-  const [rows, setRows] = useState(initialRows);
+  const [rows, setRows] = useState(dataRowUD);
   const [rowModesModel, setRowModesModel] = useState({});
 
   const handleRowEditStop = (params, event) => {

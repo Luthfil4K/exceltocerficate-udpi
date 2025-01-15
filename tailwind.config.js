@@ -6,9 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        roboto: ['Roboto', 'sans-serif'], // Menambahkan font Roboto ke dalam tema
-      },
+      // fontFamily: {
+      //   roboto: ['Roboto', 'sans-serif'], // Menambahkan font Roboto ke dalam tema
+      // },
     },
   },
   plugins: [],
