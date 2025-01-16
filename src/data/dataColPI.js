@@ -7,6 +7,22 @@ const dataColPI = [
     flex: 1,
   },
   {
+    field: "pangkat",
+    headerClassName: "super-app-theme--header",
+    editable: true,
+    headerName: "pangkat",
+    minWidth: 200,
+    flex: 1,
+  },
+  {
+    field: "golongan",
+    headerClassName: "super-app-theme--header",
+    editable: true,
+    headerName: "golongan",
+    minWidth: 200,
+    flex: 1,
+  },
+  {
     field: "unit_eselon_II",
     headerClassName: "super-app-theme--header",
     editable: true,

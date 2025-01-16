@@ -16,11 +16,10 @@
       flex: 1,
     },
     {
-
       field: "pangkat",
       headerClassName: "super-app-theme--header",
       editable: true,
-      headerName: "unit_eselon_II",
+      headerName: "pangkat",
       minWidth: 200,
       flex: 1,
     },
@@ -28,7 +27,7 @@
       field: "golongan",
       headerClassName: "super-app-theme--header",
       editable: true,
-      headerName: "unit_eselon_II",
+      headerName: "golongan",
       minWidth: 200,
       flex: 1,
     },

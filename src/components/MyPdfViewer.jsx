@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { PDFViewer, Document, Page } from '@react-pdf-viewer/core';
-import { PDFDocument } from 'pdf-lib';
+// import { PDFViewer, Document, Page } from '@react-pdf-viewer/core';
+// import { PDFDocument } from 'pdf-lib';
 import { Text, View, Image } from '@react-pdf/renderer';
 
 const MyPdfViewer = (props) => {
