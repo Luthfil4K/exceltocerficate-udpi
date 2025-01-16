@@ -15,13 +15,7 @@ import FontRobotoRegular from "../assets/fonts/Roboto/Roboto-Regular.ttf";
 import FontRobotoItalic from "../assets/fonts/Roboto/Roboto-Italic.ttf";
 import FontRobotoBoldItalic from "../assets/fonts/Roboto/Roboto-BoldItalic.ttf";
 import FontRobotoBold from "../assets/fonts/Roboto/Roboto-Bold.ttf";
-import {
-  Table,
-  TableHeader,
-  TableCell,
-  TableBody,
-  DataTableCell,
-} from "@david.kucsai/react-pdf-table";
+
 
 import html2pdf from "html2pdf.js";
 
