@@ -17,6 +17,9 @@ import { styles } from '../styles/stylePI';
 const SplitPDF = (props) => {
   const [pdfData, setPdfData] = useState([]);
 
+  console.log(props)
+  console.log(props)
+  console.log(props)
   // Function to generate and split the PDF
   const handleSplitPdf = async () => {
     // Generate the PDF as a Blob using react-pdf
@@ -486,8 +489,7 @@ const SplitPDF = (props) => {
                                 style={styles.keteranganIsi.formatIdentitas}
                               >
                                 :{" "}
-                                {data.tempat_tanggal_lahir /
-                                  data.tempat_tanggal_lahir}
+                                {data.pangkat} / {data.golongan}
                               </Text>
                               <Text
                                 style={styles.keteranganIsi.formatIdentitas}

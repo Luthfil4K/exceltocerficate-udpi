@@ -136,12 +136,12 @@ const CardRenderTable = (props) => {
   };
 
   useEffect(()=>{
-    console.log("data")
-    console.log(data)
-    console.log("rows")
-    console.log(rows)
-    console.log("cols")
-    console.log(cols)
+    // console.log("data")
+    // console.log(data)
+    // console.log("rows")
+    // console.log(rows)
+    // console.log("cols")
+    // console.log(cols)
   },[data])
   // end handle import
 
