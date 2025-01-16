@@ -124,7 +124,7 @@
       field: "sejarah",
       headerClassName: "super-app-theme--header",
       editable: true,
-      headerName: "Sejarah",
+      headerName: "sejarah",
       minWidth: 100,
       flex: 1,
     },
