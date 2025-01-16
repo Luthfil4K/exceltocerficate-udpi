@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@david.kucsai/react-pdf-table": "^0.4.1",
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
     "@mui/icons-material": "^6.2.1",
@@ -22,7 +21,9 @@
     "framer-motion": "^11.11.17",
     "html2pdf.js": "^0.10.2",
     "json-as-xlsx": "^2.5.6",
+    "jszip": "^3.10.1",
     "lucide-react": "^0.460.0",
+    "pdf-lib": "^1.17.1",
     "postcss": "^8.4.49",
     "proptypes": "^1.1.0",
     "react": "^18.3.1",

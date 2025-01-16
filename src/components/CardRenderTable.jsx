@@ -21,6 +21,7 @@ import { randomId } from "@mui/x-data-grid-generator";
 import * as XLSX from "xlsx/xlsx.mjs";
 import dataRowPI from "../data/dataRowPI";
 import Bingkai from "./Bingkai";
+import SplitPDF from "./SplitPDF";
 
 const EXTENSIONS = ["xlsx", "xls", "csv"];
 
@@ -242,7 +243,9 @@ const CardRenderTable = (props) => {
           }}
         />
       </Box>
-      <Bingkai datadata={rows}></Bingkai>
+      {/* <Bingkai datadata={rows}></Bingkai> */}
+      <SplitPDF datadata={rows}></SplitPDF>
+      {/* <SplitPDF></SplitPDF> */}
     </div>
   );
 };

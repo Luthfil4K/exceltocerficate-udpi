@@ -25,7 +25,7 @@ const RenderPage = (props) => {
         <Grid item xs={12}>
           <Card
             sx={{
-              height: 350,
+              height: 1450,
               padding: 2,
               overflow: "auto",
               backgroundColor: "#101722",
