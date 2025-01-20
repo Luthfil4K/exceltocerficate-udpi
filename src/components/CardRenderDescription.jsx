@@ -7,8 +7,7 @@ import ButtonStandard from './ButtonStandard';
 
 const CardRenderDescription = (props) => {
   const [value, setValue] = useState  (0);
-
-  
+ 
   return (
     <div>
       <Card sx={{ backgroundColor:'#101722',height:200}}>
@@ -24,7 +23,6 @@ const CardRenderDescription = (props) => {
         <Grid container spacing={2}>
             <Grid item xs={12}>
               <ButtonStandard kegiatan={'ujianDinas'} title={'Unduh Template Excel'}></ButtonStandard>
-              
             </Grid>
            </Grid>
         </Box>

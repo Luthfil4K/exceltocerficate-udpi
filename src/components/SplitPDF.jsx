@@ -319,8 +319,7 @@ const SplitPDF = (props) => {
                                 style={styles.keteranganIsi.formatIdentitas}
                               >
                                 :{" "}
-                                {data.tempat_tanggal_lahir /
-                                  data.tempat_tanggal_lahir}
+                                {data.pangkat} / {data.golongan}
                               </Text>
                               <Text
                                 style={styles.keteranganIsi.formatIdentitas}
