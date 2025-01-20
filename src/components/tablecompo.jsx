@@ -155,6 +155,14 @@ const TableComponent = () => {
       borderTop: "1px solid black",
       textAlign:'left',
     },
+    fullborderBottom: {
+      border: "1px solid black",
+      borderBottom:"none",
+      paddingBottom: "5px",
+      textAlign: "center",
+      borderCollapse: "collapse",
+      borderSpacing:0,
+    },
     fullborder: {
       border: "1px solid black",
       borderLeft:"none",

@@ -163,14 +163,14 @@ const TableComponent = () => {
       borderCollapse: "collapse",
       borderSpacing:0,
     },
-    fullborderLeft: {
+    fullBorder: {
       border: "1px solid black",
       paddingBottom: "5px",
       textAlign: "center",
       borderCollapse: "collapse",
       borderSpacing:0,
     },
-    fullBorderNoTop: {
+    fullBorder: {
       borderLeft: "1px solid black",
       borderTop: "none",
       paddingBottom: "5px",
@@ -178,7 +178,7 @@ const TableComponent = () => {
       borderCollapse: "collapse",
       borderSpacing:0,
     },
-    fullBorderNoTop2: {
+    fullBorder2: {
       textAlign:'left',
       borderLeft: "1px solid black",
       borderTop: "none",
@@ -244,7 +244,11 @@ const TableComponent = () => {
       >
         <Grid container sx={{ height: 800 }}>
           <Grid item xs={12}>
-            <Grid ref={pdfRef2} container sx={{ height: 1000, backgroundColor:'gray' }}>
+            <Grid
+              ref={pdfRef2}
+              container
+              sx={{ height: 1000, backgroundColor: "gray" }}
+            >
               <Grid item xs={12}>
                 <Grid container>
                   <Grid sx={{ height: 100 }} item xs={12}>
@@ -294,9 +298,9 @@ const TableComponent = () => {
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
-                              flexDirection:'column',
+                              flexDirection: "column",
                               textAlign: "center",
-                              backgroundColor:'darkGray'
+                              backgroundColor: "darkGray",
                             }}
                             mt={5}
                             item
@@ -386,45 +390,30 @@ const TableComponent = () => {
                                       <td style={tableStyles.judulKelompokLeft}>
                                         KELOMPOK A
                                       </td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
+                                      <td rowSpan="2">80</td>
+                                      <td rowSpan="2">88</td>
+                                      <td rowSpan="2">B</td>
                                     </tr>
                                     <tr>
                                       <td style={tableStyles.materiUDTop}>
                                         a. Pancasila
-                                      </td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        80
-                                      </td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        88
-                                      </td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        B
                                       </td>
                                     </tr>
                                     <tr>
                                       <td style={tableStyles.materiUD}>
                                         b. UUD 1945
                                       </td>
-                                      <td style={tableStyles.fullborderLeft}>85</td>
-                                      <td style={tableStyles.fullborder}>90</td>
-                                      <td style={tableStyles.fullborder}>A</td>
+                                      <td>85</td>
+                                      <td>90</td>
+                                      <td>A</td>
                                     </tr>
                                     <tr>
                                       <td style={tableStyles.materiUD}>
                                         c. Propenas
                                       </td>
-                                      <td style={tableStyles.fullborderLeft}>85</td>
-                                      <td style={tableStyles.fullborder}>90</td>
-                                      <td style={tableStyles.fullborder}>A</td>
+                                      <td>85</td>
+                                      <td>90</td>
+                                      <td>A</td>
                                     </tr>
                                     <tr>
                                       <td
@@ -436,38 +425,23 @@ const TableComponent = () => {
                                       <td style={tableStyles.judulKelompokLeft}>
                                         KELOMPOK B
                                       </td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
+                                      <td rowSpan="2">80</td>
+                                      <td rowSpan="2">88</td>
+                                      <td rowSpan="2">B</td>
                                     </tr>
                                     <tr>
                                       <td style={tableStyles.materiUDTop}>
                                         a. Peraturan Perundang-undangan dibidang
                                         kepegawaian
                                       </td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        80
-                                      </td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        88
-                                      </td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        B
-                                      </td>
                                     </tr>
                                     <tr>
                                       <td style={tableStyles.materiUD}>
                                         b. KORPRI
                                       </td>
-                                      <td style={tableStyles.fullborderLeft}>85</td>
-                                      <td style={tableStyles.fullborder}>90</td>
-                                      <td style={tableStyles.fullborder}>A</td>
+                                      <td>85</td>
+                                      <td>90</td>
+                                      <td>A</td>
                                     </tr>
                                     <tr>
                                       <td
@@ -479,28 +453,13 @@ const TableComponent = () => {
                                       <td style={tableStyles.judulKelompokLeft}>
                                         KELOMPOK C
                                       </td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
+                                      <td rowSpan="2">80</td>
+                                      <td rowSpan="2">88</td>
+                                      <td rowSpan="2">B</td>
                                     </tr>
                                     <tr>
-                                      <td style={tableStyles.fullBorderNoTop2}>
+                                      <td style={tableStyles.fullBorder2}>
                                         Pengetahuan Perkantoran
-                                      </td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        80
-                                      </td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        88
-                                      </td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        B
                                       </td>
                                     </tr>
                                     <tr>
@@ -513,30 +472,15 @@ const TableComponent = () => {
                                       <td style={tableStyles.judulKelompokLeft}>
                                         KELOMPOK D
                                       </td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
+                                      <td rowSpan="2">80</td>
+                                      <td rowSpan="2">88</td>
+                                      <td rowSpan="2">B</td>
                                     </tr>
                                     <tr>
                                       <td style={tableStyles.materiUDTop}>
                                         a. Tugas pokok, fungsi, struktur
                                         organisasi dan tata kerja instansi yang
                                         bersangkutan
-                                      </td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        80
-                                      </td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        88
-                                      </td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        B
                                       </td>
                                     </tr>
                                     <tr>
@@ -546,9 +490,9 @@ const TableComponent = () => {
                                         pengetahuan lain yang ditentukan oleh
                                         pimpinan instansi yang bersangkutan
                                       </td>
-                                      <td style={tableStyles.fullborderLeft}>80</td>
-                                      <td style={tableStyles.fullborder}>88</td>
-                                      <td style={tableStyles.fullborder}>B</td>
+                                      <td>80</td>
+                                      <td>88</td>
+                                      <td>B</td>
                                     </tr>
                                     <tr>
                                       <td
@@ -560,42 +504,29 @@ const TableComponent = () => {
                                       <td style={tableStyles.judulKelompokLeft}>
                                         KELOMPOK E
                                       </td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
-                                      <td
-                                        style={tableStyles.judulKelompok}
-                                      ></td>
+                                      <td rowSpan="2">80</td>
+                                      <td rowSpan="2">88</td>
+                                      <td rowSpan="2">B</td>
                                     </tr>
                                     <tr>
-                                      <td style={tableStyles.materiUDTop}>a. Bahasa Indonesia</td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        80
-                                      </td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        88
-                                      </td>
-                                      <td style={tableStyles.fullBorderNoTop}>
-                                        B
+                                      <td style={tableStyles.materiUDTop}>
+                                        a. Bahasa Indonesia
                                       </td>
                                     </tr>
                                     <tr>
                                       <td style={tableStyles.materiUDBottom}>
                                         b. Sejarah Indonesia
                                       </td>
-                                      <td style={tableStyles.fullborderLeft}>85</td>
-                                      <td style={tableStyles.fullborder}>90</td>
-                                      <td style={tableStyles.fullborder}>A</td>
+                                      <td>85</td>
+                                      <td>90</td>
+                                      <td>A</td>
                                     </tr>
                                     <tr>
                                       <td></td>
                                       <td>Jumlah</td>
-                                      <td style={tableStyles.jumlah}>85</td>
-                                      <td style={tableStyles.jumlah}>90</td>
-                                      <td style={tableStyles.jumlah}>A</td>
+                                      <td>85</td>
+                                      <td>90</td>
+                                      <td>A</td>
                                     </tr>
                                   </tbody>
                                 </table>
