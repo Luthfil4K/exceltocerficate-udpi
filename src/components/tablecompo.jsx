@@ -171,6 +171,7 @@ const TableComponent = () => {
       borderCollapse: "collapse",
       borderSpacing:0,
     },
+    
     fullborderLeft: {
       border: "1px solid black",
       paddingBottom: "5px",

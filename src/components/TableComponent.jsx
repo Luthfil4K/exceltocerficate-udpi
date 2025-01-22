@@ -4,238 +4,12 @@ import { jsPDF } from "jspdf";
 import { Grid, Card, Paper, Typography, Button } from "@mui/material";
 import "jspdf-autotable";
 import html2canvas from "html2canvas";
+import { tableStyles } from '../styles/styleTable';
 
-import { StyleSheet } from "@react-pdf/renderer";
 
 const TableComponent = () => {
   const pdfRef2 = React.useRef();
 
-  const tableStyles = StyleSheet.create({
-    page: {
-      display: "flex",
-      flexDirection: "column",
-      padding: "10px",
-      fontFamily: "Helvetica",
-    },
-    section: {
-      marginBottom: "20px",
-    },
-    table: {
-      display: "table",
-      width: "100%",
-      borderStyle: "solid",
-      borderWidth: "1px",
-      borderColor: "black",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-      marginBottom: "20px",
-    },
-    tableHeader: {
-      backgroundColor: "#4CAF50",
-      color: "#fff",
-      textAlign: "center",
-      padding: "10px",
-      border: "1px solid black", // Garis pada header
-      borderBottom: "none", // Menghilangkan garis bawah pada header
-      paddingBottom: "5px",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-    },
-    tableCell: {
-      textAlign: "left",
-      paddingLeft: "10px",
-      // borderStyle: "solid",
-      // borderWidth: "1px",
-      // borderColor: "black",
-      borderLeft: "1px solid black",
-      // borderBottom:"1px solid black",
-      borderTop: "1px solid black",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-
-      paddingBottom: "5px",
-    },
-
-    tableCellKelompok: {
-      borderLeft: "1px solid black",
-      borderLeftColor: "black",
-      paddingLeft: "10px",
-      paddingBottom: "5px",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-    },
-
-    cellNilai: {
-      height: "70px",
-      borderLeft: "1px solid black",
-      borderBottom: "1px solid black",
-      borderColor: "black",
-      textAlign: "center",
-      borderBottomColor: "black",
-      paddingBottom: "5px",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-    },
-    tableHeaderNoBottomBorder: {
-      height: "70px",
-      borderBottom: "none",
-      borderLeft: "1px solid black",
-      borderLeftColor: "black",
-      textAlign: "center",
-      paddingBottom: "5px",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-    },
-    tableHeaderNoBottomBorderNo: {
-      height: "70px",
-      borderBottom: "none",
-      borderLeftColor: "black",
-      textAlign: "center",
-      paddingBottom: "5px",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-    },
-    cellnoHeight: {
-      // borderBottom: "1px solid black",
-      height: "40px",
-      borderLeft: "1px solid black",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-      borderLeftColor: "black",
-      borderBottomColor: "black",
-      paddingBottom: "5px",
-    },
-    noKolom: {
-      borderTop: "1px solid black",
-      // borderBottom: "1px solid black",
-      borderRight: "1px solid black",
-      borderColor: "black",
-      textAlign: "center",
-      paddingBottom: "5px",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-    },
-    noKolom5: {
-      borderTop: "1px solid black",
-      borderBottom: "1px solid black",
-      borderRight: "1px solid black",
-      borderColor: "black",
-      textAlign: "center",
-      paddingBottom: "5px",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-    },
-    
-    tableCellD: {
-      paddingLeft: 10,
-      borderTop: "1px solid black",
-      borderLeft: "1px solid black",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-      paddingBottom: "5px",
-    },
-    judulKelompokLeft: {
-      borderTop: "1px solid black",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-      textAlign:'left',
-    },
-
-    judulKelompok: {
-      borderTop: "1px solid black",
-      borderLeft: "1px solid black",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-      textAlign:'left',
-    },
-
-    noKolomJudul: {
-      borderLeft: "1px solid black",
-      borderTop: "1px solid black",
-      borderBottom: "none",
-      borderCollapse: "collapse",
-      textAlign:"center",
-      borderSpacing:0,
-      paddingBottom:"5px",
-    },
-    noKolomJudul1: {
-      // borderLeft: "1px solid black",
-      borderTop: "1px solid black",
-      borderBottom: "none",
-      borderCollapse: "collapse",
-      textAlign:"center",
-      borderSpacing:0,
-      paddingBottom:"5px",
-    },
-
-    materiUD: {
-      borderTop: "1px solid black",
-      paddingBottom: "5px",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-      textAlign:'left'
-    },
-    materiUDTop: {
-      textAlign:'left',
-      borderCollapse: "collapse",
-      borderSpacing:0,
-      paddingBottom: "5px",
-
-    },
-    materiUDBottom: {
-      borderCollapse: "collapse",
-      borderSpacing:0,
-      borderBottom: "1px solid black",
-      borderTop: "1px solid black",
-      textAlign:'left',
-      paddingBottom: "5px",
-
-    },
-    fullborder: {
-      border: "1px solid black",
-      borderLeft:"none",
-      paddingBottom: "5px",
-      textAlign: "center",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-    },
-    fullBorder: {
-      border: "1px solid black",
-      paddingBottom: "5px",
-      textAlign: "center",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-    },
-    fullBorder: {
-      borderLeft: "1px solid black",
-      borderTop: "none",
-      paddingBottom: "5px",
-      textAlign: "center",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-    },
-    fullBorder2: {
-      textAlign:'left',
-      // borderLeft: "1px solid black",
-      borderTop: "none",
-      paddingBottom: "5px",
-      borderCollapse: "collapse",
-      borderSpacing:0,
-    },
-    jumlah: {
-      borderLeft: "1px solid black",
-      textAlign: "center",
-      paddingBottom: "5px",
-      borderCollapse:"collapse",
-      borderSpacing:0,
-      borderSpacing:0,
-    },
-    nilai:{
-      borderLeft: "1px solid black",
-      borderTop: "1px solid black",
-      paddingBottom: "5px",
-    }
-  });
 
   const handleUnduhUndangan = async () => {
     const input2 = pdfRef2.current;
@@ -431,9 +205,15 @@ const TableComponent = () => {
                                       <td style={tableStyles.judulKelompokLeft}>
                                         KELOMPOK A
                                       </td>
-                                      <td style={tableStyles.nilai} rowSpan="2">80</td>
-                                      <td style={tableStyles.nilai} rowSpan="2">88</td>
-                                      <td style={tableStyles.nilai} rowSpan="2">B</td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        80
+                                      </td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        88
+                                      </td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        B
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td style={tableStyles.materiUDTop}>
@@ -466,9 +246,15 @@ const TableComponent = () => {
                                       <td style={tableStyles.judulKelompokLeft}>
                                         KELOMPOK B
                                       </td>
-                                      <td style={tableStyles.nilai} rowSpan="2">80</td>
-                                      <td style={tableStyles.nilai} rowSpan="2">88</td>
-                                      <td style={tableStyles.nilai} rowSpan="2">B</td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        80
+                                      </td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        88
+                                      </td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        B
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td style={tableStyles.materiUDTop}>
@@ -494,9 +280,15 @@ const TableComponent = () => {
                                       <td style={tableStyles.judulKelompokLeft}>
                                         KELOMPOK C
                                       </td>
-                                      <td style={tableStyles.nilai} rowSpan="2">80</td>
-                                      <td style={tableStyles.nilai} rowSpan="2">88</td>
-                                      <td style={tableStyles.nilai} rowSpan="2">B</td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        80
+                                      </td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        88
+                                      </td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        B
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td style={tableStyles.fullBorder2}>
@@ -513,9 +305,15 @@ const TableComponent = () => {
                                       <td style={tableStyles.judulKelompokLeft}>
                                         KELOMPOK D
                                       </td>
-                                      <td style={tableStyles.nilai} rowSpan="2">80</td>
-                                      <td style={tableStyles.nilai} rowSpan="2">88</td>
-                                      <td style={tableStyles.nilai} rowSpan="2">B</td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        80
+                                      </td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        88
+                                      </td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        B
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td style={tableStyles.materiUDTop}>
@@ -545,9 +343,15 @@ const TableComponent = () => {
                                       <td style={tableStyles.judulKelompokLeft}>
                                         KELOMPOK E
                                       </td>
-                                      <td style={tableStyles.nilai} rowSpan="2">80</td>
-                                      <td style={tableStyles.nilai} rowSpan="2">88</td>
-                                      <td style={tableStyles.nilai} rowSpan="2">B</td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        80
+                                      </td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        88
+                                      </td>
+                                      <td style={tableStyles.nilai} rowSpan="2">
+                                        B
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td style={tableStyles.materiUDTop}>
@@ -574,7 +378,20 @@ const TableComponent = () => {
                               </div>
                             </div>
                           </Grid>
+                          <Grid item xs={1}></Grid>
+                          <Grid
+                            xs={10}
+                            sx={{
+                              height: 100,
+                              alignItems: "ends",
+                              justifyContent: "end",
+                            }}
+                            bgcolor={'red'}
+                          >
+
+                          </Grid>
                         </Grid>
+                              <Grid item xs={1}></Grid>
                       </Grid>
                       {/* <Grid sx={{ height: 150 }} item xs={12} bgcolor={'success.dark'}></Grid> */}
                     </Grid>
