@@ -379,19 +379,67 @@ const TableComponent = () => {
                             </div>
                           </Grid>
                           <Grid item xs={1}></Grid>
+                          <Grid item xs={1}></Grid>
                           <Grid
                             xs={10}
                             sx={{
-                              height: 100,
-                              alignItems: "ends",
+                              height: 200,
+                              display: "flex",
+                              flexDirection: "row",
+                              alignItems: "end",
                               justifyContent: "end",
                             }}
-                            bgcolor={'red'}
+                            bgcolor={"red"}
                           >
-
+                            <Grid container>
+                              <Grid
+                                item
+                                xs={6}
+                                sx={{ height: 200 }}
+                                bgcolor={"blue"}
+                              ></Grid>
+                              <Grid
+                                item
+                                xs={6}
+                                sx={{ height: 200 }}
+                                bgcolor={"black"}
+                              >
+                                <Grid sx={{ height: 50 }} bgcolor={"purple"}>
+                                  <Typography textAlign={"center"}>
+                                    a.n. KEPALA BADAN PUSAT STATISTIK,{" "}
+                                  </Typography>
+                                  <Typography textAlign={"center"}>
+                                    Kepala Biro Sumber Daya Manusia,
+                                  </Typography>
+                                </Grid>
+                                <Grid sx={{ height: 100 }} bgcolor={"green"}>
+                                  <img
+                                    style={{
+                                      width: 150,
+                                      height: 150,
+                                      position: "relative",
+                                      top: "-20px",
+                                    }}
+                                    src="STEMPEL-BPSpng.png"
+                                    alt="ttd"
+                                  />
+                                </Grid>
+                                <Grid sx={{ height: 50 }} bgcolor={"yellow"}>
+                                  <Typography
+                                    textAlign={"center"}
+                                    sx={{ textDecoration: "underline" }}
+                                  >
+                                    Dr. Eni Lestariningsih, S.Si, M.A{" "}
+                                  </Typography>
+                                  <Typography textAlign={"center"}>
+                                    NIP. 197003101994012001{" "}
+                                  </Typography>
+                                </Grid>
+                              </Grid>
+                            </Grid>
                           </Grid>
                         </Grid>
-                              <Grid item xs={1}></Grid>
+                        <Grid item xs={1}></Grid>
                       </Grid>
                       {/* <Grid sx={{ height: 150 }} item xs={12} bgcolor={'success.dark'}></Grid> */}
                     </Grid>
