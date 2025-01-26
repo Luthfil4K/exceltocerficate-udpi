@@ -93,7 +93,7 @@ export const tableStyles = StyleSheet.create({
       borderSpacing:0,
       borderLeftColor: "black",
       borderBottomColor: "black",
-      paddingBottom: "5px",
+      paddingBottom: "7px",
     },
     noKolom: {
       borderTop: "1px solid black",
@@ -127,6 +127,7 @@ export const tableStyles = StyleSheet.create({
     judulKelompokLeft: {
       borderTop: "1px solid black",
       borderCollapse: "collapse",
+      fontWeight:'bold',
       borderSpacing:0,
       textAlign:'left',
     },
