@@ -6,8 +6,11 @@ import "jspdf-autotable";
 import html2canvas from "html2canvas";
 import { tableStyles } from "../styles/styleTable";
 
-const TableComponent = () => {
+const TableComponent = (props) => {
   const pdfRef2 = React.useRef();
+  console.log("props.datadata");
+  console.log(props.datadata);
+  console.log("props.datadata");
 
   // const handleUnduhUndangan = async () => {
   //   const input2 = pdfRef2.current;
@@ -17,23 +20,21 @@ const TableComponent = () => {
   //     const canvas2 = await html2canvas(input2, { scale });
   //     const imgData2 = canvas2.toDataURL("image/png");
 
-  //     const pdf = new jsPDF("p", "mm", "a4", true);
-  //     const pdfWidth = pdf.internal.pageSize.getWidth();
-  //     const pdfHeight = 250;
+  //     // Ukuran elemen Box
+  //     const boxWidth = canvas2.width-150;
+  //     const boxHeight = canvas2.height;
 
-  //     const imgWidth2 = canvas2.width / scale;
-  //     const imgHeight2 = canvas2.height / scale;
-  //     const ratio2 = Math.min(pdfWidth / imgWidth2, pdfHeight / imgHeight2);
-  //     const imgX2 = (pdfWidth - imgWidth2 * ratio2) / 2;
-  //     const imgY2 = 10;
+  //     // Membuat PDF dengan ukuran halaman sesuai ukuran elemen Box
+  //     const pdf = new jsPDF("p", "px", [boxWidth, boxHeight]);
 
+  //     // Menambahkan gambar ke PDF
   //     pdf.addImage(
   //       imgData2,
   //       "PNG",
-  //       imgX2,
-  //       imgY2,
-  //       imgWidth2 * ratio2,
-  //       imgHeight2 * ratio2
+  //       0,
+  //       0,
+  //       boxWidth,
+  //       boxHeight
   //     );
 
   //     pdf.save(`Undangan Ho'oh.pdf`);
@@ -47,36 +48,152 @@ const TableComponent = () => {
   const handleUnduhUndangan = async () => {
     const input2 = pdfRef2.current;
     const scale = 2; // Meningkatkan resolusi canvas
-  
+    const pdf = new jsPDF("p", "px", "a4"); // Menyiapkan PDF dengan ukuran standar A4
+
     try {
-      const canvas2 = await html2canvas(input2, { scale });
-      const imgData2 = canvas2.toDataURL("image/png");
-  
-      // Ukuran elemen Box
-      const boxWidth = canvas2.width-150;
-      const boxHeight = canvas2.height;
-  
-      // Membuat PDF dengan ukuran halaman sesuai ukuran elemen Box
-      const pdf = new jsPDF("p", "px", [boxWidth, boxHeight]);
-  
-      // Menambahkan gambar ke PDF
-      pdf.addImage(
-        imgData2,
-        "PNG",
-        0,
-        0,
-        boxWidth,
-        boxHeight
-      );
-  
+      // Mengambil data dari props
+      const dataArray = props.datadata;
+
+      // Perulangan untuk setiap data yang ada di props.datadata
+      for (let i = 0; i < dataArray.length; i++) {
+        const data = dataArray[i];
+
+        // Update konten tabel dengan data dari props.datadata
+        updateTableContent(data);
+
+        // Render Box ke canvas
+        const canvas2 = await html2canvas(input2, { scale });
+        const imgData2 = canvas2.toDataURL("image/png");
+
+        // Ukuran elemen Box
+        const boxWidth = canvas2.width - 150;
+        const boxHeight = canvas2.height;
+
+        // Menambahkan gambar ke PDF pada halaman baru
+        if (i > 0) pdf.addPage(); // Tambahkan halaman baru setelah halaman pertama
+        pdf.addImage(imgData2, "PNG", 0, 0, boxWidth, boxHeight);
+      }
+
+      // Mengunduh file PDF yang sudah digabung
       pdf.save(`Undangan Ho'oh.pdf`);
     } catch (error) {
       console.error("Error while processing:", error);
     } finally {
-      console.log("success download");
+      console.log("Success download");
     }
   };
-  
+
+  const tertimbang = (nilai, bobot) => {
+    return (parseFloat(nilai) * bobot).toFixed(2).replace(".", ",");
+  };
+
+  const updateTableContent = (data) => {
+    // Misalnya kita ingin menambahkan data pada setiap baris dalam tabel
+    const tableRows = document.querySelectorAll("#myTable tr"); // Mendapatkan semua baris tabel
+
+    const pancasila = document.getElementById("pancasila");
+    const pancasilaTertimbang = document.getElementById("pancasilaTertimbang");
+    const pancasilaTerbilang = document.getElementById("pancasilaTerbilang");
+    const uud = document.getElementById("uud");
+    const uudTertimbang = document.getElementById("uudTertimbang");
+    const uudTerbilang = document.getElementById("uudTerbilang");
+    const propenas = document.getElementById("propenas");
+    const propenasTertimbang = document.getElementById("propenasTertimbang");
+    const propenasTerbilang = document.getElementById("propenasTerbilang");
+    const ppk = document.getElementById("ppk");
+    const ppkTertimbang = document.getElementById("ppkTertimbang");
+    const ppkTerbilang = document.getElementById("ppkTerbilang");
+    const korpri = document.getElementById("korpri");
+    const korpriTertimbang = document.getElementById("korpriTertimbang");
+    const korpriTerbilang = document.getElementById("korpriTerbilang");
+    const kantor = document.getElementById("kantor");
+    const kantorTertimbang = document.getElementById("kantorTertimbang");
+    const kantorTerbilang = document.getElementById("kantorTerbilang");
+    const organisasi = document.getElementById("organisasi");
+    const organisasiTertimbang = document.getElementById(
+      "organisasiTertimbang"
+    );
+    const organisasiTerbilang = document.getElementById("organisasiTerbilang");
+    const substansi = document.getElementById("substansi");
+    const substansiTertimbang = document.getElementById("substansiTertimbang");
+    const substansiTerbilang = document.getElementById("substansiTerbilang");
+    const bindo = document.getElementById("bindo");
+    const bindoTertimbang = document.getElementById("bindoTertimbang");
+    const bindoTerbilang = document.getElementById("bindoTerbilang");
+    const sejarah = document.getElementById("sejarah");
+    const sejarahTertimbang = document.getElementById("sejarahTertimbang");
+    const sejarahTerbilang = document.getElementById("sejarahTerbilang");
+    const jumlah = document.getElementById("jumlah");
+    const jumlahTertimbang = document.getElementById("jumlahTertimbang");
+    const jumlahTerbilang = document.getElementById("jumlahTerbilang");
+
+    // pancasila.textContent = data.pancasila;
+    // pancasilaTertimbang.textContent =  tertimbang(data.pancasila,0.15)
+    // pancasilaTerbilang.textContent = data.pancasilaTerbilang;
+    // uud.textContent = data.uud_1945;
+    // uudTertimbang.textContent = tertimbang(data.uud_1945,0.15);
+    // uudTerbilang.textContent = data.uudTerbilang;
+    // propenas.textContent = data.propenas;
+    // propenasTertimbang.textContent = tertimbang(propenas,0.15);
+    // propenasTerbilang.textContent = data.propenasTerbilang;
+    // ppk.textContent = data.pengetahuan_bidang_kepegawaian;
+    // ppkTertimbang.textContent = tertimbang(data.pengetahuan_bidang_kepegawaian,0.1);
+    // ppkTerbilang.textContent = data.ppkTerbilang;
+    // korpri.textContent = data.korpri;
+    // korpriTertimbang.textContent = tertimbang(data.korpri,0.1);
+    // korpriTerbilang.textContent = data.korpriTerbilang;
+    // kantor.textContent = data.pengetahuan_perkantoran;
+    // kantorTertimbang.textContent = tertimbang(pengetahuan_perkantoran,0.08);
+    // kantorTerbilang.textContent = data.kantorTerbilang;
+    // organisasi.textContent = data.organisasi;
+    // organisasiTertimbang.textContent = data.organisasiTertimbang;
+    // organisasiTerbilang.textContent = data.organisasiTerbilang;
+    // substansi.textContent = data.substansi;
+    // substansiTertimbang.textContent = data.substansiTertimbang;
+    // substansiTerbilang.textContent = data.substansiTerbilang;
+    // bindo.textContent = data.bindo;
+    // bindoTertimbang.textContent = data.bindoTertimbang;
+    // bindoTerbilang.textContent = data.bindoTerbilang;
+    // sejarah.textContent = data.sejarah;
+    // sejarahTertimbang.textContent = data.sejarahTertimbang;
+    // sejarahTerbilang.textContent = data.sejarahTerbilang;
+    // jumlah.textContent = data.jumlah;
+    // jumlahTertimbang.textContent = data.jumlahTertimbang;
+    // jumlahTerbilang.textContent = data.jumlahTerbilang;
+
+    // // Iterasi pada baris tabel dan perbarui kontennya dengan data yang sesuai
+    // let rowIndex = 1; // Start dari baris pertama setelah header
+
+    // // Loop untuk mengupdate data pada setiap baris
+    // tableRows.forEach((row, index) => {
+    //   const cells = row.querySelectorAll("td");
+
+    //   if (index === 0) {
+    //     // Skip header, baris pertama adalah header
+    //     return;
+    //   }
+
+    //   if (index % 2 === 1) {
+    //     // Setiap baris ganjil kita mulai memasukkan data
+    //     cells[1].textContent = data.unit_eselon_II; // Unit Eselon II
+    //     cells[2].textContent = data.unit_kerja; // Unit Kerja
+    //     cells[3].textContent = data.pangkat; // Pangkat
+    //     cells[4].textContent = data.golongan; // Golongan
+    //     cells[5].textContent = data.nilai_presentasi || '-'; // Nilai Presentasi (NPR)
+    //     cells[6].textContent = data.nilai_tertinggi || '-'; // Nilai Tertimbang (NT)
+    //     cells[7].textContent = data.nilai_huruf || '-'; // Nilai Huruf
+    //   } else {
+    //     // Baris genap, isi data sesuai kolom
+    //     cells[1].textContent = data.unit_eselon_II;
+    //     cells[2].textContent = data.unit_kerja;
+    //     cells[3].textContent = data.pangkat;
+    //     cells[4].textContent = data.golongan;
+    //     cells[5].textContent = data.nilai_presentasi;
+    //     cells[6].textContent = data.nilai_tertinggi;
+    //     cells[7].textContent = data.nilai_huruf;
+    //   }
+    // });
+  };
 
   return (
     <>
@@ -165,7 +282,7 @@ const TableComponent = () => {
                               </Typography>
                               <div style={tableStyles.page}>
                                 <div style={tableStyles.section}>
-                                  <table style={tableStyles.table}>
+                                  <table id="myTable" style={tableStyles.table}>
                                     <thead>
                                       <tr>
                                         <th
@@ -233,16 +350,19 @@ const TableComponent = () => {
                                           KELOMPOK A
                                         </td>
                                         <td
+                                          id="pancasila"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           80
                                         </td>
                                         <td
+                                          id="pancasilaTertimbang"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           88
                                         </td>
                                         <td
+                                          id="pancasilaTerbilang"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           B
@@ -257,17 +377,39 @@ const TableComponent = () => {
                                         <td style={tableStyles.materiUD}>
                                           b. UUD 1945
                                         </td>
-                                        <td style={tableStyles.nilai}>85</td>
-                                        <td style={tableStyles.nilai}>90</td>
-                                        <td style={tableStyles.nilai}>A</td>
+                                        <td id="uud" style={tableStyles.nilai}>
+                                          85
+                                        </td>
+                                        <td
+                                          id="uudTertimbang"
+                                          style={tableStyles.nilai}>
+                                          90
+                                        </td>
+                                        <td
+                                          id="uudTerbilang"
+                                          style={tableStyles.nilai}>
+                                          A
+                                        </td>
                                       </tr>
                                       <tr>
                                         <td style={tableStyles.materiUD}>
                                           c. Propenas
                                         </td>
-                                        <td style={tableStyles.nilai}>85</td>
-                                        <td style={tableStyles.nilai}>90</td>
-                                        <td style={tableStyles.nilai}>A</td>
+                                        <td
+                                          id="propenas"
+                                          style={tableStyles.nilai}>
+                                          85
+                                        </td>
+                                        <td
+                                          id="propenasTertimbang"
+                                          style={tableStyles.nilai}>
+                                          90
+                                        </td>
+                                        <td
+                                          id="propenasTerbilang"
+                                          style={tableStyles.nilai}>
+                                          A
+                                        </td>
                                       </tr>
                                       <tr>
                                         <td
@@ -280,16 +422,19 @@ const TableComponent = () => {
                                           KELOMPOK B
                                         </td>
                                         <td
+                                          id="ppk"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           80
                                         </td>
                                         <td
+                                          id="ppkTertimbang"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           88
                                         </td>
                                         <td
+                                          id="ppkTerbilang"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           B
@@ -305,9 +450,21 @@ const TableComponent = () => {
                                         <td style={tableStyles.materiUD}>
                                           b. KORPRI
                                         </td>
-                                        <td style={tableStyles.nilai}>85</td>
-                                        <td style={tableStyles.nilai}>90</td>
-                                        <td style={tableStyles.nilai}>A</td>
+                                        <td
+                                          id="korpri"
+                                          style={tableStyles.nilai}>
+                                          85
+                                        </td>
+                                        <td
+                                          id="korpriTertimbang"
+                                          style={tableStyles.nilai}>
+                                          90
+                                        </td>
+                                        <td
+                                          id="korpriTerbilang"
+                                          style={tableStyles.nilai}>
+                                          A
+                                        </td>
                                       </tr>
                                       <tr>
                                         <td
@@ -320,16 +477,19 @@ const TableComponent = () => {
                                           KELOMPOK C
                                         </td>
                                         <td
+                                          id="kantor"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           80
                                         </td>
                                         <td
+                                          id="kantorTertimbang"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           88
                                         </td>
                                         <td
+                                          id="kantorTerbilang"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           B
@@ -351,16 +511,19 @@ const TableComponent = () => {
                                           KELOMPOK D
                                         </td>
                                         <td
+                                          id="organisasi"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           80
                                         </td>
                                         <td
+                                          id="organisasiTertimbang"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           88
                                         </td>
                                         <td
+                                          id="organisasiTerbilang"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           B
@@ -380,9 +543,21 @@ const TableComponent = () => {
                                           pengetahuan lain yang ditentukan oleh
                                           pimpinan instansi yang bersangkutan
                                         </td>
-                                        <td style={tableStyles.nilai}>80</td>
-                                        <td style={tableStyles.nilai}>88</td>
-                                        <td style={tableStyles.nilai}>B</td>
+                                        <td
+                                          id="substansi"
+                                          style={tableStyles.nilai}>
+                                          80
+                                        </td>
+                                        <td
+                                          id="substansiTertimbang"
+                                          style={tableStyles.nilai}>
+                                          88
+                                        </td>
+                                        <td
+                                          id="substansiTerbilang"
+                                          style={tableStyles.nilai}>
+                                          B
+                                        </td>
                                       </tr>
                                       <tr>
                                         <td
@@ -395,16 +570,19 @@ const TableComponent = () => {
                                           KELOMPOK E
                                         </td>
                                         <td
+                                          id="bindo"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           80
                                         </td>
                                         <td
+                                          id="bindoTertimbang"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           88
                                         </td>
                                         <td
+                                          id="bindoTerbilang"
                                           style={tableStyles.nilai}
                                           rowSpan="2">
                                           B
@@ -419,26 +597,47 @@ const TableComponent = () => {
                                         <td style={tableStyles.materiUDBottom}>
                                           b. Sejarah Indonesia
                                         </td>
-                                        <td style={tableStyles.nilai}>85</td>
-                                        <td style={tableStyles.nilai}>90</td>
-                                        <td style={tableStyles.nilai}>A</td>
+                                        <td
+                                          id="sejarah"
+                                          style={tableStyles.nilai}>
+                                          85
+                                        </td>
+                                        <td
+                                          id="sejarahTertimbang"
+                                          style={tableStyles.nilai}>
+                                          90
+                                        </td>
+                                        <td
+                                          id="sejarahTerbilang"
+                                          style={tableStyles.nilai}>
+                                          A
+                                        </td>
                                       </tr>
                                       <tr>
                                         <td></td>
                                         <td>Jumlah</td>
-                                        <td style={tableStyles.nilai}>85</td>
-                                        <td style={tableStyles.nilai}>90</td>
-                                        <td style={tableStyles.nilai}>A</td>
+                                        <td
+                                          id="jumlah"
+                                          style={tableStyles.nilai}>
+                                          85
+                                        </td>
+                                        <td
+                                          id="jumlahTertimbang"
+                                          style={tableStyles.nilai}>
+                                          90
+                                        </td>
+                                        <td
+                                          id="jumlahTerbilang"
+                                          style={tableStyles.nilai}>
+                                          A
+                                        </td>
                                       </tr>
                                     </tbody>
                                   </table>
                                 </div>
                               </div>
                             </Grid>
-                            <Grid
-                              sx={{  }}
-                              item
-                              xs={1}></Grid>
+                            <Grid sx={{}} item xs={1}></Grid>
                             {/* 12 */}
                             <Grid item xs={1}></Grid>
                             <Grid

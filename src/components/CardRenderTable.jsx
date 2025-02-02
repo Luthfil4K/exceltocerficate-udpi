@@ -24,6 +24,7 @@ import dataRowPI from "../data/dataRowPI";
 
 import TableComponent from "./TableComponent";
 import SplitPDF from "./SplitPDF";
+import TryTable from "./TryTable";
 
 const EXTENSIONS = ["xlsx", "xls", "csv"];
 
@@ -245,10 +246,9 @@ const CardRenderTable = (props) => {
           }}
         />
       </Box>
-      {/* <Bingkai datadata={rows}></Bingkai> */}
       {/* <SplitPDF datadata={rows}></SplitPDF> */}
-      <TableComponent ></TableComponent>
-      {/* <SplitPDF></SplitPDF> */}
+      <TableComponent datadata={rows}></TableComponent>
+      {/* <TryTable></TryTable> */}
     </div>
   );
 };
