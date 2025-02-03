@@ -247,8 +247,8 @@ const CardRenderTable = (props) => {
         />
       </Box>
       {/* <SplitPDF datadata={rows}></SplitPDF> */}
-      <TableComponent datadata={rows}></TableComponent>
-      {/* <TryTable></TryTable> */}
+      {/* <TableComponent datadata={rows}></TableComponent> */}
+      <TryTable></TryTable>
     </div>
   );
 };

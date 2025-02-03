@@ -1,30 +1,43 @@
-import { Document, Page, View, Text, PDFViewer, StyleSheet } from '@react-pdf/renderer';
+import {
+  Document,
+  Page,
+  View,
+  Text,
+  PDFViewer,
+  Font,
+  StyleSheet,
+} from "@react-pdf/renderer";
+
+import FontRobotoRegular from "../assets/fonts/Roboto/Roboto-Regular.ttf";
+import FontRobotoItalic from "../assets/fonts/Roboto/Roboto-Italic.ttf";
+import FontRobotoBoldItalic from "../assets/fonts/Roboto/Roboto-BoldItalic.ttf";
+import FontRobotoBold from "../assets/fonts/Roboto/Roboto-Bold.ttf";
 
 const styles = StyleSheet.create({
   table: {
-    display: 'table',
-    width: '100%',
+    display: "table",
+    width: "100%",
     marginBottom: 10,
   },
   tableRow: {
-    display: 'table-row',
-    flexDirection: 'row', // Baris tabel menggunakan flex
+    display: "table-row",
+    flexDirection: "row", // Baris tabel menggunakan flex
   },
   tableCell: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     padding: 5,
     borderTopWidth: 0, // Menghindari border atas pada setiap sel
     borderLeftWidth: 0, // Menghindari border kiri pada setiap sel
     borderBottomWidth: 1, // Border bawah untuk setiap sel
     borderRightWidth: 1, // Border kanan untuk setiap sel
-    borderColor: 'black',
+    borderColor: "black",
     flex: 1,
   },
   tableHeader: {
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: "bold",
+    textAlign: "center",
     borderBottomWidth: 1, // Border bawah untuk header
   },
   colspan: {
@@ -35,32 +48,115 @@ const styles = StyleSheet.create({
     flex: 1, // Menjaga agar tinggi sel tetap mengikuti baris lainnya
   },
   rowspanWrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100%',
+    display: "flex",
+    flexDirection: "column",
+    height: "100%",
   },
   rowspanCell: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     padding: 5,
     flex: 1,
-    height: '33.33%', // Membagi ruang 3 baris
+    height: "33.33%", // Membagi ruang 3 baris
     borderBottomWidth: 1, // Border bawah untuk setiap sel dalam rowspan
-    borderColor: 'black',
+    borderColor: "black",
   },
   colNoWrapper: {
-    width: '10%', // Atur lebar kolom pertama menjadi 10%
-    display: 'flex',
+    width: "10%", // Atur lebar kolom pertama menjadi 10%
+    display: "flex",
   },
 });
 
+Font.register({
+  family: "Roboto", // Nama font keluarga
+  fonts: [
+    {
+      src: FontRobotoRegular,
+    },
+    {
+      src: FontRobotoBoldItalic,
+      fontWeight: "bold",
+      fontStyle: "italic",
+    },
+    {
+      src: FontRobotoItalic,
+      fontWeight: "normal",
+      fontStyle: "italic",
+    },
+    {
+      src: FontRobotoBold,
+      fontWeight: "bold",
+    },
+  ],
+});
+
+const sty = StyleSheet.create({
+  paperBg: { display: "flex", alignItems: "center", justifyContent: "center" },
+
+  // boxIdentitas: { border: "1px solid black", width: "450px", height: "100px",marginBottom:10 },
+  boxIdentitas: {  width: "450px", height: "100px",marginBottom:10 },
+  formIdentitas:{ display:'flex', flexDirection:'row'},
+  baganKiri:{width:'100px'},
+  fontIdentitas:{fontSize:'11px',marginBottom:'8px'},
+  lampiranStlud:{display: "flex", alignItems: "center", justifyContent: "center" },
+  
+  boxTahun:{ width:"470px", display:'flex', alignItems:"end", justifyContent:"flex-end",flexDirection:"row" },
+
+  boxNilai:{ width:"470px", display:'flex', alignItems:"center", justifyContent:"center" },
+  fontNilai:{fontSize:'16px',marginBottom:'4px', fontFamily:'Roboto',fontWeight:'bold'},
+  
+  boxTable: { border: "1px solid black", width: "500px", height: "600px" },
+
+
+
+});
 const TryTable = () => (
   <PDFViewer style={{ width: "100%", height: "800px" }}>
     <Document>
       <Page size="A4" style={{ padding: 20 }}>
+        <View style={sty.paperBg}>
+          <View style={sty.boxIdentitas}>
+            <View style={sty.lampiranStlud}>
+              <Text style={sty.fontIdentitas}>Lampiran STLUD</Text>
+            </View>
+            <View style={[sty.nama, sty.formIdentitas]}>
+              <Text style={[sty.baganKiri, sty.fontIdentitas]}>NAMA</Text>
+              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                : contohNama
+              </Text>
+            </View>
+            <View style={[sty.nip, sty.formIdentitas]}>
+              <Text style={[sty.baganKiri, sty.fontIdentitas]}>NIP</Text>
+              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                : contohNip
+              </Text>
+            </View>
+            <View style={[sty.stlud, sty.formIdentitas]}>
+              <Text style={[sty.baganKiri, sty.fontIdentitas]}>STLUD NO</Text>
+              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                : contohStlud
+              </Text>
+            </View>
+            <View style={[sty.tingkat, sty.formIdentitas]}>
+              <Text style={[sty.baganKiri, sty.fontIdentitas]}>TINGKAT</Text>
+              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                : contohTingkat
+              </Text>
+            </View>
+          </View>
+          <View style={sty.boxTahun}>
+            <Text style={sty.fontIdentitas}>Tahun 2025</Text>
+          </View>
+          <View style={sty.boxNilai}>
+            <Text style={sty.fontNilai}>NILAI</Text>
+          </View>
+          <View style={sty.boxTable}></View>
+        </View>
+      </Page>
+      <>
+        {/* <Page size="A4" style={{ padding: 20 }}>
         <View style={styles.table}>
-          {/* Header */}
           <View style={styles.tableRow}>
             <View style={styles.tableCell}>
               <Text style={styles.tableHeader}>No</Text>
@@ -76,10 +172,9 @@ const TryTable = () => (
             </View>
           </View>
 
-          {/* Baris pertama */}
           <View style={styles.tableRow}>
             <View style={styles.colNoWrapper}>
-              <Text style={styles.tableCell}>1</Text> {/* Apply colNoWrapper here */}
+              <Text style={styles.tableCell}>1</Text>{" "}
             </View>
             <View style={styles.tableCell}>
               <Text>John Doe</Text>
@@ -92,7 +187,6 @@ const TryTable = () => (
             </View>
           </View>
 
-          {/* Baris kedua dengan colspan */}
           <View style={styles.tableRow}>
             <View style={[styles.tableCell, styles.colspan]}>
               <Text>A long text here that takes 2 columns</Text>
@@ -105,7 +199,6 @@ const TryTable = () => (
             </View>
           </View>
 
-          {/* Baris ketiga dengan rowspan */}
           <View style={styles.tableRow}>
             <View style={styles.rowspanWrapper}>
               <View style={styles.rowspanCell}>
@@ -126,7 +219,6 @@ const TryTable = () => (
             </View>
           </View>
 
-          {/* Baris keempat */}
           <View style={styles.tableRow}>
             <View style={styles.tableCell}>
               <Text>4</Text>
@@ -142,7 +234,8 @@ const TryTable = () => (
             </View>
           </View>
         </View>
-      </Page>
+      </Page> */}
+      </>
     </Document>
   </PDFViewer>
 );
