@@ -95,19 +95,123 @@ const sty = StyleSheet.create({
   paperBg: { display: "flex", alignItems: "center", justifyContent: "center" },
 
   // boxIdentitas: { border: "1px solid black", width: "450px", height: "100px",marginBottom:10 },
-  boxIdentitas: {  width: "450px", height: "100px",marginBottom:10 },
-  formIdentitas:{ display:'flex', flexDirection:'row'},
-  baganKiri:{width:'100px'},
-  fontIdentitas:{fontSize:'11px',marginBottom:'8px'},
-  lampiranStlud:{display: "flex", alignItems: "center", justifyContent: "center" },
-  
-  boxTahun:{ width:"470px", display:'flex', alignItems:"end", justifyContent:"flex-end",flexDirection:"row" },
+  boxIdentitas: { width: "450px", height: "100px", marginBottom: 10 },
+  formIdentitas: { display: "flex", flexDirection: "row" },
+  baganKiri: { width: "100px" },
+  fontIdentitas: { fontSize: "11px", marginBottom: "8px" },
+  lampiranStlud: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 
-  boxNilai:{ width:"470px", display:'flex', alignItems:"center", justifyContent:"center" },
-  fontNilai:{fontSize:'16px',marginBottom:'4px', fontFamily:'Roboto',fontWeight:'bold'},
-  
+  boxTahun: {
+    width: "470px",
+    display: "flex",
+    alignItems: "end",
+    justifyContent: "flex-end",
+    flexDirection: "row",
+  },
+
+  boxNilai: {
+    width: "470px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  fontNilai: {
+    fontSize: "16px",
+    marginBottom: "4px",
+    fontFamily: "Roboto",
+    fontWeight: "bold",
+  },
+
   boxTable: { border: "1px solid black", width: "500px", height: "600px" },
+  barisHeader: {
+    height: "50px",
+    borderBottom: "1px solid black",
+    display: "flex",
+    flexDirection: "row",
+  },
+  fontHeader: { fontSize: "10px", textAlign: "center" },
+  kolNo: { width: "30px", alignItems: "center", justifyContent: "center" },
+  kolMateri: {
+    borderLeft: "1px solid black",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "190px",
+  },
+  kolNilai: {
+   
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "140px",
+    flexDirection:'column',
+    
+  },
+  KolNilaiAtas:{
+    alignItems: "center",
+    justifyContent: "center",
+    width: "140px",
+    height:'20px',
+    borderBottom:'1px solid black',
+    borderLeft: "1px solid black",
+  },
+  kolNilaiBawah:{
+    alignItems: "end",
+    justifyContent:'flex-end',
+    width: "140px",
+    display:'flex',
+    flexDirection:'row',
+    height:'30px',
+  },
+  
+  kolPresentasi: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "70px",
+    height:"100%",
+    borderLeft: "1px solid black",
+  },
+  kolTertimbang: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "70px",
+    height:"100%",
+    borderLeft: "1px solid black",
+  },
+ 
+  kolTerbilang: {
+    borderLeft: "1px solid black",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "140px",
+  },
 
+  barisSatu:{
+    height: "80px",
+    borderBottom: "1px solid black",
+    display: "flex",
+    flexDirection: "row",
+  },
+
+  barisKelompokA:{
+
+  },
+
+  kolNilaiIsi:{
+    alignItems: "end",
+    justifyContent:'flex-end',
+    width: "140px",
+    display:'flex',
+    flexDirection:'row',
+    height:'100%',
+  },
 
 
 });
@@ -151,7 +255,68 @@ const TryTable = () => (
           <View style={sty.boxNilai}>
             <Text style={sty.fontNilai}>NILAI</Text>
           </View>
-          <View style={sty.boxTable}></View>
+          <View style={sty.boxTable}>
+            <View style={sty.barisHeader}>
+              <View style={sty.kolNo}>
+                <Text style={sty.fontHeader}>NO</Text>
+              </View>
+              <View style={sty.kolMateri}>
+                <Text style={sty.fontHeader}>MATERI UJIAN DINAS</Text>
+              </View>
+              <View style={sty.kolNilai}>
+                <View style={sty.KolNilaiAtas}>
+                  <Text style={sty.fontHeader}>NILAI</Text>
+                </View>
+                <View style={sty.kolNilaiBawah}>
+                  <View style={sty.kolPresentasi}>
+                    <Text style={sty.fontHeader}>PRESENTASI (NPR)</Text>
+                  </View>
+                  <View style={sty.kolTertimbang}>
+                    <Text style={sty.fontHeader}>TERTIMBANG (NT)</Text>
+                  </View>
+                </View>
+              </View>
+              <View style={sty.kolTerbilang}>
+                <Text style={sty.fontHeader}>NILAI TERTIMBANG</Text>
+                <Text style={sty.fontHeader}>DENGAN HURUF</Text>
+              </View>
+            </View>
+            <View style={sty.barisSatu}>
+              <View style={sty.kolNo}>
+                <Text style={sty.fontHeader}>1</Text>
+              </View>
+              <View style={sty.kolMateri}>
+                <Text style={sty.fontHeader}>Pancasila</Text>
+              </View>
+              <View style={sty.kolPresentasi}>
+                <Text style={sty.fontHeader}>PRESENTASI (NPR)</Text>
+              </View>
+              <View style={sty.kolTertimbang}>
+                <Text style={sty.fontHeader}>TERTIMBANG (NT)</Text>
+              </View>
+              <View style={sty.kolTerbilang}>
+                <Text style={sty.fontHeader}>NILAI TERTIMBANG</Text>
+                <Text style={sty.fontHeader}>DENGAN HURUF</Text>
+              </View>
+            </View>
+            {/* <View style={sty.barisSatu}>
+              <View style={sty.kolNo}>
+                <Text style={sty.fontHeader}>NO</Text>
+              </View>
+              <View style={sty.barisSelainNo}>
+
+              </View>
+              <View style={sty.kolMateri}>
+                <Text style={sty.fontHeader}>Bahasa</Text>
+              </View>
+              <View style={sty.kolPresentasi}>
+                <Text style={sty.fontHeader}>90</Text>
+              </View>
+              <View style={sty.kolTertimbang}>
+                <Text style={sty.fontHeader}>9.45</Text>
+              </View>
+            </View> */}
+          </View>
         </View>
       </Page>
       <>
