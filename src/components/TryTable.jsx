@@ -126,54 +126,73 @@ const sty = StyleSheet.create({
     fontWeight: "bold",
   },
 
-  boxTable: { border: "1px solid black", width: "500px", height: "600px" },
+  boxTable: {
+    borderTop: "1px solid black",
+    width: "500px",
+    height: "430px",
+    marginBottom: "15px",
+  },
   barisHeader: {
     height: "50px",
     borderBottom: "1px solid black",
     display: "flex",
     flexDirection: "row",
   },
-  fontHeader: { fontSize: "10px", textAlign: "center" },
-  kolNo: { width: "30px", alignItems: "center", justifyContent: "center" },
+  fontHeader: {
+    fontSize: "10px",
+    textAlign: "center",
+    fontFamily: "Roboto",
+    fontWeight: "bold",
+  },
+  fontTerbilang: { fontSize: "8px", textAlign: "center" },
+  fontBaris: { fontSize: "10px" },
+  fontTtd: { fontSize: "10px",textAlign:'center' },
+  needBold: {
+    fontWeight: "bold",
+    fontFamily: "Roboto",
+  },
+  kolNo: {
+    width: "30px",
+    alignItems: "center",
+    justifyContent: "center",
+    borderLeft: "1px solid black",
+  },
   kolMateri: {
     borderLeft: "1px solid black",
     display: "flex",
-    alignItems: "center",
     justifyContent: "center",
     width: "190px",
   },
   kolNilai: {
-   
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     width: "140px",
-    flexDirection:'column',
-    
+    flexDirection: "column",
   },
-  KolNilaiAtas:{
+  KolNilaiAtas: {
     alignItems: "center",
     justifyContent: "center",
     width: "140px",
-    height:'20px',
-    borderBottom:'1px solid black',
+    height: "20px",
+    borderBottom: "1px solid black",
     borderLeft: "1px solid black",
   },
-  kolNilaiBawah:{
+  kolNilaiBawah: {
     alignItems: "end",
-    justifyContent:'flex-end',
+    justifyContent: "flex-end",
     width: "140px",
-    display:'flex',
-    flexDirection:'row',
-    height:'30px',
+    display: "flex",
+    flexDirection: "row",
+    height: "30px",
   },
-  
+
   kolPresentasi: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     width: "70px",
-    height:"100%",
+    height: "100%",
     borderLeft: "1px solid black",
   },
   kolTertimbang: {
@@ -181,39 +200,151 @@ const sty = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     width: "70px",
-    height:"100%",
+    height: "100%",
     borderLeft: "1px solid black",
   },
- 
+
   kolTerbilang: {
     borderLeft: "1px solid black",
+    borderRight: "1px solid black",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     width: "140px",
   },
 
-  barisSatu:{
+  barisSatu: {
     height: "80px",
+    display: "flex",
+    flexDirection: "row",
+  },
+
+  barisKelompokA: {},
+
+  kolNilaiIsi: {
+    alignItems: "end",
+    justifyContent: "flex-end",
+    width: "140px",
+    display: "flex",
+    flexDirection: "row",
+    height: "100%",
+  },
+
+  barisSatu: {
+    height: "80px",
+    display: "flex",
+    flexDirection: "row",
+  },
+
+  kelompokA: {
+    height: "100%",
+    width: "470px",
+  },
+
+  a1: {
+    height: "40px",
     borderBottom: "1px solid black",
     display: "flex",
     flexDirection: "row",
   },
 
-  barisKelompokA:{
-
+  barisStandard: {
+    borderBottom: "1px solid black",
+    display: "flex",
+    flexDirection: "row",
+    height: "20px",
+  },
+  needBB: {
+    borderBottom: "1px solid black",
+  },
+  needBL: {
+    borderBottom: "1px solid black",
+  },
+  needBR: {
+    borderBottom: "1px solid black",
+  },
+  needBT: {
+    borderBottom: "1px solid black",
   },
 
-  kolNilaiIsi:{
-    alignItems: "end",
-    justifyContent:'flex-end',
-    width: "140px",
-    display:'flex',
-    flexDirection:'row',
-    height:'100%',
+  needPL: {
+    paddingLeft: "5px",
+  },
+  needMorePL: {
+    paddingLeft: "14px",
   },
 
+  barisDua: {
+    height: "60px",
+    display: "flex",
+    flexDirection: "row",
+  },
+  barisTiga: {
+    height: "40px",
+    display: "flex",
+    flexDirection: "row",
+  },
+  barisEmpat: {
+    height: "120px",
+    display: "flex",
+    flexDirection: "row",
+  },
+  d1: {
+    height: "60px",
+    borderBottom: "1px solid black",
+    display: "flex",
+    flexDirection: "row",
+  },
+  d2: {
+    borderBottom: "1px solid black",
+    display: "flex",
+    flexDirection: "row",
+    height: "60px",
+  },
+  barisLima: {
+    height: "60px",
+    display: "flex",
+    flexDirection: "row",
+  },
+  barisJumlah: {
+    display: "flex",
+    flexDirection: "row",
+    height: "20px",
+  },
 
+  kelJumlah: {
+    width: "500px",
+    height: "20px",
+  },
+  kolJumlah: {
+    height: "20px",
+    width: "220px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderLeft: "1px solid black",
+  },
+  boxTtd: {
+    border: "1px solid black",
+    width: "500px",
+    height: "100px",
+    alignItems: "flex-end",
+  },
+
+  boxTtd2: {
+    border: "1px solid black",
+    width: "200px",
+    height: "100px",
+    alignItems: "flex-end",
+  },
+  jabatanTtd:{
+    
+    width: "200px",
+    alignItems:"center"
+  },
+  ttd:{
+    height:"50px"
+  }
 });
 const TryTable = () => (
   <PDFViewer style={{ width: "100%", height: "800px" }}>
@@ -282,125 +413,286 @@ const TryTable = () => (
               </View>
             </View>
             <View style={sty.barisSatu}>
-              <View style={sty.kolNo}>
-                <Text style={sty.fontHeader}>1</Text>
+              <View style={[sty.kolNo, sty.needBB]}>
+                <Text style={sty.fontBaris}>1</Text>
               </View>
-              <View style={sty.kolMateri}>
-                <Text style={sty.fontHeader}>Pancasila</Text>
-              </View>
-              <View style={sty.kolPresentasi}>
-                <Text style={sty.fontHeader}>PRESENTASI (NPR)</Text>
-              </View>
-              <View style={sty.kolTertimbang}>
-                <Text style={sty.fontHeader}>TERTIMBANG (NT)</Text>
-              </View>
-              <View style={sty.kolTerbilang}>
-                <Text style={sty.fontHeader}>NILAI TERTIMBANG</Text>
-                <Text style={sty.fontHeader}>DENGAN HURUF</Text>
+              <View style={sty.kelompokA}>
+                <View style={sty.a1}>
+                  <View style={sty.kolMateri}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>KELOMPOK A</Text>
+                    <Text style={[sty.fontBaris, sty.needPL]}>
+                      a. Pancasila
+                    </Text>
+                  </View>
+                  <View style={sty.kolPresentasi}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>86</Text>
+                  </View>
+                  <View style={sty.kolTertimbang}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>89</Text>
+                  </View>
+                  <View style={sty.kolTerbilang}>
+                    <Text style={sty.fontTerbilang}>
+                      Sembilan Puluh Koma Lima Nol
+                    </Text>
+                  </View>
+                </View>
+                <View style={sty.barisStandard}>
+                  <View style={sty.kolMateri}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>b. UUD 1945</Text>
+                  </View>
+                  <View style={sty.kolPresentasi}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>90</Text>
+                  </View>
+                  <View style={sty.kolTertimbang}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>90</Text>
+                  </View>
+                  <View style={sty.kolTerbilang}>
+                    <Text style={sty.fontTerbilang}>
+                      Sembilan Puluh Koma Lima Nol
+                    </Text>
+                  </View>
+                </View>
+                <View style={sty.barisStandard}>
+                  <View style={sty.kolMateri}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>C. Propenas</Text>
+                  </View>
+                  <View style={sty.kolPresentasi}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>90</Text>
+                  </View>
+                  <View style={sty.kolTertimbang}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>90</Text>
+                  </View>
+                  <View style={sty.kolTerbilang}>
+                    <Text style={sty.fontTerbilang}>
+                      Sembilan Puluh Koma Lima Nol
+                    </Text>
+                  </View>
+                </View>
               </View>
             </View>
-            {/* <View style={sty.barisSatu}>
-              <View style={sty.kolNo}>
-                <Text style={sty.fontHeader}>NO</Text>
+            <View style={sty.barisDua}>
+              <View style={[sty.kolNo, sty.needBB]}>
+                <Text style={sty.fontBaris}>2</Text>
               </View>
-              <View style={sty.barisSelainNo}>
+              <View style={sty.kelompokA}>
+                <View style={sty.a1}>
+                  <View style={sty.kolMateri}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>KELOMPOK B</Text>
+                    <Text style={[sty.fontBaris, sty.needPL]}>
+                      a. Peraturan Perundang-undangan{" "}
+                    </Text>
+                    <Text style={[sty.fontBaris, sty.needMorePL]}>
+                      {" "}
+                      dibidang kepegawaian
+                    </Text>
+                  </View>
+                  <View style={sty.kolPresentasi}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>86</Text>
+                  </View>
+                  <View style={sty.kolTertimbang}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>89</Text>
+                  </View>
+                  <View style={sty.kolTerbilang}>
+                    <Text style={sty.fontTerbilang}>
+                      Sembilan Puluh Koma Lima Nol
+                    </Text>
+                  </View>
+                </View>
+                <View style={sty.barisStandard}>
+                  <View style={sty.kolMateri}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>b. KORPRI</Text>
+                  </View>
+                  <View style={sty.kolPresentasi}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>90</Text>
+                  </View>
+                  <View style={sty.kolTertimbang}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>90</Text>
+                  </View>
+                  <View style={sty.kolTerbilang}>
+                    <Text style={sty.fontTerbilang}>
+                      Sembilan Puluh Koma Lima Nol
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View style={sty.barisTiga}>
+              <View style={[sty.kolNo, sty.needBB]}>
+                <Text style={sty.fontBaris}>3</Text>
+              </View>
+              <View style={sty.kelompokA}>
+                <View style={sty.a1}>
+                  <View style={sty.kolMateri}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>KELOMPOK C</Text>
+                    <Text style={[sty.fontBaris, sty.needPL]}>
+                      Pegetahuan Perkantoran
+                    </Text>
+                  </View>
+                  <View style={sty.kolPresentasi}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>86</Text>
+                  </View>
+                  <View style={sty.kolTertimbang}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>89</Text>
+                  </View>
+                  <View style={sty.kolTerbilang}>
+                    <Text style={sty.fontTerbilang}>
+                      Sembilan Puluh Koma Lima Nol
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View style={sty.barisEmpat}>
+              <View style={[sty.kolNo, sty.needBB]}>
+                <Text style={sty.fontBaris}>4</Text>
+              </View>
+              <View style={sty.kelompokA}>
+                <View style={sty.d1}>
+                  <View style={[sty.kolMateri, sty.needHeight]}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>KELOMPOK D</Text>
+                    <Text style={[sty.fontBaris, sty.needPL]}>
+                      a. Tugas pokok, fungsi, struktur
+                    </Text>
+                    <Text style={[sty.fontBaris, sty.needMorePL]}>
+                      {" "}
+                      organisasi dan tata kerja instansi
+                    </Text>
+                    <Text style={[sty.fontBaris, sty.needMorePL]}>
+                      {" "}
+                      yang bersangkutan
+                    </Text>
+                  </View>
+                  <View style={sty.kolPresentasi}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>86</Text>
+                  </View>
+                  <View style={sty.kolTertimbang}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>89</Text>
+                  </View>
+                  <View style={sty.kolTerbilang}>
+                    <Text style={sty.fontTerbilang}>
+                      Sembilan Puluh Koma Lima Nol
+                    </Text>
+                  </View>
+                </View>
+                <View style={sty.d2}>
+                  <View style={sty.kolMateri}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>
+                      b. Pengetahuan mengenai substantive
+                    </Text>
+                    <Text style={[sty.fontBaris, sty.needMorePL]}>
+                      {" "}
+                      instansi yang bersangkutan dan
+                    </Text>
+                    <Text style={[sty.fontBaris, sty.needMorePL]}>
+                      {" "}
+                      pengetahuan lain yang ditentukan
+                    </Text>
+                    <Text style={[sty.fontBaris, sty.needMorePL]}>
+                      {" "}
+                      oleh pimpinan instansi yang
+                    </Text>
+                    <Text style={[sty.fontBaris, sty.needMorePL]}>
+                      {" "}
+                      bersangkutan
+                    </Text>
+                  </View>
+                  <View style={sty.kolPresentasi}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>90</Text>
+                  </View>
+                  <View style={sty.kolTertimbang}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>90</Text>
+                  </View>
+                  <View style={sty.kolTerbilang}>
+                    <Text style={sty.fontTerbilang}>
+                      Sembilan Puluh Koma Lima Nol
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View style={sty.barisLima}>
+              <View style={[sty.kolNo, sty.needBB]}>
+                <Text style={sty.fontBaris}>5</Text>
+              </View>
+              <View style={sty.kelompokA}>
+                <View style={sty.a1}>
+                  <View style={sty.kolMateri}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>KELOMPOK E</Text>
+                    <Text style={[sty.fontBaris, sty.needPL]}>
+                      a. Bahasa Indonesia
+                    </Text>
+                  </View>
+                  <View style={sty.kolPresentasi}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>86</Text>
+                  </View>
+                  <View style={sty.kolTertimbang}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>89</Text>
+                  </View>
+                  <View style={sty.kolTerbilang}>
+                    <Text style={sty.fontTerbilang}>
+                      Sembilan Puluh Koma Lima Nol
+                    </Text>
+                  </View>
+                </View>
+                <View style={sty.barisStandard}>
+                  <View style={sty.kolMateri}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>
+                      b. Sejarah Indonesia
+                    </Text>
+                  </View>
+                  <View style={sty.kolPresentasi}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>90</Text>
+                  </View>
+                  <View style={sty.kolTertimbang}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>90</Text>
+                  </View>
+                  <View style={sty.kolTerbilang}>
+                    <Text style={sty.fontTerbilang}>
+                      Sembilan Puluh Koma Lima Nol
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View style={sty.barisJumlah}>
+              <View style={sty.kelJumlah}>
+                <View style={sty.barisStandard}>
+                  <View style={sty.kolJumlah}>
+                    <Text style={[sty.fontBaris, sty.needMorePL, sty.needBold]}>
+                      JUMLAH
+                    </Text>
+                  </View>
+                  <View style={sty.kolPresentasi}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>90</Text>
+                  </View>
+                  <View style={sty.kolTertimbang}>
+                    <Text style={[sty.fontBaris, sty.needPL]}>90</Text>
+                  </View>
+                  <View style={sty.kolTerbilang}>
+                    <Text style={sty.fontTerbilang}>
+                      Sembilan Puluh Koma Lima Nol
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View style={sty.boxTtd}>
+            <View style={sty.boxTtd2}>
+              <View style={sty.jabatanTtd}>
+                <Text style={sty.fontTtd}>a.n. KEPALA BADAN PUSAT STATISTIK, </Text>
+                <Text style={sty.fontTtd}>Kepala Biro Sumber Daya Manusia, </Text>
+              </View>
+              <View style={sty.ttd}></View>
+              <View style={sty.jabatanTtd}>
+                <Text style={sty.fontTtd}>Dr. Eni Lestariningsih, S.Si, M.A </Text>
+                <Text style={sty.fontTtd}>NIP. 197003101994012001  </Text>
 
               </View>
-              <View style={sty.kolMateri}>
-                <Text style={sty.fontHeader}>Bahasa</Text>
-              </View>
-              <View style={sty.kolPresentasi}>
-                <Text style={sty.fontHeader}>90</Text>
-              </View>
-              <View style={sty.kolTertimbang}>
-                <Text style={sty.fontHeader}>9.45</Text>
-              </View>
-            </View> */}
+            </View>
           </View>
         </View>
       </Page>
-      <>
-        {/* <Page size="A4" style={{ padding: 20 }}>
-        <View style={styles.table}>
-          <View style={styles.tableRow}>
-            <View style={styles.tableCell}>
-              <Text style={styles.tableHeader}>No</Text>
-            </View>
-            <View style={styles.tableCell}>
-              <Text style={styles.tableHeader}>Nama</Text>
-            </View>
-            <View style={styles.tableCell}>
-              <Text style={styles.tableHeader}>Usia</Text>
-            </View>
-            <View style={styles.tableCell}>
-              <Text style={styles.tableHeader}>Alamat</Text>
-            </View>
-          </View>
-
-          <View style={styles.tableRow}>
-            <View style={styles.colNoWrapper}>
-              <Text style={styles.tableCell}>1</Text>{" "}
-            </View>
-            <View style={styles.tableCell}>
-              <Text>John Doe</Text>
-            </View>
-            <View style={styles.tableCell}>
-              <Text>30</Text>
-            </View>
-            <View style={styles.tableCell}>
-              <Text>Jakarta</Text>
-            </View>
-          </View>
-
-          <View style={styles.tableRow}>
-            <View style={[styles.tableCell, styles.colspan]}>
-              <Text>A long text here that takes 2 columns</Text>
-            </View>
-            <View style={styles.tableCell}>
-              <Text>More info</Text>
-            </View>
-            <View style={styles.tableCell}>
-              <Text>More info</Text>
-            </View>
-          </View>
-
-          <View style={styles.tableRow}>
-            <View style={styles.rowspanWrapper}>
-              <View style={styles.rowspanCell}>
-                <Text>Row 1 of 3 (Rowspan)</Text>
-              </View>
-              <View style={styles.rowspanCell}>
-                <Text>Row 2 of 3 (Rowspan)</Text>
-              </View>
-              <View style={styles.rowspanCell}>
-                <Text>Row 3 of 3 (Rowspan)</Text>
-              </View>
-            </View>
-            <View style={styles.tableCell}>
-              <Text>Additional info</Text>
-            </View>
-            <View style={styles.tableCell}>
-              <Text>More info</Text>
-            </View>
-          </View>
-
-          <View style={styles.tableRow}>
-            <View style={styles.tableCell}>
-              <Text>4</Text>
-            </View>
-            <View style={styles.tableCell}>
-              <Text>Sam Smith</Text>
-            </View>
-            <View style={styles.tableCell}>
-              <Text>40</Text>
-            </View>
-            <View style={styles.tableCell}>
-              <Text>Surabaya</Text>
-            </View>
-          </View>
-        </View>
-      </Page> */}
-      </>
     </Document>
   </PDFViewer>
 );
