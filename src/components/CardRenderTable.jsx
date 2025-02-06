@@ -26,6 +26,7 @@ import TableComponent from "./TableComponent";
 import SplitPDF from "./SplitPDF";
 import TryTable from "./TryTable";
 
+
 const EXTENSIONS = ["xlsx", "xls", "csv"];
 
 const EditToolbar = (props) => {
@@ -139,12 +140,12 @@ const CardRenderTable = (props) => {
   };
 
   useEffect(()=>{
-    // console.log("data")
-    // console.log(data)
-    // console.log("rows")
-    // console.log(rows)
-    // console.log("cols")
-    // console.log(cols)
+    console.log("data")
+    console.log(data)
+    console.log("rows")
+    console.log(rows)
+    console.log("cols")
+    console.log(cols)
   },[data])
   // end handle import
 
@@ -246,9 +247,9 @@ const CardRenderTable = (props) => {
           }}
         />
       </Box>
-      {/* <SplitPDF datadata={rows}></SplitPDF> */}
+      <SplitPDF datadata={rows}></SplitPDF>
       {/* <TableComponent datadata={rows}></TableComponent> */}
-      <TryTable></TryTable>
+      {/* <TryTable></TryTable> */}
     </div>
   );
 };
