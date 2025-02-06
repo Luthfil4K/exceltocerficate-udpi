@@ -112,6 +112,22 @@
       flex: 1,
     },
     {
+      field: "organisasi",
+      headerClassName: "super-app-theme--header",
+      editable: true,
+      headerName: "organisasi",
+      minWidth: 100,
+      flex: 1,
+    },
+    {
+      field: "substantive",
+      headerClassName: "super-app-theme--header",
+      editable: true,
+      headerName: "substantive",
+      minWidth: 100,
+      flex: 1,
+    },
+    {
       field: "bahasa_indonesia",
       headerClassName: "super-app-theme--header",
       editable: true,
