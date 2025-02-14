@@ -25,8 +25,8 @@ export const tableStyles = StyleSheet.create({
       color: "#fff",
       textAlign: "center",
       padding: "10px",
-      border: "1px solid black", // Garis pada header
-      borderBottom: "none", // Menghilangkan garis bawah pada header
+      border: "1px solid black",
+      borderBottom: "none",
       paddingBottom: "5px",
       borderCollapse: "collapse",
       borderSpacing:0,
@@ -34,11 +34,9 @@ export const tableStyles = StyleSheet.create({
     tableCell: {
       textAlign: "left",
       paddingLeft: "10px",
-      // borderStyle: "solid",
-      // borderWidth: "1px",
-      // borderColor: "black",
+
       borderLeft: "1px solid black",
-      // borderBottom:"1px solid black",
+     
       borderTop: "1px solid black",
       borderCollapse: "collapse",
       borderSpacing:0,

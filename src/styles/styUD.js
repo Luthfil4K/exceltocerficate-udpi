@@ -36,7 +36,7 @@ import {
     ],
   });
   
-  export const sty = StyleSheet.create({
+  export const styUD = StyleSheet.create({
     paperBg: { display: "flex", alignItems: "center", justifyContent: "center" },
   
     // boxIdentitas: { border: "1px solid black", width: "450px", height: "100px",marginBottom:10 },
@@ -174,12 +174,18 @@ import {
       flexDirection: "row",
       height: "100%",
     },
+    barisNoKolom: {
+      height: "15px",
+      display: "flex",
+      flexDirection: "row",
+    },
   
     barisSatu: {
       height: "80px",
       display: "flex",
       flexDirection: "row",
     },
+    
   
     kelompokA: {
       height: "100%",
@@ -214,6 +220,11 @@ import {
   
     needPL: {
       paddingLeft: "5px",
+    },
+    needMiddle:{
+      alignItems:"center",
+      justifyContent:"center",
+      textAlign:"center"
     },
     needMorePL: {
       paddingLeft: "14px",

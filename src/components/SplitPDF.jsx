@@ -14,7 +14,7 @@ import JSZip from "jszip"; // Import JSZip
 import { Grid, Card, Typography, Button } from "@mui/material";
 
 import { styles } from "../styles/stylePI";
-import { sty } from "../styles/sty";
+import { styUD } from "../styles/styUD";
 import { terbilang } from "../utils/terbilang";
 
 const SplitPDF = (props) => {
@@ -146,389 +146,414 @@ const SplitPDF = (props) => {
               </View>
             </Page>
             <Page size="A4" style={{ padding: 20 }}>
-              <View style={sty.paperBg}>
-                <View style={sty.boxIdentitas}>
-                  <View style={sty.lampiranStlud}>
-                    <Text style={sty.fontIdentitas}>Lampiran STLUD</Text>
+              <View style={styUD.paperBg}>
+                <View style={styUD.boxIdentitas}>
+                  <View style={styUD.lampiranStlud}>
+                    <Text style={styUD.fontIdentitas}>Lampiran STLUD</Text>
                   </View>
-                  <View style={[sty.nama, sty.formIdentitas]}>
-                    <Text style={[sty.baganKiri, sty.fontIdentitas]}>NAMA</Text>
-                    <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                  <View style={[styUD.nama, styUD.formIdentitas]}>
+                    <Text style={[styUD.baganKiri, styUD.fontIdentitas]}>
+                      NAMA
+                    </Text>
+                    <Text style={[styUD.baganKiri, styUD.fontIdentitas]}>
                       : {data.nama_peserta}
                     </Text>
                   </View>
-                  <View style={[sty.nip, sty.formIdentitas]}>
-                    <Text style={[sty.baganKiri, sty.fontIdentitas]}>NIP</Text>
-                    <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                  <View style={[styUD.nip, styUD.formIdentitas]}>
+                    <Text style={[styUD.baganKiri, styUD.fontIdentitas]}>
+                      NIP
+                    </Text>
+                    <Text style={[styUD.baganKiri, styUD.fontIdentitas]}>
                       : {data.nip}
                     </Text>
                   </View>
-                  <View style={[sty.stlud, sty.formIdentitas]}>
-                    <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                  <View style={[styUD.stlud, styUD.formIdentitas]}>
+                    <Text style={[styUD.baganKiri, styUD.fontIdentitas]}>
                       STLUD NO
                     </Text>
-                    <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                    <Text style={[styUD.baganKiri, styUD.fontIdentitas]}>
                       : {data.nomor_ijazah}
                     </Text>
                   </View>
-                  <View style={[sty.tingkat, sty.formIdentitas]}>
-                    <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                  <View style={[styUD.tingkat, styUD.formIdentitas]}>
+                    <Text style={[styUD.baganKiri, styUD.fontIdentitas]}>
                       TINGKAT
                     </Text>
-                    <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                    <Text style={[styUD.baganKiri, styUD.fontIdentitas]}>
                       : {data.pangkat}
                     </Text>
                   </View>
                 </View>
-                <View style={sty.boxTahun}>
-                  <Text style={sty.fontIdentitas}>Tahun 2025</Text>
+                <View style={styUD.boxTahun}>
+                  <Text style={styUD.fontIdentitas}>Tahun 2025</Text>
                 </View>
-                <View style={sty.boxNilai}>
-                  <Text style={sty.fontNilai}>NILAI</Text>
+                <View style={styUD.boxNilai}>
+                  <Text style={styUD.fontNilai}>NILAI</Text>
                 </View>
-                <View style={sty.boxTable}>
-                  <View style={sty.barisHeader}>
-                    <View style={sty.kolNo}>
-                      <Text style={sty.fontHeader}>NO</Text>
+                <View style={styUD.boxTable}>
+                  <View style={styUD.barisHeader}>
+                    <View style={styUD.kolNo}>
+                      <Text style={styUD.fontHeader}>NO</Text>
                     </View>
-                    <View style={sty.kolMateri}>
-                      <Text style={sty.fontHeader}>MATERI UJIAN DINAS</Text>
+                    <View style={styUD.kolMateri}>
+                      <Text style={styUD.fontHeader}>MATERI UJIAN DINAS</Text>
                     </View>
-                    <View style={sty.kolNilai}>
-                      <View style={sty.KolNilaiAtas}>
-                        <Text style={sty.fontHeader}>NILAI</Text>
+                    <View style={styUD.kolNilai}>
+                      <View style={styUD.KolNilaiAtas}>
+                        <Text style={styUD.fontHeader}>NILAI</Text>
                       </View>
-                      <View style={sty.kolNilaiBawah}>
-                        <View style={sty.kolPresentasi}>
-                          <Text style={sty.fontHeader}>PRESENTASI (NPR)</Text>
+                      <View style={styUD.kolNilaiBawah}>
+                        <View style={styUD.kolPresentasi}>
+                          <Text style={styUD.fontHeader}>PRESENTASI (NPR)</Text>
                         </View>
-                        <View style={sty.kolTertimbang}>
-                          <Text style={sty.fontHeader}>TERTIMBANG (NT)</Text>
+                        <View style={styUD.kolTertimbang}>
+                          <Text style={styUD.fontHeader}>TERTIMBANG (NT)</Text>
                         </View>
                       </View>
                     </View>
-                    <View style={sty.kolTerbilang}>
-                      <Text style={sty.fontHeader}>NILAI TERTIMBANG</Text>
-                      <Text style={sty.fontHeader}>DENGAN HURUF</Text>
+                    <View style={styUD.kolTerbilang}>
+                      <Text style={styUD.fontHeader}>NILAI TERTIMBANG</Text>
+                      <Text style={styUD.fontHeader}>DENGAN HURUF</Text>
                     </View>
                   </View>
-                  <View style={sty.barisSatu}>
-                    <View style={[sty.kolNo, sty.needBB]}>
-                      <Text style={sty.fontBaris}>1</Text>
+                  <View style={styUD.barisNoKolom}>
+                    <View style={[styUD.kolNo, styUD.needBB]}>
+                      <Text style={styUD.fontBaris}>(1)</Text>
                     </View>
-                    <View style={sty.kelompokA}>
-                      <View style={sty.a1}>
-                        <View style={sty.kolMateri}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                    <View style={[styUD.barisNoKolom, styUD.needBB]}>
+                      <View style={styUD.kolMateri}>
+                        <Text style={[styUD.fontBaris, styUD.needMiddle]}>
+                          (2)
+                        </Text>
+                      </View>
+                      <View style={styUD.kolPresentasi}>
+                        <Text style={[styUD.fontBaris, styUD.needPL]}>(3)</Text>
+                      </View>
+                      <View style={styUD.kolTertimbang}>
+                        <Text style={[styUD.fontBaris, styUD.needPL]}>(4)</Text>
+                      </View>
+                      <View style={styUD.kolTerbilang}>
+                        <Text style={styUD.fontTerbilang}>(5)</Text>
+                      </View>
+                    </View>
+                  </View>
+                  <View style={styUD.barisSatu}>
+                    <View style={[styUD.kolNo, styUD.needBB]}>
+                      <Text style={styUD.fontBaris}>1</Text>
+                    </View>
+                    <View style={styUD.kelompokA}>
+                      <View style={styUD.a1}>
+                        <View style={styUD.kolMateri}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             KELOMPOK A
                           </Text>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             a. Pancasila
                           </Text>
                         </View>
-                        <View style={sty.kolPresentasi}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolPresentasi}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {data.pancasila}
                           </Text>
                         </View>
-                        <View style={sty.kolTertimbang}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolTertimbang}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {tertimbang(data.pancasila, 0.15)}
                           </Text>
                         </View>
-                        <View style={sty.kolTerbilang}>
-                          <Text style={sty.fontTerbilang}>
+                        <View style={styUD.kolTerbilang}>
+                          <Text style={styUD.fontTerbilang}>
                             {terbilang(data.pancasila)}
                           </Text>
                         </View>
                       </View>
-                      <View style={sty.barisStandard}>
-                        <View style={sty.kolMateri}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                      <View style={styUD.barisStandard}>
+                        <View style={styUD.kolMateri}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             b. UUD 1945
                           </Text>
                         </View>
-                        <View style={sty.kolPresentasi}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolPresentasi}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {data.uud_1945}
                           </Text>
                         </View>
-                        <View style={sty.kolTertimbang}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolTertimbang}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {tertimbang(data.uud_1945, 0.15)}
                           </Text>
                         </View>
-                        <View style={sty.kolTerbilang}>
-                          <Text style={sty.fontTerbilang}>
+                        <View style={styUD.kolTerbilang}>
+                          <Text style={styUD.fontTerbilang}>
                             {terbilang(data.uud_1945)}
                           </Text>
                         </View>
                       </View>
-                      <View style={sty.barisStandard}>
-                        <View style={sty.kolMateri}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                      <View style={styUD.barisStandard}>
+                        <View style={styUD.kolMateri}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             C. Propenas
                           </Text>
                         </View>
-                        <View style={sty.kolPresentasi}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolPresentasi}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {data.propenas}
                           </Text>
                         </View>
-                        <View style={sty.kolTertimbang}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolTertimbang}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {tertimbang(data.propenas, 0.15)}
                           </Text>
                         </View>
-                        <View style={sty.kolTerbilang}>
-                          <Text style={sty.fontTerbilang}>
+                        <View style={styUD.kolTerbilang}>
+                          <Text style={styUD.fontTerbilang}>
                             Sembilan Puluh Koma Lima Nol
                           </Text>
                         </View>
                       </View>
                     </View>
                   </View>
-                  <View style={sty.barisDua}>
-                    <View style={[sty.kolNo, sty.needBB]}>
-                      <Text style={sty.fontBaris}>2</Text>
+                  <View style={styUD.barisDua}>
+                    <View style={[styUD.kolNo, styUD.needBB]}>
+                      <Text style={styUD.fontBaris}>2</Text>
                     </View>
-                    <View style={sty.kelompokA}>
-                      <View style={sty.a1}>
-                        <View style={sty.kolMateri}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                    <View style={styUD.kelompokA}>
+                      <View style={styUD.a1}>
+                        <View style={styUD.kolMateri}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             KELOMPOK B
                           </Text>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             a. Peraturan Perundang-undangan{" "}
                           </Text>
-                          <Text style={[sty.fontBaris, sty.needMorePL]}>
+                          <Text style={[styUD.fontBaris, styUD.needMorePL]}>
                             {" "}
                             dibidang kepegawaian
                           </Text>
                         </View>
-                        <View style={sty.kolPresentasi}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolPresentasi}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {data.pengetahuan_bidang_kepegawaian}
                           </Text>
                         </View>
-                        <View style={sty.kolTertimbang}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolTertimbang}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {tertimbang(
                               data.pengetahuan_bidang_kepegawaian,
                               0.1
                             )}
                           </Text>
                         </View>
-                        <View style={sty.kolTerbilang}>
-                          <Text style={sty.fontTerbilang}>
+                        <View style={styUD.kolTerbilang}>
+                          <Text style={styUD.fontTerbilang}>
                             {tertimbang(data.pengetahuan_bidang_kepegawaian)}
                           </Text>
                         </View>
                       </View>
-                      <View style={sty.barisStandard}>
-                        <View style={sty.kolMateri}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                      <View style={styUD.barisStandard}>
+                        <View style={styUD.kolMateri}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             b. KORPRI
                           </Text>
                         </View>
-                        <View style={sty.kolPresentasi}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolPresentasi}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {data.korpri}
                           </Text>
                         </View>
-                        <View style={sty.kolTertimbang}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolTertimbang}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {tertimbang(data.korpri, 0.1)}
                           </Text>
                         </View>
-                        <View style={sty.kolTerbilang}>
-                          <Text style={sty.fontTerbilang}>
+                        <View style={styUD.kolTerbilang}>
+                          <Text style={styUD.fontTerbilang}>
                             {terbilang(data.korpri)}
                           </Text>
                         </View>
                       </View>
                     </View>
                   </View>
-                  <View style={sty.barisTiga}>
-                    <View style={[sty.kolNo, sty.needBB]}>
-                      <Text style={sty.fontBaris}>3</Text>
+                  <View style={styUD.barisTiga}>
+                    <View style={[styUD.kolNo, styUD.needBB]}>
+                      <Text style={styUD.fontBaris}>3</Text>
                     </View>
-                    <View style={sty.kelompokA}>
-                      <View style={sty.a1}>
-                        <View style={sty.kolMateri}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                    <View style={styUD.kelompokA}>
+                      <View style={styUD.a1}>
+                        <View style={styUD.kolMateri}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             KELOMPOK C
                           </Text>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             Pegetahuan Perkantoran
                           </Text>
                         </View>
-                        <View style={sty.kolPresentasi}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolPresentasi}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {data.pengetahuan_perkantoran}
                           </Text>
                         </View>
-                        <View style={sty.kolTertimbang}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolTertimbang}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {tertimbang(data.pengetahuan_perkantoran, 0.08)}
                           </Text>
                         </View>
-                        <View style={sty.kolTerbilang}>
-                          <Text style={sty.fontTerbilang}>
+                        <View style={styUD.kolTerbilang}>
+                          <Text style={styUD.fontTerbilang}>
                             {terbilang(data.pengetahuan_perkantoran)}
                           </Text>
                         </View>
                       </View>
                     </View>
                   </View>
-                  <View style={sty.barisEmpat}>
-                    <View style={[sty.kolNo, sty.needBB]}>
-                      <Text style={sty.fontBaris}>4</Text>
+                  <View style={styUD.barisEmpat}>
+                    <View style={[styUD.kolNo, styUD.needBB]}>
+                      <Text style={styUD.fontBaris}>4</Text>
                     </View>
-                    <View style={sty.kelompokA}>
-                      <View style={sty.d1}>
-                        <View style={[sty.kolMateri, sty.needHeight]}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                    <View style={styUD.kelompokA}>
+                      <View style={styUD.d1}>
+                        <View style={[styUD.kolMateri, styUD.needHeight]}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             KELOMPOK D
                           </Text>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             a. Tugas pokok, fungsi, struktur
                           </Text>
-                          <Text style={[sty.fontBaris, sty.needMorePL]}>
+                          <Text style={[styUD.fontBaris, styUD.needMorePL]}>
                             {" "}
                             organisasi dan tata kerja instansi
                           </Text>
-                          <Text style={[sty.fontBaris, sty.needMorePL]}>
+                          <Text style={[styUD.fontBaris, styUD.needMorePL]}>
                             {" "}
                             yang bersangkutan
                           </Text>
                         </View>
-                        <View style={sty.kolPresentasi}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolPresentasi}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {data.organisasi}
                           </Text>
                         </View>
-                        <View style={sty.kolTertimbang}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolTertimbang}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {tertimbang(data.organisasi, 0.08)}
                           </Text>
                         </View>
-                        <View style={sty.kolTerbilang}>
-                          <Text style={sty.fontTerbilang}>
+                        <View style={styUD.kolTerbilang}>
+                          <Text style={styUD.fontTerbilang}>
                             {terbilang(data.organisasi)}
                           </Text>
                         </View>
                       </View>
-                      <View style={sty.d2}>
-                        <View style={sty.kolMateri}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                      <View style={styUD.d2}>
+                        <View style={styUD.kolMateri}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             b. Pengetahuan mengenai substantive
                           </Text>
-                          <Text style={[sty.fontBaris, sty.needMorePL]}>
+                          <Text style={[styUD.fontBaris, styUD.needMorePL]}>
                             {" "}
                             instansi yang bersangkutan dan
                           </Text>
-                          <Text style={[sty.fontBaris, sty.needMorePL]}>
+                          <Text style={[styUD.fontBaris, styUD.needMorePL]}>
                             {" "}
                             pengetahuan lain yang ditentukan
                           </Text>
-                          <Text style={[sty.fontBaris, sty.needMorePL]}>
+                          <Text style={[styUD.fontBaris, styUD.needMorePL]}>
                             {" "}
                             oleh pimpinan instansi yang
                           </Text>
-                          <Text style={[sty.fontBaris, sty.needMorePL]}>
+                          <Text style={[styUD.fontBaris, styUD.needMorePL]}>
                             {" "}
                             bersangkutan
                           </Text>
                         </View>
-                        <View style={sty.kolPresentasi}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolPresentasi}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {data.substantive}
                           </Text>
                         </View>
-                        <View style={sty.kolTertimbang}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolTertimbang}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {tertimbang(data.substantive, 0.08)}
                           </Text>
                         </View>
-                        <View style={sty.kolTerbilang}>
-                          <Text style={sty.fontTerbilang}>
+                        <View style={styUD.kolTerbilang}>
+                          <Text style={styUD.fontTerbilang}>
                             {terbilang(data.substantive)}
                           </Text>
                         </View>
                       </View>
                     </View>
                   </View>
-                  <View style={sty.barisLima}>
-                    <View style={[sty.kolNo, sty.needBB]}>
-                      <Text style={sty.fontBaris}>5</Text>
+                  <View style={styUD.barisLima}>
+                    <View style={[styUD.kolNo, styUD.needBB]}>
+                      <Text style={styUD.fontBaris}>5</Text>
                     </View>
-                    <View style={sty.kelompokA}>
-                      <View style={sty.a1}>
-                        <View style={sty.kolMateri}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                    <View style={styUD.kelompokA}>
+                      <View style={styUD.a1}>
+                        <View style={styUD.kolMateri}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             KELOMPOK E
                           </Text>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             a. Bahasa Indonesia
                           </Text>
                         </View>
-                        <View style={sty.kolPresentasi}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolPresentasi}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {data.bahasa_indonesia}
                           </Text>
                         </View>
-                        <View style={sty.kolTertimbang}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolTertimbang}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {tertimbang(data.bahasa_indonesia, 0.06)}
                           </Text>
                         </View>
-                        <View style={sty.kolTerbilang}>
-                          <Text style={sty.fontTerbilang}>
+                        <View style={styUD.kolTerbilang}>
+                          <Text style={styUD.fontTerbilang}>
                             {terbilang(data.bahasa_indonesia)}
                           </Text>
                         </View>
                       </View>
-                      <View style={sty.barisStandard}>
-                        <View style={sty.kolMateri}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                      <View style={styUD.barisStandard}>
+                        <View style={styUD.kolMateri}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             b. Sejarah Indonesia
                           </Text>
                         </View>
-                        <View style={sty.kolPresentasi}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolPresentasi}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {data.sejarah}
                           </Text>
                         </View>
-                        <View style={sty.kolTertimbang}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolTertimbang}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {tertimbang(data.sejarah, 0.05)}
                           </Text>
                         </View>
-                        <View style={sty.kolTerbilang}>
-                          <Text style={sty.fontTerbilang}>
+                        <View style={styUD.kolTerbilang}>
+                          <Text style={styUD.fontTerbilang}>
                             {terbilang(data.sejarah)}
                           </Text>
                         </View>
                       </View>
                     </View>
                   </View>
-                  <View style={sty.barisJumlah}>
-                    <View style={sty.kelJumlah}>
-                      <View style={sty.barisStandard}>
-                        <View style={sty.kolJumlah}>
+                  <View style={styUD.barisJumlah}>
+                    <View style={styUD.kelJumlah}>
+                      <View style={styUD.barisStandard}>
+                        <View style={styUD.kolJumlah}>
                           <Text
                             style={[
-                              sty.fontBaris,
-                              sty.needMorePL,
-                              sty.needBold,
+                              styUD.fontBaris,
+                              styUD.needMorePL,
+                              styUD.needBold,
                             ]}
                           >
                             JUMLAH
                           </Text>
                         </View>
-                        <View style={sty.kolPresentasi}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolPresentasi}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {Number(data.bahasa_indonesia) +
                               Number(data.organisasi) +
                               Number(data.korpri) +
@@ -541,8 +566,8 @@ const SplitPDF = (props) => {
                               Number(data.substantive)}
                           </Text>
                         </View>
-                        <View style={sty.kolTertimbang}>
-                          <Text style={[sty.fontBaris, sty.needPL]}>
+                        <View style={styUD.kolTertimbang}>
+                          <Text style={[styUD.fontBaris, styUD.needPL]}>
                             {Number(data.bahasa_indonesia) +
                               Number(data.organisasi) +
                               Number(data.korpri) +
@@ -555,8 +580,8 @@ const SplitPDF = (props) => {
                               Number(data.substantive)}
                           </Text>
                         </View>
-                        <View style={sty.kolTerbilang}>
-                          <Text style={sty.fontTerbilang}>
+                        <View style={styUD.kolTerbilang}>
+                          <Text style={styUD.fontTerbilang}>
                             Sembilan Puluh Koma Lima Nol
                           </Text>
                         </View>
@@ -564,22 +589,24 @@ const SplitPDF = (props) => {
                     </View>
                   </View>
                 </View>
-                <View style={sty.boxTtd}>
-                  <View style={sty.boxTtd2}>
-                    <View style={sty.jabatanTtd}>
-                      <Text style={sty.fontTtd}>
+                <View style={styUD.boxTtd}>
+                  <View style={styUD.boxTtd2}>
+                    <View style={styUD.jabatanTtd}>
+                      <Text style={styUD.fontTtd}>
                         a.n. KEPALA BADAN PUSAT STATISTIK,{" "}
                       </Text>
-                      <Text style={sty.fontTtd}>
+                      <Text style={styUD.fontTtd}>
                         Kepala Biro Sumber Daya Manusia,{" "}
                       </Text>
                     </View>
-                    <View style={sty.ttd}></View>
-                    <View style={sty.jabatanTtd}>
-                      <Text style={sty.fontTtd}>
+                    <View style={styUD.ttd}></View>
+                    <View style={styUD.jabatanTtd}>
+                      <Text style={styUD.fontTtd}>
                         Dr. Eni Lestariningsih, S.Si, M.A{" "}
                       </Text>
-                      <Text style={sty.fontTtd}>NIP. 197003101994012001 </Text>
+                      <Text style={styUD.fontTtd}>
+                        NIP. 197003101994012001{" "}
+                      </Text>
                     </View>
                   </View>
                 </View>
@@ -820,422 +847,562 @@ const SplitPDF = (props) => {
                         </View>
                       </Page>
                       <Page size="A4" style={{ padding: 20 }}>
-                        <View style={sty.paperBg}>
-                          <View style={sty.boxIdentitas}>
-                            <View style={sty.lampiranStlud}>
-                              <Text style={sty.fontIdentitas}>
+                        <View style={styUD.paperBg}>
+                          <View style={styUD.boxIdentitas}>
+                            <View style={styUD.lampiranStlud}>
+                              <Text style={styUD.fontIdentitas}>
                                 Lampiran STLUD
                               </Text>
                             </View>
-                            <View style={[sty.nama, sty.formIdentitas]}>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                            <View style={[styUD.nama, styUD.formIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 NAMA
                               </Text>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 : {data.nama_peserta}
                               </Text>
                             </View>
-                            <View style={[sty.nip, sty.formIdentitas]}>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                            <View style={[styUD.nip, styUD.formIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 NIP
                               </Text>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 : {data.nip}
                               </Text>
                             </View>
-                            <View style={[sty.stlud, sty.formIdentitas]}>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                            <View style={[styUD.stlud, styUD.formIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 STLUD NO
                               </Text>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 : {data.nomor_ijazah}
                               </Text>
                             </View>
-                            <View style={[sty.tingkat, sty.formIdentitas]}>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                            <View style={[styUD.tingkat, styUD.formIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 TINGKAT
                               </Text>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 : {data.pangkat}
                               </Text>
                             </View>
                           </View>
-                          <View style={sty.boxTahun}>
-                            <Text style={sty.fontIdentitas}>Tahun 2025</Text>
+                          <View style={styUD.boxTahun}>
+                            <Text style={styUD.fontIdentitas}>Tahun 2025</Text>
                           </View>
-                          <View style={sty.boxNilai}>
-                            <Text style={sty.fontNilai}>NILAI</Text>
+                          <View style={styUD.boxNilai}>
+                            <Text style={styUD.fontNilai}>NILAI</Text>
                           </View>
-                          <View style={sty.boxTable}>
-                            <View style={sty.barisHeader}>
-                              <View style={sty.kolNo}>
-                                <Text style={sty.fontHeader}>NO</Text>
+                          <View style={styUD.boxTable}>
+                            <View style={styUD.barisHeader}>
+                              <View style={styUD.kolNo}>
+                                <Text style={styUD.fontHeader}>NO</Text>
                               </View>
-                              <View style={sty.kolMateri}>
-                                <Text style={sty.fontHeader}>
+                              <View style={styUD.kolMateri}>
+                                <Text style={styUD.fontHeader}>
                                   MATERI UJIAN DINAS
                                 </Text>
                               </View>
-                              <View style={sty.kolNilai}>
-                                <View style={sty.KolNilaiAtas}>
-                                  <Text style={sty.fontHeader}>NILAI</Text>
+                              <View style={styUD.kolNilai}>
+                                <View style={styUD.KolNilaiAtas}>
+                                  <Text style={styUD.fontHeader}>NILAI</Text>
                                 </View>
-                                <View style={sty.kolNilaiBawah}>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={sty.fontHeader}>
+                                <View style={styUD.kolNilaiBawah}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text style={styUD.fontHeader}>
                                       PRESENTASI (NPR)
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={sty.fontHeader}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text style={styUD.fontHeader}>
                                       TERTIMBANG (NT)
                                     </Text>
                                   </View>
                                 </View>
                               </View>
-                              <View style={sty.kolTerbilang}>
-                                <Text style={sty.fontHeader}>
+                              <View style={styUD.kolTerbilang}>
+                                <Text style={styUD.fontHeader}>
                                   NILAI TERTIMBANG
                                 </Text>
-                                <Text style={sty.fontHeader}>DENGAN HURUF</Text>
+                                <Text style={styUD.fontHeader}>
+                                  DENGAN HURUF
+                                </Text>
                               </View>
                             </View>
-                            <View style={sty.barisSatu}>
-                              <View style={[sty.kolNo, sty.needBB]}>
-                                <Text style={sty.fontBaris}>1</Text>
+                            <View style={styUD.barisNoKolom}>
+                              <View style={[styUD.kolNo, styUD.needBB]}>
+                                <Text style={styUD.fontBaris}>(1)</Text>
                               </View>
-                              <View style={sty.kelompokA}>
-                                <View style={sty.a1}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                              <View style={[styUD.barisNoKolom, styUD.needBB]}>
+                                <View style={styUD.kolMateri}>
+                                  <Text
+                                    style={[styUD.fontBaris, styUD.needMiddle]}
+                                  >
+                                    (2)
+                                  </Text>
+                                </View>
+                                <View style={styUD.kolPresentasi}>
+                                  <Text style={[styUD.fontBaris, styUD.needPL]}>
+                                    (3)
+                                  </Text>
+                                </View>
+                                <View style={styUD.kolTertimbang}>
+                                  <Text style={[styUD.fontBaris, styUD.needPL]}>
+                                    (4)
+                                  </Text>
+                                </View>
+                                <View style={styUD.kolTerbilang}>
+                                  <Text style={styUD.fontTerbilang}>(5)</Text>
+                                </View>
+                              </View>
+                            </View>
+                            <View style={styUD.barisSatu}>
+                              <View style={[styUD.kolNo, styUD.needBB]}>
+                                <Text style={styUD.fontBaris}>1</Text>
+                              </View>
+                              <View style={styUD.kelompokA}>
+                                <View style={styUD.a1}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       KELOMPOK A
                                     </Text>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       a. Pancasila
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.pancasila}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.pancasila, 0.15)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.pancasila)}
                                     </Text>
                                   </View>
                                 </View>
-                                <View style={sty.barisStandard}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                <View style={styUD.barisStandard}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       b. UUD 1945
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.uud_1945}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.uud_1945, 0.15)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.uud_1945)}
                                     </Text>
                                   </View>
                                 </View>
-                                <View style={sty.barisStandard}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                <View style={styUD.barisStandard}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       C. Propenas
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.propenas}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.propenas, 0.15)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       Sembilan Puluh Koma Lima Nol
                                     </Text>
                                   </View>
                                 </View>
                               </View>
                             </View>
-                            <View style={sty.barisDua}>
-                              <View style={[sty.kolNo, sty.needBB]}>
-                                <Text style={sty.fontBaris}>2</Text>
+                            <View style={styUD.barisDua}>
+                              <View style={[styUD.kolNo, styUD.needBB]}>
+                                <Text style={styUD.fontBaris}>2</Text>
                               </View>
-                              <View style={sty.kelompokA}>
-                                <View style={sty.a1}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                              <View style={styUD.kelompokA}>
+                                <View style={styUD.a1}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       KELOMPOK B
                                     </Text>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       a. Peraturan Perundang-undangan{" "}
                                     </Text>
                                     <Text
-                                      style={[sty.fontBaris, sty.needMorePL]}
+                                      style={[
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                      ]}
                                     >
                                       {" "}
                                       dibidang kepegawaian
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.pengetahuan_bidang_kepegawaian}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(
                                         data.pengetahuan_bidang_kepegawaian,
                                         0.1
                                       )}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {tertimbang(
                                         data.pengetahuan_bidang_kepegawaian
                                       )}
                                     </Text>
                                   </View>
                                 </View>
-                                <View style={sty.barisStandard}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                <View style={styUD.barisStandard}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       b. KORPRI
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.korpri}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.korpri, 0.1)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.korpri)}
                                     </Text>
                                   </View>
                                 </View>
                               </View>
                             </View>
-                            <View style={sty.barisTiga}>
-                              <View style={[sty.kolNo, sty.needBB]}>
-                                <Text style={sty.fontBaris}>3</Text>
+                            <View style={styUD.barisTiga}>
+                              <View style={[styUD.kolNo, styUD.needBB]}>
+                                <Text style={styUD.fontBaris}>3</Text>
                               </View>
-                              <View style={sty.kelompokA}>
-                                <View style={sty.a1}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                              <View style={styUD.kelompokA}>
+                                <View style={styUD.a1}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       KELOMPOK C
                                     </Text>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       Pegetahuan Perkantoran
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.pengetahuan_perkantoran}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(
                                         data.pengetahuan_perkantoran,
                                         0.08
                                       )}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.pengetahuan_perkantoran)}
                                     </Text>
                                   </View>
                                 </View>
                               </View>
                             </View>
-                            <View style={sty.barisEmpat}>
-                              <View style={[sty.kolNo, sty.needBB]}>
-                                <Text style={sty.fontBaris}>4</Text>
+                            <View style={styUD.barisEmpat}>
+                              <View style={[styUD.kolNo, styUD.needBB]}>
+                                <Text style={styUD.fontBaris}>4</Text>
                               </View>
-                              <View style={sty.kelompokA}>
-                                <View style={sty.d1}>
-                                  <View style={[sty.kolMateri, sty.needHeight]}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                              <View style={styUD.kelompokA}>
+                                <View style={styUD.d1}>
+                                  <View
+                                    style={[styUD.kolMateri, styUD.needHeight]}
+                                  >
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       KELOMPOK D
                                     </Text>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       a. Tugas pokok, fungsi, struktur
                                     </Text>
                                     <Text
-                                      style={[sty.fontBaris, sty.needMorePL]}
+                                      style={[
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                      ]}
                                     >
                                       {" "}
                                       organisasi dan tata kerja instansi
                                     </Text>
                                     <Text
-                                      style={[sty.fontBaris, sty.needMorePL]}
+                                      style={[
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                      ]}
                                     >
                                       {" "}
                                       yang bersangkutan
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.organisasi}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.organisasi, 0.08)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.organisasi)}
                                     </Text>
                                   </View>
                                 </View>
-                                <View style={sty.d2}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                <View style={styUD.d2}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       b. Pengetahuan mengenai substantive
                                     </Text>
                                     <Text
-                                      style={[sty.fontBaris, sty.needMorePL]}
+                                      style={[
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                      ]}
                                     >
                                       {" "}
                                       instansi yang bersangkutan dan
                                     </Text>
                                     <Text
-                                      style={[sty.fontBaris, sty.needMorePL]}
+                                      style={[
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                      ]}
                                     >
                                       {" "}
                                       pengetahuan lain yang ditentukan
                                     </Text>
                                     <Text
-                                      style={[sty.fontBaris, sty.needMorePL]}
+                                      style={[
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                      ]}
                                     >
                                       {" "}
                                       oleh pimpinan instansi yang
                                     </Text>
                                     <Text
-                                      style={[sty.fontBaris, sty.needMorePL]}
+                                      style={[
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                      ]}
                                     >
                                       {" "}
                                       bersangkutan
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.substantive}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.substantive, 0.08)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.substantive)}
                                     </Text>
                                   </View>
                                 </View>
                               </View>
                             </View>
-                            <View style={sty.barisLima}>
-                              <View style={[sty.kolNo, sty.needBB]}>
-                                <Text style={sty.fontBaris}>5</Text>
+                            <View style={styUD.barisLima}>
+                              <View style={[styUD.kolNo, styUD.needBB]}>
+                                <Text style={styUD.fontBaris}>5</Text>
                               </View>
-                              <View style={sty.kelompokA}>
-                                <View style={sty.a1}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                              <View style={styUD.kelompokA}>
+                                <View style={styUD.a1}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       KELOMPOK E
                                     </Text>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       a. Bahasa Indonesia
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.bahasa_indonesia}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.bahasa_indonesia, 0.06)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.bahasa_indonesia)}
                                     </Text>
                                   </View>
                                 </View>
-                                <View style={sty.barisStandard}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                <View style={styUD.barisStandard}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       b. Sejarah Indonesia
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.sejarah}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.sejarah, 0.05)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.sejarah)}
                                     </Text>
                                   </View>
                                 </View>
                               </View>
                             </View>
-                            <View style={sty.barisJumlah}>
-                              <View style={sty.kelJumlah}>
-                                <View style={sty.barisStandard}>
-                                  <View style={sty.kolJumlah}>
+                            <View style={styUD.barisJumlah}>
+                              <View style={styUD.kelJumlah}>
+                                <View style={styUD.barisStandard}>
+                                  <View style={styUD.kolJumlah}>
                                     <Text
                                       style={[
-                                        sty.fontBaris,
-                                        sty.needMorePL,
-                                        sty.needBold,
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                        styUD.needBold,
                                       ]}
                                     >
                                       JUMLAH
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {Number(data.bahasa_indonesia) +
                                         Number(data.organisasi) +
                                         Number(data.korpri) +
@@ -1250,8 +1417,10 @@ const SplitPDF = (props) => {
                                         Number(data.substantive)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {Number(data.bahasa_indonesia) +
                                         Number(data.organisasi) +
                                         Number(data.korpri) +
@@ -1266,8 +1435,8 @@ const SplitPDF = (props) => {
                                         Number(data.substantive)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       Sembilan Puluh Koma Lima Nol
                                     </Text>
                                   </View>
@@ -1275,22 +1444,22 @@ const SplitPDF = (props) => {
                               </View>
                             </View>
                           </View>
-                          <View style={sty.boxTtd}>
-                            <View style={sty.boxTtd2}>
-                              <View style={sty.jabatanTtd}>
-                                <Text style={sty.fontTtd}>
+                          <View style={styUD.boxTtd}>
+                            <View style={styUD.boxTtd2}>
+                              <View style={styUD.jabatanTtd}>
+                                <Text style={styUD.fontTtd}>
                                   a.n. KEPALA BADAN PUSAT STATISTIK,{" "}
                                 </Text>
-                                <Text style={sty.fontTtd}>
+                                <Text style={styUD.fontTtd}>
                                   Kepala Biro Sumber Daya Manusia,{" "}
                                 </Text>
                               </View>
-                              <View style={sty.ttd}></View>
-                              <View style={sty.jabatanTtd}>
-                                <Text style={sty.fontTtd}>
+                              <View style={styUD.ttd}></View>
+                              <View style={styUD.jabatanTtd}>
+                                <Text style={styUD.fontTtd}>
                                   Dr. Eni Lestariningsih, S.Si, M.A{" "}
                                 </Text>
-                                <Text style={sty.fontTtd}>
+                                <Text style={styUD.fontTtd}>
                                   NIP. 197003101994012001{" "}
                                 </Text>
                               </View>
@@ -1460,422 +1629,562 @@ const SplitPDF = (props) => {
                         </View>
                       </Page>
                       <Page size="A4" style={{ padding: 20 }}>
-                        <View style={sty.paperBg}>
-                          <View style={sty.boxIdentitas}>
-                            <View style={sty.lampiranStlud}>
-                              <Text style={sty.fontIdentitas}>
+                        <View style={styUD.paperBg}>
+                          <View style={styUD.boxIdentitas}>
+                            <View style={styUD.lampiranStlud}>
+                              <Text style={styUD.fontIdentitas}>
                                 Lampiran STLUD
                               </Text>
                             </View>
-                            <View style={[sty.nama, sty.formIdentitas]}>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                            <View style={[styUD.nama, styUD.formIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 NAMA
                               </Text>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 : {data.nama_peserta}
                               </Text>
                             </View>
-                            <View style={[sty.nip, sty.formIdentitas]}>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                            <View style={[styUD.nip, styUD.formIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 NIP
                               </Text>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 : {data.nip}
                               </Text>
                             </View>
-                            <View style={[sty.stlud, sty.formIdentitas]}>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                            <View style={[styUD.stlud, styUD.formIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 STLUD NO
                               </Text>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 : {data.nomor_ijazah}
                               </Text>
                             </View>
-                            <View style={[sty.tingkat, sty.formIdentitas]}>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                            <View style={[styUD.tingkat, styUD.formIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 TINGKAT
                               </Text>
-                              <Text style={[sty.baganKiri, sty.fontIdentitas]}>
+                              <Text
+                                style={[styUD.baganKiri, styUD.fontIdentitas]}
+                              >
                                 : {data.pangkat}
                               </Text>
                             </View>
                           </View>
-                          <View style={sty.boxTahun}>
-                            <Text style={sty.fontIdentitas}>Tahun 2025</Text>
+                          <View style={styUD.boxTahun}>
+                            <Text style={styUD.fontIdentitas}>Tahun 2025</Text>
                           </View>
-                          <View style={sty.boxNilai}>
-                            <Text style={sty.fontNilai}>NILAI</Text>
+                          <View style={styUD.boxNilai}>
+                            <Text style={styUD.fontNilai}>NILAI</Text>
                           </View>
-                          <View style={sty.boxTable}>
-                            <View style={sty.barisHeader}>
-                              <View style={sty.kolNo}>
-                                <Text style={sty.fontHeader}>NO</Text>
+                          <View style={styUD.boxTable}>
+                            <View style={styUD.barisHeader}>
+                              <View style={styUD.kolNo}>
+                                <Text style={styUD.fontHeader}>NO</Text>
                               </View>
-                              <View style={sty.kolMateri}>
-                                <Text style={sty.fontHeader}>
+                              <View style={styUD.kolMateri}>
+                                <Text style={styUD.fontHeader}>
                                   MATERI UJIAN DINAS
                                 </Text>
                               </View>
-                              <View style={sty.kolNilai}>
-                                <View style={sty.KolNilaiAtas}>
-                                  <Text style={sty.fontHeader}>NILAI</Text>
+                              <View style={styUD.kolNilai}>
+                                <View style={styUD.KolNilaiAtas}>
+                                  <Text style={styUD.fontHeader}>NILAI</Text>
                                 </View>
-                                <View style={sty.kolNilaiBawah}>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={sty.fontHeader}>
+                                <View style={styUD.kolNilaiBawah}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text style={styUD.fontHeader}>
                                       PRESENTASI (NPR)
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={sty.fontHeader}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text style={styUD.fontHeader}>
                                       TERTIMBANG (NT)
                                     </Text>
                                   </View>
                                 </View>
                               </View>
-                              <View style={sty.kolTerbilang}>
-                                <Text style={sty.fontHeader}>
+                              <View style={styUD.kolTerbilang}>
+                                <Text style={styUD.fontHeader}>
                                   NILAI TERTIMBANG
                                 </Text>
-                                <Text style={sty.fontHeader}>DENGAN HURUF</Text>
+                                <Text style={styUD.fontHeader}>
+                                  DENGAN HURUF
+                                </Text>
                               </View>
                             </View>
-                            <View style={sty.barisSatu}>
-                              <View style={[sty.kolNo, sty.needBB]}>
-                                <Text style={sty.fontBaris}>1</Text>
+                            <View style={styUD.barisNoKolom}>
+                              <View style={[styUD.kolNo, styUD.needBB]}>
+                                <Text style={styUD.fontBaris}>(1)</Text>
                               </View>
-                              <View style={sty.kelompokA}>
-                                <View style={sty.a1}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                              <View style={[styUD.barisNoKolom, styUD.needBB]}>
+                                <View style={styUD.kolMateri}>
+                                  <Text
+                                    style={[styUD.fontBaris, styUD.needMiddle]}
+                                  >
+                                    (2)
+                                  </Text>
+                                </View>
+                                <View style={styUD.kolPresentasi}>
+                                  <Text style={[styUD.fontBaris, styUD.needPL]}>
+                                    (3)
+                                  </Text>
+                                </View>
+                                <View style={styUD.kolTertimbang}>
+                                  <Text style={[styUD.fontBaris, styUD.needPL]}>
+                                    (4)
+                                  </Text>
+                                </View>
+                                <View style={styUD.kolTerbilang}>
+                                  <Text style={styUD.fontTerbilang}>(5)</Text>
+                                </View>
+                              </View>
+                            </View>
+                            <View style={styUD.barisSatu}>
+                              <View style={[styUD.kolNo, styUD.needBB]}>
+                                <Text style={styUD.fontBaris}>1</Text>
+                              </View>
+                              <View style={styUD.kelompokA}>
+                                <View style={styUD.a1}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       KELOMPOK A
                                     </Text>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       a. Pancasila
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.pancasila}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.pancasila, 0.15)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.pancasila)}
                                     </Text>
                                   </View>
                                 </View>
-                                <View style={sty.barisStandard}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                <View style={styUD.barisStandard}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       b. UUD 1945
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.uud_1945}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.uud_1945, 0.15)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.uud_1945)}
                                     </Text>
                                   </View>
                                 </View>
-                                <View style={sty.barisStandard}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                <View style={styUD.barisStandard}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       C. Propenas
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.propenas}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.propenas, 0.15)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       Sembilan Puluh Koma Lima Nol
                                     </Text>
                                   </View>
                                 </View>
                               </View>
                             </View>
-                            <View style={sty.barisDua}>
-                              <View style={[sty.kolNo, sty.needBB]}>
-                                <Text style={sty.fontBaris}>2</Text>
+                            <View style={styUD.barisDua}>
+                              <View style={[styUD.kolNo, styUD.needBB]}>
+                                <Text style={styUD.fontBaris}>2</Text>
                               </View>
-                              <View style={sty.kelompokA}>
-                                <View style={sty.a1}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                              <View style={styUD.kelompokA}>
+                                <View style={styUD.a1}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       KELOMPOK B
                                     </Text>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       a. Peraturan Perundang-undangan{" "}
                                     </Text>
                                     <Text
-                                      style={[sty.fontBaris, sty.needMorePL]}
+                                      style={[
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                      ]}
                                     >
                                       {" "}
                                       dibidang kepegawaian
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.pengetahuan_bidang_kepegawaian}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(
                                         data.pengetahuan_bidang_kepegawaian,
                                         0.1
                                       )}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {tertimbang(
                                         data.pengetahuan_bidang_kepegawaian
                                       )}
                                     </Text>
                                   </View>
                                 </View>
-                                <View style={sty.barisStandard}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                <View style={styUD.barisStandard}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       b. KORPRI
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.korpri}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.korpri, 0.1)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.korpri)}
                                     </Text>
                                   </View>
                                 </View>
                               </View>
                             </View>
-                            <View style={sty.barisTiga}>
-                              <View style={[sty.kolNo, sty.needBB]}>
-                                <Text style={sty.fontBaris}>3</Text>
+                            <View style={styUD.barisTiga}>
+                              <View style={[styUD.kolNo, styUD.needBB]}>
+                                <Text style={styUD.fontBaris}>3</Text>
                               </View>
-                              <View style={sty.kelompokA}>
-                                <View style={sty.a1}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                              <View style={styUD.kelompokA}>
+                                <View style={styUD.a1}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       KELOMPOK C
                                     </Text>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       Pegetahuan Perkantoran
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.pengetahuan_perkantoran}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(
                                         data.pengetahuan_perkantoran,
                                         0.08
                                       )}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.pengetahuan_perkantoran)}
                                     </Text>
                                   </View>
                                 </View>
                               </View>
                             </View>
-                            <View style={sty.barisEmpat}>
-                              <View style={[sty.kolNo, sty.needBB]}>
-                                <Text style={sty.fontBaris}>4</Text>
+                            <View style={styUD.barisEmpat}>
+                              <View style={[styUD.kolNo, styUD.needBB]}>
+                                <Text style={styUD.fontBaris}>4</Text>
                               </View>
-                              <View style={sty.kelompokA}>
-                                <View style={sty.d1}>
-                                  <View style={[sty.kolMateri, sty.needHeight]}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                              <View style={styUD.kelompokA}>
+                                <View style={styUD.d1}>
+                                  <View
+                                    style={[styUD.kolMateri, styUD.needHeight]}
+                                  >
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       KELOMPOK D
                                     </Text>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       a. Tugas pokok, fungsi, struktur
                                     </Text>
                                     <Text
-                                      style={[sty.fontBaris, sty.needMorePL]}
+                                      style={[
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                      ]}
                                     >
                                       {" "}
                                       organisasi dan tata kerja instansi
                                     </Text>
                                     <Text
-                                      style={[sty.fontBaris, sty.needMorePL]}
+                                      style={[
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                      ]}
                                     >
                                       {" "}
                                       yang bersangkutan
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.organisasi}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.organisasi, 0.08)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.organisasi)}
                                     </Text>
                                   </View>
                                 </View>
-                                <View style={sty.d2}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                <View style={styUD.d2}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       b. Pengetahuan mengenai substantive
                                     </Text>
                                     <Text
-                                      style={[sty.fontBaris, sty.needMorePL]}
+                                      style={[
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                      ]}
                                     >
                                       {" "}
                                       instansi yang bersangkutan dan
                                     </Text>
                                     <Text
-                                      style={[sty.fontBaris, sty.needMorePL]}
+                                      style={[
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                      ]}
                                     >
                                       {" "}
                                       pengetahuan lain yang ditentukan
                                     </Text>
                                     <Text
-                                      style={[sty.fontBaris, sty.needMorePL]}
+                                      style={[
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                      ]}
                                     >
                                       {" "}
                                       oleh pimpinan instansi yang
                                     </Text>
                                     <Text
-                                      style={[sty.fontBaris, sty.needMorePL]}
+                                      style={[
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                      ]}
                                     >
                                       {" "}
                                       bersangkutan
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.substantive}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.substantive, 0.08)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.substantive)}
                                     </Text>
                                   </View>
                                 </View>
                               </View>
                             </View>
-                            <View style={sty.barisLima}>
-                              <View style={[sty.kolNo, sty.needBB]}>
-                                <Text style={sty.fontBaris}>5</Text>
+                            <View style={styUD.barisLima}>
+                              <View style={[styUD.kolNo, styUD.needBB]}>
+                                <Text style={styUD.fontBaris}>5</Text>
                               </View>
-                              <View style={sty.kelompokA}>
-                                <View style={sty.a1}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                              <View style={styUD.kelompokA}>
+                                <View style={styUD.a1}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       KELOMPOK E
                                     </Text>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       a. Bahasa Indonesia
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.bahasa_indonesia}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.bahasa_indonesia, 0.06)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.bahasa_indonesia)}
                                     </Text>
                                   </View>
                                 </View>
-                                <View style={sty.barisStandard}>
-                                  <View style={sty.kolMateri}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                <View style={styUD.barisStandard}>
+                                  <View style={styUD.kolMateri}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       b. Sejarah Indonesia
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {data.sejarah}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {tertimbang(data.sejarah, 0.05)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       {terbilang(data.sejarah)}
                                     </Text>
                                   </View>
                                 </View>
                               </View>
                             </View>
-                            <View style={sty.barisJumlah}>
-                              <View style={sty.kelJumlah}>
-                                <View style={sty.barisStandard}>
-                                  <View style={sty.kolJumlah}>
+                            <View style={styUD.barisJumlah}>
+                              <View style={styUD.kelJumlah}>
+                                <View style={styUD.barisStandard}>
+                                  <View style={styUD.kolJumlah}>
                                     <Text
                                       style={[
-                                        sty.fontBaris,
-                                        sty.needMorePL,
-                                        sty.needBold,
+                                        styUD.fontBaris,
+                                        styUD.needMorePL,
+                                        styUD.needBold,
                                       ]}
                                     >
                                       JUMLAH
                                     </Text>
                                   </View>
-                                  <View style={sty.kolPresentasi}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolPresentasi}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {Number(data.bahasa_indonesia) +
                                         Number(data.organisasi) +
                                         Number(data.korpri) +
@@ -1890,8 +2199,10 @@ const SplitPDF = (props) => {
                                         Number(data.substantive)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTertimbang}>
-                                    <Text style={[sty.fontBaris, sty.needPL]}>
+                                  <View style={styUD.kolTertimbang}>
+                                    <Text
+                                      style={[styUD.fontBaris, styUD.needPL]}
+                                    >
                                       {Number(data.bahasa_indonesia) +
                                         Number(data.organisasi) +
                                         Number(data.korpri) +
@@ -1906,8 +2217,8 @@ const SplitPDF = (props) => {
                                         Number(data.substantive)}
                                     </Text>
                                   </View>
-                                  <View style={sty.kolTerbilang}>
-                                    <Text style={sty.fontTerbilang}>
+                                  <View style={styUD.kolTerbilang}>
+                                    <Text style={styUD.fontTerbilang}>
                                       Sembilan Puluh Koma Lima Nol
                                     </Text>
                                   </View>
@@ -1915,22 +2226,22 @@ const SplitPDF = (props) => {
                               </View>
                             </View>
                           </View>
-                          <View style={sty.boxTtd}>
-                            <View style={sty.boxTtd2}>
-                              <View style={sty.jabatanTtd}>
-                                <Text style={sty.fontTtd}>
+                          <View style={styUD.boxTtd}>
+                            <View style={styUD.boxTtd2}>
+                              <View style={styUD.jabatanTtd}>
+                                <Text style={styUD.fontTtd}>
                                   a.n. KEPALA BADAN PUSAT STATISTIK,{" "}
                                 </Text>
-                                <Text style={sty.fontTtd}>
+                                <Text style={styUD.fontTtd}>
                                   Kepala Biro Sumber Daya Manusia,{" "}
                                 </Text>
                               </View>
-                              <View style={sty.ttd}></View>
-                              <View style={sty.jabatanTtd}>
-                                <Text style={sty.fontTtd}>
+                              <View style={styUD.ttd}></View>
+                              <View style={styUD.jabatanTtd}>
+                                <Text style={styUD.fontTtd}>
                                   Dr. Eni Lestariningsih, S.Si, M.A{" "}
                                 </Text>
-                                <Text style={sty.fontTtd}>
+                                <Text style={styUD.fontTtd}>
                                   NIP. 197003101994012001{" "}
                                 </Text>
                               </View>

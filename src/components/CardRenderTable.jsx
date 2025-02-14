@@ -22,9 +22,11 @@ import * as XLSX from "xlsx/xlsx.mjs";
 import dataRowPI from "../data/dataRowPI";
 // import Bingkai from "./Bingkai";
 
+import TablePI from "./TablePI"
 import TableComponent from "./TableComponent";
 import SplitPDF from "./SplitPDF";
-import TryTable from "./TryTable";
+import TableUD from "./TableUD";
+
 
 
 const EXTENSIONS = ["xlsx", "xls", "csv"];
@@ -247,9 +249,11 @@ const CardRenderTable = (props) => {
           }}
         />
       </Box>
-      <SplitPDF datadata={rows}></SplitPDF>
+      {/* <SplitPDF datadata={rows}></SplitPDF> */}
       {/* <TableComponent datadata={rows}></TableComponent> */}
-      {/* <TryTable></TryTable> */}
+      {/* <TableUD></TableUD> */}
+      <TablePI></TablePI>
+
     </div>
   );
 };
