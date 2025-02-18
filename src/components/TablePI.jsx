@@ -13,7 +13,6 @@ import { Typography } from "@mui/material";
 
 const TablePI = () => (
   <>
-    <Typography>xaxaxa</Typography>
     <PDFViewer style={{ width: "100%", height: "800px" }}>
       <Document>
         <Page size="A4" style={{ padding: 20 }}>

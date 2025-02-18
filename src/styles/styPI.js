@@ -79,9 +79,11 @@ export const styPI = StyleSheet.create({
   },
 
   boxTable: {
+    backgroundColor:"red",
+
     borderTop: "1px solid black",
     width: "500px",
-    height: "430px",
+    height: "330px",
     marginBottom: "15px",
   },
   barisHeader: {
@@ -293,6 +295,7 @@ export const styPI = StyleSheet.create({
     width: "500px",
     height: "100px",
     alignItems: "flex-end",
+    backgroundColor:"red"
   },
 
   boxTtd2: {
